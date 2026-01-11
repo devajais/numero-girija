@@ -14,6 +14,9 @@ A beautiful, mobile-first web application for Lo Shu Grid Numerology analysis by
 - **Calculation Explanations**: See exactly how your grid was created
 - **Mobile-First Design**: Beautiful purple gradient UI optimized for phone screens
 - **Single Page App**: Smooth navigation with bottom tab bar
+- **PWA Support**: Install as an app on your phone (Add to Home Screen)
+- **Offline Support**: Works offline after first visit with service worker
+- **Custom App Icon**: Lo Shu Grid themed icon for your home screen
 
 ## 🚀 Commands
 
@@ -26,6 +29,27 @@ All commands are run from the root of the project:
 | `npm run build` | Build your production site to `./dist/` |
 | `npm run preview` | Preview your build locally |
 | `npm run deploy` | Build and deploy to GitHub Pages |
+
+## 📱 Installing as a PWA
+
+### On iPhone/iPad:
+1. Open https://devajais.github.io/numero-girija/ in Safari
+2. Tap the Share button (square with arrow)
+3. Scroll down and tap "Add to Home Screen"
+4. Tap "Add" in the top right
+5. The app will appear on your home screen with a custom icon
+
+### On Android:
+1. Open https://devajais.github.io/numero-girija/ in Chrome
+2. Tap the menu (three dots)
+3. Tap "Add to Home screen" or "Install app"
+4. Confirm by tapping "Add"
+5. The app will appear on your home screen
+
+### Desktop (Chrome/Edge):
+1. Visit the site and look for the install icon in the address bar
+2. Click "Install" when prompted
+3. The app will open in its own window
 
 ## 📦 Deployment
 
