@@ -7,8 +7,22 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Lo Shu Grid Numerology Analysis by Girija Sharma" />
-    <title>Astro Girija Sharma - Lo Shu Grid</title>
+    <meta name="description" content="Lo Shu Grid Numerology Analysis by Girija Sharma - Discover your life path through ancient wisdom" />
+    <title>Numero Girija - Lo Shu Grid Numerology</title>
+
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/numero-girija/manifest.json" />
+    <meta name="theme-color" content="#6b3fa0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Numero Girija" />
+
+    <!-- App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/numero-girija/icon.svg" />
+    <link rel="apple-touch-icon" href="/numero-girija/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/numero-girija/icon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/numero-girija/icon.svg" />
     <style>
         * {
             margin: 0;
@@ -1101,6 +1115,15 @@
 
             // Scroll to top
             window.scrollTo(0, 0);
+        }
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/numero-girija/sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
+            });
         }
     </script>
 </body>
