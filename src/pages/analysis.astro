@@ -1,0 +1,431 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Deep Analysis - Astro Girija Sharma">
+    <style>
+        .analysis-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 15px;
+        }
+
+        .transit-grid {
+            background: linear-gradient(135deg, #f9f5ff 0%, #f0ebff 100%);
+            padding: 20px;
+            border-radius: 14px;
+            border: 3px solid #6b3fa0;
+            margin: 15px 0;
+        }
+
+        .transit-title {
+            color: #2d1b69;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .grid-mini {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .grid-mini-cell {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: 2px solid #e5e7f0;
+        }
+
+        .grid-mini-cell.active {
+            border-color: #6b3fa0;
+            background: linear-gradient(145deg, #ffffff 0%, #f9f5ff 100%);
+            color: #2d1b69;
+        }
+
+        .grid-label {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+            border-left: 4px solid #ff9933;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+
+        .insight-box.positive {
+            background: linear-gradient(135deg, #e6f7e6 0%, #ccffcc 100%);
+            border-left-color: #33cc33;
+        }
+
+        .insight-box.challenge {
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+            border-left-color: #ff3333;
+        }
+
+        .insight-box h4 {
+            color: #2d1b69;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .insight-box p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.85rem;
+        }
+
+        .strength-list, .challenge-list {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .strength-list li, .challenge-list li {
+            padding: 10px 12px;
+            background: white;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #555;
+            border-left: 3px solid #6b3fa0;
+        }
+
+        .synergy-meter {
+            background: #f0f0f0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .synergy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #33cc33, #66ff66);
+            border-radius: 15px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .plane-analysis {
+            display: grid;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .plane-box {
+            background: linear-gradient(135deg, #f8f9fd 0%, #f0f2f8 100%);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #6b3fa0;
+        }
+
+        .plane-box h4 {
+            color: #2d1b69;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .plane-box p {
+            color: #666;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .plane-status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .plane-status.active {
+            background: #33cc33;
+            color: white;
+        }
+
+        .plane-status.partial {
+            background: #ff9933;
+            color: white;
+        }
+
+        .plane-status.inactive {
+            background: #cccccc;
+            color: #666;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .no-data-btn {
+            margin-top: 20px;
+        }
+    </style>
+
+    <div id="analysisContent">
+        <div class="no-data">
+            <p>Please enter your date of birth first</p>
+            <a href="/" class="btn no-data-btn">Go to Home</a>
+        </div>
+    </div>
+
+    <script is:inline src="/loshu-utils.js"></script>
+    <script is:inline>
+        const dob = sessionStorage.getItem('userDOB');
+
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const frequency = data.frequency;
+            const missing = getMissingNumbers(frequency);
+
+            // Calculate transit grid (birth + 2026 energies)
+            const universalYear = calculateUniversalYear(2026);
+            const personalYear = calculatePersonalYear(data.day, data.month, universalYear);
+
+            // Create transit frequency (birth + universal year + personal year)
+            const transitFreq = {...frequency};
+            transitFreq[universalYear] = (transitFreq[universalYear] || 0) + 1;
+            transitFreq[personalYear] = (transitFreq[personalYear] || 0) + 1;
+
+            // Check plane completions
+            function checkPlane(freq, nums) {
+                return nums.every(n => freq[n] > 0);
+            }
+
+            const birthPlanes = {
+                mental: checkPlane(frequency, [4, 9, 2]),
+                emotional: checkPlane(frequency, [3, 5, 7]),
+                practical: checkPlane(frequency, [8, 1, 6])
+            };
+
+            const transitPlanes = {
+                mental: checkPlane(transitFreq, [4, 9, 2]),
+                emotional: checkPlane(transitFreq, [3, 5, 7]),
+                practical: checkPlane(transitFreq, [8, 1, 6])
+            };
+
+            // Calculate synergy score
+            let synergyScore = 0;
+            for (let i = 1; i <= 9; i++) {
+                if (frequency[i] > 0 && transitFreq[i] > frequency[i]) {
+                    synergyScore += 10;
+                }
+                if (frequency[i] === 0 && transitFreq[i] > 0) {
+                    synergyScore += 15; // Filling gaps is powerful
+                }
+            }
+            synergyScore = Math.min(100, synergyScore);
+
+            let html = `
+                <div class="analysis-card">
+                    <h2 class="section-title">Transit Grid Analysis</h2>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">
+                        Your birth grid combined with 2026 universal and personal energies
+                    </p>
+
+                    <div class="comparison-grid">
+                        <div>
+                            <div class="grid-label">Birth Grid</div>
+                            <div class="grid-mini">
+            `;
+
+            const gridLayout = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+            gridLayout.forEach(num => {
+                html += `<div class="grid-mini-cell ${frequency[num] > 0 ? 'active' : ''}">${frequency[num]}</div>`;
+            });
+
+            html += `
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid-label">Transit Grid 2026</div>
+                            <div class="grid-mini">
+            `;
+
+            gridLayout.forEach(num => {
+                html += `<div class="grid-mini-cell ${transitFreq[num] > 0 ? 'active' : ''}">${transitFreq[num]}</div>`;
+            });
+
+            html += `
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div style="font-size: 0.9rem; font-weight: 600; color: #2d1b69; margin-bottom: 8px;">
+                            2026 Synergy Score
+                        </div>
+                        <div class="synergy-meter">
+                            <div class="synergy-fill" style="width: ${synergyScore}%">${synergyScore}%</div>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">
+                            ${synergyScore > 70 ? 'Excellent alignment! 2026 strongly supports your natural energies.' :
+                              synergyScore > 40 ? 'Good alignment. 2026 brings opportunities to fill gaps.' :
+                              'Moderate alignment. Focus on developing new skills this year.'}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <h2 class="section-title">Plane Activations</h2>
+                    <div class="plane-analysis">
+            `;
+
+            // Mental Plane
+            let mentalStatus = birthPlanes.mental ? 'active' : (transitPlanes.mental ? 'partial' : 'inactive');
+            html += `
+                <div class="plane-box">
+                    <h4>Mental Plane (4-9-2) <span class="plane-status ${mentalStatus}">${
+                        birthPlanes.mental ? 'Active in Birth' :
+                        transitPlanes.mental ? '2026 Activation' : 'Inactive'
+                    }</span></h4>
+                    <p>${
+                        birthPlanes.mental ? 'You naturally excel in thinking, planning, and analysis.' :
+                        transitPlanes.mental ? '2026 brings temporary boost to mental abilities. Great year for intellectual pursuits!' :
+                        'Focus on developing analytical and planning skills.'
+                    }</p>
+                </div>
+            `;
+
+            // Emotional Plane
+            let emotionalStatus = birthPlanes.emotional ? 'active' : (transitPlanes.emotional ? 'partial' : 'inactive');
+            html += `
+                <div class="plane-box">
+                    <h4>Emotional Plane (3-5-7) <span class="plane-status ${emotionalStatus}">${
+                        birthPlanes.emotional ? 'Active in Birth' :
+                        transitPlanes.emotional ? '2026 Activation' : 'Inactive'
+                    }</span></h4>
+                    <p>${
+                        birthPlanes.emotional ? 'You have balanced emotions and excellent communication skills.' :
+                        transitPlanes.emotional ? '2026 enhances your emotional intelligence and communication. Focus on relationships!' :
+                        'Work on emotional expression and interpersonal skills.'
+                    }</p>
+                </div>
+            `;
+
+            // Practical Plane
+            let practicalStatus = birthPlanes.practical ? 'active' : (transitPlanes.practical ? 'partial' : 'inactive');
+            html += `
+                <div class="plane-box">
+                    <h4>Practical Plane (8-1-6) <span class="plane-status ${practicalStatus}">${
+                        birthPlanes.practical ? 'Active in Birth' :
+                        transitPlanes.practical ? '2026 Activation' : 'Inactive'
+                    }</span></h4>
+                    <p>${
+                        birthPlanes.practical ? 'You are grounded, practical, and good with material matters.' :
+                        transitPlanes.practical ? '2026 brings practical opportunities! Excellent for career and financial growth.' :
+                        'Develop practical skills and focus on implementation.'
+                    }</p>
+                </div>
+            `;
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <h2 class="section-title">2026 Opportunities</h2>
+            `;
+
+            // Find which missing numbers are being filled by transit
+            let opportunities = [];
+            missing.forEach(num => {
+                if (num === universalYear || num === personalYear) {
+                    const meaning = getNumberMeaning(num);
+                    opportunities.push(`
+                        <div class="insight-box positive">
+                            <h4>✨ Number ${num} Activated</h4>
+                            <p>Your missing ${getPlanetName(num)} energy (${meaning.aspect}) is temporarily activated in 2026! This is your chance to develop this quality.</p>
+                        </div>
+                    `);
+                }
+            });
+
+            if (opportunities.length > 0) {
+                html += opportunities.join('');
+            } else {
+                html += `
+                    <div class="insight-box">
+                        <h4>🔮 Natural Flow Year</h4>
+                        <p>2026 enhances your existing strengths rather than filling gaps. Focus on maximizing what you already have!</p>
+                    </div>
+                `;
+            }
+
+            // Present numbers being doubled
+            let doubleEnergies = [];
+            for (let i = 1; i <= 9; i++) {
+                if (frequency[i] > 0 && (i === universalYear || i === personalYear)) {
+                    const meaning = getNumberMeaning(i);
+                    doubleEnergies.push(`
+                        <div class="insight-box positive">
+                            <h4>🚀 Number ${i} Doubled</h4>
+                            <p>Your ${getPlanetName(i)} energy is amplified in 2026! ${meaning.aspect} will be a major focus and strength.</p>
+                        </div>
+                    `);
+                }
+            }
+
+            html += doubleEnergies.join('');
+
+            html += `
+                </div>
+
+                <div class="analysis-card">
+                    <h2 class="section-title">Key Recommendations</h2>
+                    <div class="insight-box">
+                        <h4>💡 Primary Focus</h4>
+                        <p>${getPersonalYearMeaning(personalYear).desc}</p>
+                    </div>
+                    <div class="insight-box">
+                        <h4>⚠️ Areas to Watch</h4>
+                        <p>${
+                            missing.length > 3 ? 'You have several missing numbers. Use 2026 to consciously develop these qualities through practice and learning.' :
+                            missing.length > 0 ? 'Focus on developing the qualities associated with your missing numbers.' :
+                            'Your grid is complete! Focus on balancing and harmonizing all energies.'
+                        }</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('analysisContent').innerHTML = html;
+        }
+    </script>
+</Layout>

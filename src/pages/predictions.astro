@@ -1,0 +1,305 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="2026 Predictions - Astro Girija Sharma">
+    <style>
+        .prediction-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 15px;
+        }
+
+        .universal-year {
+            text-align: center;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 25px rgba(107, 63, 160, 0.4);
+        }
+
+        .universal-year h3 {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .year-number {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .year-theme {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .year-desc {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .personal-year {
+            background: linear-gradient(145deg, #f9f5ff 0%, #f0ebff 100%);
+            padding: 20px;
+            border-radius: 14px;
+            border: 3px solid #6b3fa0;
+            margin-bottom: 15px;
+        }
+
+        .personal-year h3 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .py-number {
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .py-title {
+            font-size: 1.1rem;
+            color: #2d1b69;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .py-desc {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .month-box {
+            background: white;
+            padding: 15px 12px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e5e7f0;
+            transition: all 0.3s ease;
+        }
+
+        .month-box.highlight {
+            border-color: #6b3fa0;
+            background: linear-gradient(145deg, #ffffff 0%, #f9f5ff 100%);
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.15);
+        }
+
+        .month-name {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .month-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .month-theme {
+            font-size: 0.7rem;
+            color: #8b5fbf;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f8f9fd 0%, #f0f2f8 100%);
+            border-left: 4px solid #6b3fa0;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .info-box h4 {
+            color: #2d1b69;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.8rem;
+        }
+
+        .highlight-month {
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 14px;
+            margin: 15px 0;
+        }
+
+        .highlight-month h3 {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .highlight-month .month-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-month .month-num {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .no-data-btn {
+            margin-top: 20px;
+        }
+    </style>
+
+    <div id="predictionsContent">
+        <div class="no-data">
+            <p>Please enter your date of birth first</p>
+            <a href="/" class="btn no-data-btn">Go to Home</a>
+        </div>
+    </div>
+
+    <script is:inline src="/loshu-utils.js"></script>
+    <script is:inline>
+        const dob = sessionStorage.getItem('userDOB');
+
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const universalYear = calculateUniversalYear(2026);
+            const personalYear = calculatePersonalYear(data.day, data.month, universalYear);
+            const personalYearMeaning = getPersonalYearMeaning(personalYear);
+
+            // Get current month for highlighting
+            const currentMonth = new Date().getMonth() + 1;
+            const nextMonth = currentMonth === 12 ? 1 : currentMonth + 1;
+            const nextMonthPersonal = calculatePersonalMonth(personalYear, nextMonth);
+            const nextMonthMeaning = getPersonalYearMeaning(nextMonthPersonal);
+
+            let html = `
+                <div class="prediction-card">
+                    <h2 class="section-title">Universal Energy 2026</h2>
+                    <div class="universal-year">
+                        <h3>Universal Year Number</h3>
+                        <div class="year-number">${universalYear}</div>
+                        <div class="year-theme">${getPersonalYearMeaning(universalYear).title}</div>
+                        <p class="year-desc">2026 is a Universal Year ${universalYear}. This is the energy that affects everyone globally - a year of ${getPersonalYearMeaning(universalYear).title.toLowerCase()}.</p>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title">Your Personal Year 2026</h2>
+                    <div class="personal-year">
+                        <h3>
+                            <span class="py-number">${personalYear}</span>
+                            <span>Personal Year ${personalYear}</span>
+                        </h3>
+                        <div class="py-title">${personalYearMeaning.title}</div>
+                        <p class="py-desc">${personalYearMeaning.desc}</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>How This Was Calculated</h4>
+                        <p>Birth Day (${data.day}) + Birth Month (${data.month}) + Universal Year (${universalYear}) = Personal Year ${personalYear}</p>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title">Next Month Forecast</h2>
+                    <div class="highlight-month">
+                        <h3>${getMonthName(nextMonth)} 2026</h3>
+                        <div class="month-info">
+                            <div class="month-num">${nextMonthPersonal}</div>
+                            <div>
+                                <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">${nextMonthMeaning.title}</div>
+                                <p style="font-size: 0.85rem; opacity: 0.95;">${nextMonthMeaning.desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title">Monthly Forecast 2026</h2>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Your personal month number for each month of 2026</p>
+                    <div class="months-grid">
+            `;
+
+            for (let month = 1; month <= 12; month++) {
+                const monthPersonal = calculatePersonalMonth(personalYear, month);
+                const monthMeaning = getPersonalYearMeaning(monthPersonal);
+                const isNext = month === nextMonth;
+                html += `
+                    <div class="month-box ${isNext ? 'highlight' : ''}">
+                        <div class="month-name">${getMonthName(month)}</div>
+                        <div class="month-number">${monthPersonal}</div>
+                        <div class="month-theme">${monthMeaning.title}</div>
+                    </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title">Understanding Your 2026</h2>
+                    <div class="info-box">
+                        <h4>Universal Year Impact</h4>
+                        <p>The Universal Year ${universalYear} sets the global theme. Everyone experiences this energy, but it manifests uniquely based on your personal numbers.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Personal Year Guidance</h4>
+                        <p>Your Personal Year ${personalYear} is your individual journey within the universal energy. Focus on ${personalYearMeaning.title.toLowerCase()} throughout 2026.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Monthly Cycles</h4>
+                        <p>Each month adds its own flavor to your personal year. Pay attention to the monthly themes to navigate 2026 effectively.</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('predictionsContent').innerHTML = html;
+        }
+    </script>
+</Layout>

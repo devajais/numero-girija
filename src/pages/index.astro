@@ -1,0 +1,989 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Lo Shu Grid Numerology Analysis by Girija Sharma" />
+    <title>Astro Girija Sharma - Lo Shu Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 50%, #8b5fbf 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 20px 15px 15px;
+            background: rgba(45, 27, 105, 0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header .tagline {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        .main-content {
+            padding: 15px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 15px;
+        }
+
+        .welcome-text {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 18px;
+            background: linear-gradient(135deg, #f8f9fd 0%, #f0f2f8 100%);
+            border-radius: 12px;
+            border-left: 4px solid #6b3fa0;
+        }
+
+        .welcome-text strong {
+            color: #2d1b69;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="date"]:focus {
+            outline: none;
+            border-color: #6b3fa0;
+            box-shadow: 0 0 0 3px rgba(107, 63, 160, 0.1);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #2d1b69, #6b3fa0);
+            border-radius: 2px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loshu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .loshu-grid-wrapper {
+            background: #f8f9fd;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 15px 0;
+        }
+
+        .loshu-cell {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            padding: 10px;
+            min-height: 90px;
+            border: 2px solid #e5e7f0;
+            transition: all 0.3s ease;
+        }
+
+        .loshu-cell:active {
+            transform: scale(0.95);
+        }
+
+        .loshu-cell.has-numbers {
+            background: white;
+            border-color: #6b3fa0;
+            box-shadow: 0 3px 12px rgba(107, 63, 160, 0.15);
+        }
+
+        .cell-number {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            font-size: 0.75rem;
+            color: white;
+            font-weight: 700;
+            background: #999;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .loshu-cell.has-numbers .cell-number {
+            background: linear-gradient(135deg, #6b3fa0, #8b5fbf);
+            color: white;
+        }
+
+        .cell-planet {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.65rem;
+            color: #666;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .loshu-cell.has-numbers .cell-planet {
+            color: #2d1b69;
+        }
+
+        .cell-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .cell-count {
+            font-size: 2.5rem;
+            color: #ccc;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .loshu-cell.has-numbers .cell-count {
+            color: #2d1b69;
+        }
+
+        .cell-dots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+            margin-top: 8px;
+            max-width: 60px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            background: #6b3fa0;
+            border-radius: 50%;
+        }
+
+        .calculation-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            border-left: 4px solid #ffb84d;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .calculation-box h3 {
+            color: #8b5000;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .calculation-step {
+            color: #555;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .calculation-step strong {
+            color: #2d1b69;
+            font-weight: 700;
+        }
+
+        .month-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .month-selector select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            background: white;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .month-selector select:focus {
+            outline: none;
+            border-color: #6b3fa0;
+            box-shadow: 0 0 0 3px rgba(107, 63, 160, 0.1);
+        }
+
+        .month-selector select:hover {
+            border-color: #8b5fbf;
+        }
+
+        .month-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fd 100%);
+            padding: 18px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            border: 2px solid #e5e7f0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .month-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.15);
+        }
+
+        .month-card.current {
+            border-color: #6b3fa0;
+            background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+            box-shadow: 0 4px 20px rgba(107, 63, 160, 0.3);
+        }
+
+        .month-card h4 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+        }
+
+        .month-card.current h4 {
+            color: white;
+        }
+
+        .month-card .month-num {
+            background: linear-gradient(135deg, #6b3fa0, #8b5fbf);
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .month-card.current .month-num {
+            background: white;
+            color: #6b3fa0;
+        }
+
+        .month-card p {
+            color: #555;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .month-card.current p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .month-card p strong {
+            color: #2d1b69;
+            font-weight: 700;
+        }
+
+        .month-card.current p strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .key-numbers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .key-box {
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+
+        .key-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .key-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f9f5ff 0%, #f0ebff 100%);
+            border-left: 4px solid #6b3fa0;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(107, 63, 160, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateX(3px);
+            box-shadow: 0 3px 12px rgba(107, 63, 160, 0.15);
+        }
+
+        .info-box h3 {
+            color: #2d1b69;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .number-badge {
+            background: linear-gradient(135deg, #6b3fa0, #8b5fbf);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(107, 63, 160, 0.3);
+        }
+
+        .info-box p {
+            color: #444;
+            line-height: 1.6;
+            font-size: 0.88rem;
+        }
+
+        .missing-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .missing-number {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(45, 27, 105, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: rgba(255, 255, 255, 0.6);
+            background: none;
+            border: none;
+            font-size: 0.7rem;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 80px;
+            cursor: pointer;
+        }
+
+        .nav-btn.active {
+            color: white;
+            background: rgba(139, 95, 191, 0.3);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .nav-icon {
+            font-size: 1.3rem;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="/girija-sharma.jpg" alt="Girija Sharma" class="profile-img" onerror="this.style.display='none'">
+            <h1>Astro Girija Sharma</h1>
+            <p>Lo Shu Grid Numerology Analysis</p>
+            <p class="tagline">Discover Your Life Path Through Ancient Wisdom</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Input Section -->
+            <div class="card" id="inputCard">
+                <div class="welcome-text">
+                    Welcome! I'm <strong>Girija Sharma</strong>, and I'm here to help you discover the hidden patterns in your life through the ancient art of <strong>Lo Shu Grid Numerology</strong>.
+                    <br><br>
+                    Enter your birth date below to reveal your unique cosmic blueprint and understand the energies that shape your journey through life.
+                </div>
+
+                <div class="input-group">
+                    <label for="dob">Enter Your Date of Birth</label>
+                    <input type="date" id="dob" required max="2025-12-31">
+                </div>
+
+                <button class="btn" onclick="generateGrid()">Generate My Lo Shu Grid</button>
+            </div>
+
+            <!-- Grid Section -->
+            <div id="gridSection" class="hidden">
+                <div class="card">
+                    <h2 class="section-title">Your Key Numbers</h2>
+                    <div class="key-numbers">
+                        <div class="key-box">
+                            <div class="key-label">Driver</div>
+                            <div class="key-value" id="driverNum">-</div>
+                        </div>
+                        <div class="key-box">
+                            <div class="key-label">Conductor</div>
+                            <div class="key-value" id="conductorNum">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="section-title">Your Lo Shu Grid</h2>
+                    <div class="loshu-grid" id="loShuGrid"></div>
+                </div>
+
+                <div id="gridDetails"></div>
+            </div>
+
+            <!-- Predictions Section -->
+            <div id="predictionsSection" class="hidden"></div>
+
+            <!-- Analysis Section -->
+            <div id="analysisSection" class="hidden"></div>
+
+            <div class="footer-text">
+                © 2026 Girija Sharma • Ancient Wisdom for Modern Living
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-items">
+                <button class="nav-btn active" onclick="showSection('grid')" id="gridBtn">
+                    <span class="nav-icon">📊</span>
+                    <span>Grid</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('predictions')" id="predBtn">
+                    <span class="nav-icon">🔮</span>
+                    <span>2026</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('analysis')" id="analysisBtn">
+                    <span class="nav-icon">📈</span>
+                    <span>Analysis</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <script is:inline src="/loshu-utils.js"></script>
+    <script is:inline>
+        let currentData = null;
+
+        function generateGrid() {
+            const dobInput = document.getElementById('dob');
+            const dob = dobInput.value;
+
+            if (!dob) {
+                alert('Please enter your date of birth!');
+                return;
+            }
+
+            currentData = calculateLoShuChart(dob);
+            displayGrid();
+            displayPredictions();
+            displayAnalysis();
+
+            document.getElementById('gridSection').classList.remove('hidden');
+            showSection('grid');
+        }
+
+        function displayGrid() {
+            const { frequency, driver, conductor, day, month, year } = currentData;
+
+            document.getElementById('driverNum').textContent = driver;
+            document.getElementById('conductorNum').textContent = conductor;
+
+            const gridLayout = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+            let gridHTML = '';
+
+            gridLayout.forEach(num => {
+                const count = frequency[num];
+                const hasNumbers = count > 0;
+                const dots = hasNumbers ? Array(count).fill(0).map(() => '<div class="dot"></div>').join('') : '';
+                const planet = getPlanetName(num);
+                gridHTML += `
+                    <div class="loshu-cell ${hasNumbers ? 'has-numbers' : ''}">
+                        <span class="cell-number">${num}</span>
+                        <span class="cell-planet">${planet}</span>
+                        <div class="cell-content">
+                            <span class="cell-count">${count}</span>
+                            <div class="cell-dots">${dots}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('loShuGrid').innerHTML = gridHTML;
+
+            // Add calculation explanation
+            const dayDigits = String(day).split('').map(Number).filter(d => d !== 0);
+            const monthDigits = String(month).split('').map(Number).filter(d => d !== 0);
+            const yearDigits = String(year).split('').map(Number).filter(d => d !== 0);
+            const allDigits = [...dayDigits, ...monthDigits, ...yearDigits];
+
+            const calculationHTML = `
+                <div class="calculation-box">
+                    <h3>📊 How Your Grid Was Created</h3>
+                    <div class="calculation-step">
+                        <strong>Birth Date:</strong> ${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}
+                    </div>
+                    <div class="calculation-step">
+                        <strong>Day Digits:</strong> ${dayDigits.join(', ')} → Sum = ${dayDigits.reduce((a,b) => a+b, 0)} → Driver Number = <strong>${driver}</strong>
+                    </div>
+                    <div class="calculation-step">
+                        <strong>Month Digits:</strong> ${monthDigits.join(', ')}
+                    </div>
+                    <div class="calculation-step">
+                        <strong>Year Digits:</strong> ${yearDigits.join(', ')}
+                    </div>
+                    <div class="calculation-step">
+                        <strong>All Digits:</strong> ${allDigits.join(', ')} → Sum = ${allDigits.reduce((a,b) => a+b, 0)} → Conductor Number = <strong>${conductor}</strong>
+                    </div>
+                    <div class="calculation-step">
+                        <strong>Numbers Placed in Grid:</strong> ${[...allDigits, driver, conductor].join(', ')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('loShuGrid').insertAdjacentHTML('afterend', calculationHTML);
+
+            // Present and missing numbers
+            let detailsHTML = '<div class="card"><h2 class="section-title">✨ Present Numbers</h2>';
+            for (let i = 1; i <= 9; i++) {
+                if (frequency[i] > 0) {
+                    const meaning = getNumberMeaning(i);
+                    detailsHTML += `
+                        <div class="info-box">
+                            <h3>
+                                <span class="number-badge">${i}</span>
+                                <span>→ ${getPlanetName(i)} (${meaning.aspect})</span>
+                            </h3>
+                            <p>${meaning.desc}</p>
+                        </div>
+                    `;
+                }
+            }
+            detailsHTML += '</div>';
+
+            const missing = getMissingNumbers(frequency);
+            if (missing.length > 0) {
+                detailsHTML += '<div class="card"><h2 class="section-title">⚠️ Missing Numbers</h2>';
+                detailsHTML += '<p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">These energies may need attention in your life:</p>';
+                detailsHTML += '<div class="missing-numbers">';
+                missing.forEach(num => {
+                    detailsHTML += `<span class="missing-number">${num}</span>`;
+                });
+                detailsHTML += '</div>';
+                missing.forEach(num => {
+                    const meaning = getNumberMeaning(num);
+                    detailsHTML += `
+                        <div class="info-box" style="background: linear-gradient(135deg, #fff9f5 0%, #ffebe6 100%); border-left-color: #dc2626;">
+                            <h3 style="color: #991b1b;">
+                                <span class="number-badge" style="background: linear-gradient(135deg, #dc2626, #ef4444);">${num}</span>
+                                <span>→ ${getPlanetName(num)} (${meaning.aspect})</span>
+                            </h3>
+                            <p style="color: #7c2d12;">${meaning.desc} - This energy may be lacking in your chart.</p>
+                        </div>
+                    `;
+                });
+                detailsHTML += '</div>';
+            }
+
+            document.getElementById('gridDetails').innerHTML = detailsHTML;
+        }
+
+        function displayPredictions() {
+            const { day, month } = currentData;
+            const universalYear = calculateUniversalYear(2026);
+            const personalYear = calculatePersonalYear(day, month, universalYear);
+            const personalYearMeaning = getPersonalYearMeaning(personalYear);
+
+            const currentMonth = new Date().getMonth() + 1;
+            const nextMonth = currentMonth === 12 ? 1 : currentMonth + 1;
+            const nextMonthPersonal = calculatePersonalMonth(personalYear, nextMonth);
+            const nextMonthMeaning = getPersonalYearMeaning(nextMonthPersonal);
+
+            let html = `
+                <div class="card">
+                    <h2 class="section-title">2026 Universal Year</h2>
+                    <div style="background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%); color: white; padding: 25px 20px; border-radius: 14px; text-align: center;">
+                        <div style="font-size: 4rem; font-weight: 700; margin: 10px 0;">${universalYear}</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;">${getPersonalYearMeaning(universalYear).title}</div>
+                        <p style="font-size: 0.9rem; opacity: 0.95;">Year of ${getPersonalYearMeaning(universalYear).title.toLowerCase()} for everyone</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="section-title">Your Personal Year 2026</h2>
+                    <div style="background: linear-gradient(145deg, #f9f5ff 0%, #f0ebff 100%); padding: 20px; border-radius: 14px; border: 3px solid #6b3fa0;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <div style="background: linear-gradient(135deg, #2d1b69, #6b3fa0); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700;">${personalYear}</div>
+                            <div>
+                                <div style="font-size: 1.1rem; color: #2d1b69; font-weight: 700;">${personalYearMeaning.title}</div>
+                                <div style="font-size: 0.8rem; color: #666;">Personal Year ${personalYear}</div>
+                            </div>
+                        </div>
+                        <p style="color: #555; line-height: 1.6; font-size: 0.9rem;">${personalYearMeaning.desc}</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="section-title">${getMonthName(nextMonth)} 2026 Forecast</h2>
+                    <div style="background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%); color: white; padding: 25px 20px; border-radius: 14px;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <div style="font-size: 3rem; font-weight: 700;">${nextMonthPersonal}</div>
+                            <div>
+                                <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">${nextMonthMeaning.title}</div>
+                                <p style="font-size: 0.85rem; opacity: 0.95;">${nextMonthMeaning.desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('predictionsSection').innerHTML = html;
+        }
+
+        function displayAnalysis() {
+            const { day, month } = currentData;
+            const universalYear = calculateUniversalYear(2026);
+            const personalYear = calculatePersonalYear(day, month, universalYear);
+
+            const currentMonth = new Date().getMonth() + 1;
+
+            let html = `
+                <div class="card">
+                    <h2 class="section-title">2026 Monthly Predictions</h2>
+                    <div style="background: linear-gradient(135deg, #f0f2f8 0%, #e8eaf5 100%); padding: 15px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #6b3fa0;">
+                        <p style="color: #2d1b69; font-size: 0.9rem; margin: 0; font-weight: 600;">
+                            📅 All monthly forecasts for 2026 based on your Personal Year <strong style="font-size: 1.2rem;">${personalYear}</strong>
+                        </p>
+                    </div>
+            `;
+
+            // Display all 12 months
+            for (let m = 1; m <= 12; m++) {
+                const personalMonth = calculatePersonalMonth(personalYear, m);
+                const monthMeaning = getPersonalYearMeaning(personalMonth);
+                const isCurrent = m === currentMonth;
+
+                html += `
+                    <div class="month-card ${isCurrent ? 'current' : ''}">
+                        <h4>
+                            <span style="display: flex; align-items: center; gap: 8px;">
+                                ${isCurrent ? '✨' : '📅'} ${getMonthName(m)} 2026
+                                ${isCurrent ? '<span style="font-size: 0.75rem; background: rgba(255,255,255,0.3); padding: 2px 8px; border-radius: 20px;">Current</span>' : ''}
+                            </span>
+                            <span class="month-num">${personalMonth}</span>
+                        </h4>
+                        <p style="margin-top: 8px;"><strong>${monthMeaning.title}</strong> → ${monthMeaning.desc}</p>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+
+            // Custom month/year selector
+            html += `
+                <div class="card" style="background: linear-gradient(135deg, #f9f5ff 0%, #f0ebff 100%); border: 2px solid #8b5fbf;">
+                    <h2 class="section-title">🔮 Custom Prediction</h2>
+                    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+                        <p style="color: #666; font-size: 0.9rem; margin: 0;">
+                            Select any month and year to get your personal prediction
+                        </p>
+                    </div>
+                    <div class="month-selector">
+                        <select id="customMonth">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="customYear">
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="showCustomPrediction()">✨ Get Prediction</button>
+                    <div id="customResult" style="margin-top: 15px;"></div>
+                </div>
+            `;
+
+            document.getElementById('analysisSection').innerHTML = html;
+        }
+
+        function showCustomPrediction() {
+            const { day, month } = currentData;
+            const selectedMonth = parseInt(document.getElementById('customMonth').value);
+            const selectedYear = parseInt(document.getElementById('customYear').value);
+
+            const universalYear = calculateUniversalYear(selectedYear);
+            const personalYear = calculatePersonalYear(day, month, universalYear);
+            const personalMonth = calculatePersonalMonth(personalYear, selectedMonth);
+            const monthMeaning = getPersonalYearMeaning(personalMonth);
+
+            const resultHTML = `
+                <div class="month-card current" style="animation: fadeIn 0.5s ease;">
+                    <h4>
+                        <span style="display: flex; align-items: center; gap: 8px;">
+                            ✨ ${getMonthName(selectedMonth)} ${selectedYear}
+                        </span>
+                        <span class="month-num">${personalMonth}</span>
+                    </h4>
+                    <p style="margin-top: 8px;"><strong>${monthMeaning.title}</strong> → ${monthMeaning.desc}</p>
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 0.78rem; color: rgba(255,255,255,0.9); display: flex; gap: 12px; flex-wrap: wrap;">
+                        <span>Universal: <strong>${universalYear}</strong></span>
+                        <span>→</span>
+                        <span>Personal Year: <strong>${personalYear}</strong></span>
+                        <span>→</span>
+                        <span>Personal Month: <strong>${personalMonth}</strong></span>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('customResult').innerHTML = resultHTML;
+        }
+
+        function showSection(section) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Hide all sections
+            document.getElementById('gridSection').classList.add('hidden');
+            document.getElementById('predictionsSection').classList.add('hidden');
+            document.getElementById('analysisSection').classList.add('hidden');
+
+            // Show selected section and activate button
+            if (section === 'grid') {
+                document.getElementById('gridSection').classList.remove('hidden');
+                document.getElementById('gridBtn').classList.add('active');
+            } else if (section === 'predictions') {
+                document.getElementById('predictionsSection').classList.remove('hidden');
+                document.getElementById('predBtn').classList.add('active');
+            } else if (section === 'analysis') {
+                document.getElementById('analysisSection').classList.remove('hidden');
+                document.getElementById('analysisBtn').classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
