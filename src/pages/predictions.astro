@@ -1,0 +1,516 @@
+---
+import Layout from '../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Predictions - Astro Girija">
+    <style>
+        .prediction-card {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .prediction-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .universal-year {
+            text-align: center;
+            background: #000000;
+            color: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .universal-year h3 {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .year-number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 16px 0;
+            letter-spacing: -2px;
+        }
+
+        .year-theme {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .year-desc {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .personal-year {
+            background: #fafafa;
+            border: 2px solid #000000;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .personal-year h3 {
+            color: #000000;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+        }
+
+        .py-number {
+            background: #000000;
+            color: white;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .py-title {
+            font-size: 1.3rem;
+            color: #000000;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .py-desc {
+            color: #333;
+            line-height: 1.7;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 480px) {
+            .months-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .months-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .month-box {
+            background: #ffffff;
+            padding: 18px 14px;
+            border-radius: 14px;
+            text-align: center;
+            border: 2px solid #e8e8e8;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .month-box:hover {
+            border-color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .month-box.highlight {
+            border-color: #000000;
+            background: #fafafa;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .month-name {
+            font-size: 0.85rem;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .month-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+
+        .month-theme {
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            border-left: 4px solid #000000;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+        }
+
+        .info-box h4 {
+            color: #000000;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .info-box p {
+            color: #333;
+            line-height: 1.7;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .highlight-month {
+            background: #000000;
+            color: white;
+            padding: 28px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .highlight-month h3 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .highlight-month .month-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .highlight-month .month-num {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .highlight-month .month-details {
+            flex: 1;
+        }
+
+        .highlight-month .month-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .highlight-month .month-desc {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .no-data-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .no-data h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .no-data p {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .year-card {
+            background: #ffffff;
+            border: 2px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .year-card.current {
+            border-color: #000000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .year-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .year-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .year-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .forecast-year-number {
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+
+        .year-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .year-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+
+    <div id="predictionsContent">
+        <div class="prediction-card">
+            <div class="no-data">
+                <div class="no-data-icon">📅</div>
+                <h3 id="noDobTitle">Enter Your Date of Birth</h3>
+                <p id="noDobDesc">To see your personalized predictions for 2026, please enter your date of birth.</p>
+                <button onclick="openDOBPicker()" class="btn">Select Date of Birth</button>
+            </div>
+        </div>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        // Load scripts sequentially and wait for them
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        // Load all required scripts in order
+        Promise.all([
+            loadScript(base + 'translations.js'),
+            loadScript(base + 'dob-picker.js'),
+            loadScript(base + 'loshu-utils.js')
+        ]).then(() => {
+            // All scripts loaded, now run the main code
+            // Auto-open DOB picker if no DOB is set
+            autoOpenDOBPickerIfNeeded('predictions');
+
+            const dob = sessionStorage.getItem('userDOB');
+
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const universalYear = calculateUniversalYear(2026);
+            const personalYear = calculatePersonalYear(data.day, data.month, universalYear);
+            const personalYearMeaning = getPersonalYearMeaning(personalYear);
+
+            // Get current month for highlighting
+            const currentMonth = new Date().getMonth() + 1;
+            const nextMonth = currentMonth === 12 ? 1 : currentMonth + 1;
+            const nextMonthPersonal = calculatePersonalMonth(personalYear, nextMonth);
+            const nextMonthMeaning = getPersonalYearMeaning(nextMonthPersonal);
+
+            let html = `
+                <div class="prediction-card">
+                    <h2 class="section-title" data-translate="pred.universal">${t('pred.universal')}</h2>
+                    <div class="universal-year">
+                        <h3 data-translate="pred.universal.number">${t('pred.universal.number')}</h3>
+                        <div class="year-number">${universalYear}</div>
+                        <div class="year-theme">${t('year.' + universalYear + '.title')}</div>
+                        <p class="year-desc">2026 ${t('pred.universal.number')} ${universalYear}. ${t('year.' + universalYear + '.desc')}</p>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title" data-translate="pred.personal">${t('pred.personal')}</h2>
+                    <div class="personal-year">
+                        <h3>
+                            <span class="py-number">${personalYear}</span>
+                            <span>${t('pred.personal.number')} ${personalYear}</span>
+                        </h3>
+                        <div class="py-title">${t('year.' + personalYear + '.title')}</div>
+                        <p class="py-desc">${t('year.' + personalYear + '.desc')}</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4 data-translate="pred.calculated">${t('pred.calculated')}</h4>
+                        <p>${t('dob.label')}: ${data.day}/${data.month} + ${t('pred.universal.number')} (${universalYear}) = ${t('pred.personal.number')} ${personalYear}</p>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title" data-translate="pred.next">${t('pred.next')}</h2>
+                    <div class="highlight-month">
+                        <h3>${getMonthName(nextMonth)} 2026</h3>
+                        <div class="month-info">
+                            <div class="month-num">${nextMonthPersonal}</div>
+                            <div class="month-details">
+                                <div class="month-title">${t('year.' + nextMonthPersonal + '.title')}</div>
+                                <p class="month-desc">${t('year.' + nextMonthPersonal + '.desc')}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title" data-translate="pred.monthly.full">${t('pred.monthly.full')}</h2>
+                    <p style="color: #333; font-size: 0.95rem; margin-bottom: 16px; font-weight: 500;" data-translate="pred.monthly.desc.full">${t('pred.monthly.desc.full')}</p>
+                    <div class="months-grid">
+            `;
+
+            for (let month = 1; month <= 12; month++) {
+                const monthPersonal = calculatePersonalMonth(personalYear, month);
+                const monthMeaning = getPersonalYearMeaning(monthPersonal);
+                const isNext = month === nextMonth;
+                html += `
+                    <div class="month-box ${isNext ? 'highlight' : ''}" title="${t('year.' + monthPersonal + '.desc')}">
+                        <div class="month-name">${getMonthName(month)}</div>
+                        <div class="month-number">${monthPersonal}</div>
+                        <div class="month-theme">${t('year.' + monthPersonal + '.title')}</div>
+                    </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="prediction-card">
+                    <h2 class="section-title" data-translate="pred.understanding">${t('pred.understanding')}</h2>
+                    <div class="info-box">
+                        <h4 data-translate="pred.impact">${t('pred.impact')}</h4>
+                        <p>${t('pred.impact')} ${universalYear} sets the global theme. Everyone experiences this energy, but it manifests uniquely based on your personal numbers.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-translate="pred.guidance">${t('pred.guidance')}</h4>
+                        <p>Your ${t('pred.personal.number')} ${personalYear} is your individual journey. Focus on ${t('year.' + personalYear + '.title').toLowerCase()} throughout 2026.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4 data-translate="pred.cycles">${t('pred.cycles')}</h4>
+                        <p>Each month adds its own flavor to your personal year. Pay attention to the monthly themes to navigate 2026 effectively.</p>
+                    </div>
+                </div>
+            `;
+
+            // Calculate 5-year forecast
+            const fiveYearForecast = calculateFiveYearForecast(dob, 2026);
+
+            html += `
+                <div class="prediction-card" style="margin-top: 30px;">
+                    <h2 class="section-title" style="color: #2d1b69; font-size: 1.4rem; margin-bottom: 12px; font-weight: 800;">
+                        🔮 Your 5-Year Forecast (2026-2030)
+                    </h2>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                        Your personal numerology follows a 9-year cycle. Here's your journey for the next 5 years:
+                    </p>
+
+                    <div class="timeline-container">
+            `;
+
+            fiveYearForecast.forEach((yearData, index) => {
+                html += `
+                    <div class="year-card ${index === 0 ? 'current' : ''}">
+                        <div class="year-header">
+                            <span class="year-label">${yearData.year}</span>
+                            <div class="forecast-year-number">${yearData.personalYear}</div>
+                        </div>
+                        <h3 class="year-title">${yearData.meaning.title}</h3>
+                        <p class="year-description">${yearData.meaning.desc}</p>
+                        ${index === 0 ? '<div style="position: absolute; top: 12px; right: 12px; background: #000; color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700;">CURRENT</div>' : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('predictionsContent').innerHTML = html;
+        }
+        }).catch(err => console.error('Error loading scripts:', err));
+    </script>
+</Layout>

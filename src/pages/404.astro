@@ -1,0 +1,83 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Page Not Found - Astro Girija">
+    <style>
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .not-found h1 {
+            font-size: 4rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+        }
+
+        .not-found h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .not-found p {
+            font-size: 1rem;
+            color: #666666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .home-btn:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+
+    <div class="not-found">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <a href={import.meta.env.BASE_URL} class="home-btn">Go to Home</a>
+    </div>
+
+    <script is:inline define:vars={{ base: import.meta.env.BASE_URL }}>
+        // Redirect client-side for GitHub Pages SPA routing
+        // GitHub Pages serves 404.html for all non-existent routes
+        // This script helps preserve the intended path
+
+        const currentPath = window.location.pathname;
+        const searchParams = window.location.search;
+
+        // If we're on the base 404, just stay there
+        if (currentPath === base + '404' || currentPath === base + '404/') {
+            console.log('On 404 page');
+        } else {
+            // Log the attempted path for debugging
+            console.log('404: Attempted path was:', currentPath);
+
+            // Store the attempted path in session storage for potential recovery
+            if (currentPath !== base && currentPath !== base + '/') {
+                sessionStorage.setItem('attemptedPath', currentPath);
+            }
+        }
+    </script>
+</Layout>

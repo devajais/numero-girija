@@ -1,0 +1,116 @@
+---
+import Layout from '../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="More Features - Numero Girija">
+    <div class="card">
+        <h2 class="section-title">More Features</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+            Explore additional numerology features and tools to gain deeper insights into your life path.
+        </p>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); border-left: 4px solid #6b3fa0;">
+        <h3 style="color: #2d1b69; font-size: 1.1rem; margin-bottom: 10px;">🔮 Analysis & Predictions</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Get insights about your future and life patterns</p>
+        <div style="display: grid; gap: 10px;">
+            <a href={`${base}predictions/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">🔮</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">2026 Predictions</div>
+                    <div style="font-size: 0.75rem; color: #666;">Your personal year and monthly forecasts</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+            <a href={`${base}analysis/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">📈</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Chart Analysis</div>
+                    <div style="font-size: 0.75rem; color: #666;">Planes, arrows, and combinations</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border-left: 4px solid #dc2626;">
+        <h3 style="color: #dc2626; font-size: 1.1rem; margin-bottom: 10px;">💑 Relationships & Compatibility</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Understand relationship dynamics and compatibility</p>
+        <div style="display: grid; gap: 10px;">
+            <a href={`${base}compatibility/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">💑</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Driver-Conductor Compatibility</div>
+                    <div style="font-size: 0.75rem; color: #666;">Your personality-destiny match analysis</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+            <a href={`${base}compatibility/lucky-numbers/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">🍀</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Lucky Numbers</div>
+                    <div style="font-size: 0.75rem; color: #666;">Find your favorable and unfavorable numbers</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-left: 4px solid #3b82f6;">
+        <h3 style="color: #3b82f6; font-size: 1.1rem; margin-bottom: 10px;">✨ Name & Remedies</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Calculate name numbers and discover remedies</p>
+        <div style="display: grid; gap: 10px;">
+            <a href={`${base}name-numerology/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">📝</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Name Numerology</div>
+                    <div style="font-size: 0.75rem; color: #666;">Calculate and analyze your name number</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+            <a href={`${base}learn/missing-numbers/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">💎</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Remedies & Mantras</div>
+                    <div style="font-size: 0.75rem; color: #666;">Solutions for missing numbers</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+            <a href={`${base}guidance/dos-donts/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">📋</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Do's & Don'ts</div>
+                    <div style="font-size: 0.75rem; color: #666;">Personalized guidelines by driver number</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #fef9e7, #fef3c7); border-left: 4px solid #f59e0b;">
+        <h3 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 10px;">📚 Learning Resources</h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Master Lo Shu Grid numerology from basics to advanced</p>
+        <div style="display: grid; gap: 10px;">
+            <a href={`${base}learn/`} style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px; text-decoration: none; color: inherit; transition: transform 0.2s;">
+                <div style="font-size: 1.5rem;">📚</div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2d1b69; font-size: 0.9rem;">Complete Learning Section</div>
+                    <div style="font-size: 0.75rem; color: #666;">Tutorials, number meanings, and more</div>
+                </div>
+                <div style="color: #6b3fa0;">›</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="card" style="text-align: center; background: linear-gradient(135deg, #f9f5ff, #f0ebff);">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Ready to explore your numerology chart?</p>
+        <a href={base} class="btn">Go to Home</a>
+    </div>
+
+    <style>
+        a.card:hover, a:hover > div {
+            transform: translateY(-2px);
+        }
+    </style>
+</Layout>

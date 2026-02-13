@@ -1,0 +1,182 @@
+{
+  "1": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Balanced Leadership",
+      "description": "Good balance of leadership energy. You have confidence without being overly aggressive. Can lead while also collaborating with others.",
+      "impact": "Positive - Balanced leadership qualities"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Strong Leadership",
+      "description": "Very strong leadership qualities and confidence. You're a natural-born leader with exceptional authority. However, may struggle with ego issues.",
+      "impact": "Very Strong - Potential ego problems if not balanced"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Excessive Leadership Energy",
+      "description": "Too much leadership energy can make you overly dominating, stubborn, and difficult to work with. Severe ego issues and father-related problems likely.",
+      "impact": "Challenging - Extreme ego, stubbornness, and dominating nature"
+    }
+  },
+  "2": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Heightened Emotions",
+      "description": "Strong emotional sensitivity and intuition. Excellent empathy and caring abilities. Good for relationships but need to manage mood swings.",
+      "impact": "Positive - Strong emotional intelligence with some instability"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Extreme Sensitivity",
+      "description": "Extremely sensitive and emotional. Very strong intuition and psychic abilities. However, severe mood swings and emotional instability are common.",
+      "impact": "Challenging - Extreme emotional instability and over-sensitivity"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Emotional Overwhelm",
+      "description": "Emotions are completely overwhelming. Severe mental health challenges, extreme mood swings, and difficulty functioning in daily life. Needs professional help and spiritual practices.",
+      "impact": "Very Challenging - Severe emotional and mental health issues"
+    }
+  },
+  "3": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Enhanced Creativity",
+      "description": "Strong creative and communicative abilities. Excellent for artistic expression and social connections. May need to work on focus and financial discipline.",
+      "impact": "Positive - Strong creative expression with mild scattered energy"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Excessive Expression",
+      "description": "Too much creative energy leads to extremely scattered focus. May start many projects but finish few. Financial instability and lack of depth are common.",
+      "impact": "Challenging - Extreme scattered energy and lack of focus"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Creative Chaos",
+      "description": "Creative energy is so scattered that it becomes chaotic. Extreme difficulty with focus, commitment, and completion. Serious financial problems and lack of stability.",
+      "impact": "Very Challenging - Complete lack of focus and financial stability"
+    }
+  },
+  "4": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Strong Structure Needs",
+      "description": "Strong practical and systematic abilities but also heightened confusion and anxiety. Need for routine and structure is very high. Trust issues are prominent.",
+      "impact": "Mixed - Good practical skills but increased anxiety and obstacles"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Extreme Obstacles",
+      "description": "Too many 4s create severe obstacles, extreme anxiety, and constant confusion. Life feels like constant struggle. Health issues and trust problems are severe.",
+      "impact": "Very Challenging - Severe obstacles, anxiety, and confusion"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Overwhelming Challenges",
+      "description": "Extreme level of obstacles and challenges in all areas of life. Severe mental health issues, paranoia, and feeling cursed. Requires intensive remedies and spiritual practices.",
+      "impact": "Extremely Challenging - Life of extreme difficulties and mental health issues"
+    }
+  },
+  "5": {
+    "2x": {
+      "count": 2,
+      "interpretation": "High Versatility",
+      "description": "Very versatile and adaptable with excellent communication skills. Great for business and social connections. However, commitment and focus may be challenging.",
+      "impact": "Positive - Excellent communication with mild restlessness"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Extreme Restlessness",
+      "description": "Too much freedom-loving energy creates extreme restlessness and inability to commit to anything. Constant changes and instability in all areas. Risk of addictive behaviors.",
+      "impact": "Challenging - Extreme restlessness and commitment issues"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Uncontrollable Restlessness",
+      "description": "Cannot settle down or commit to anything. Life of constant movement without purpose. High risk of addictions and self-destructive behaviors. Needs grounding practices urgently.",
+      "impact": "Very Challenging - Complete lack of stability and high addiction risk"
+    }
+  },
+  "6": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Enhanced Responsibility",
+      "description": "Strong sense of responsibility and caring nature. Excellent for family life and helping professions. May take too much responsibility for others but generally positive.",
+      "impact": "Positive - Strong caring abilities with tendency to overextend"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Excessive Responsibility",
+      "description": "Takes too much responsibility for everyone. May interfere in others' lives excessively. Feels burdened and may neglect own needs completely. Needs to learn boundaries.",
+      "impact": "Challenging - Taking too much responsibility and interfering"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Responsibility Overwhelm",
+      "description": "Completely overwhelmed by sense of responsibility. May develop martyr complex and resentment. Health issues from carrying too much burden. Urgent need to learn to say no.",
+      "impact": "Very Challenging - Complete burden and potential martyr complex"
+    }
+  },
+  "7": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Deep Spirituality",
+      "description": "Strong spiritual and analytical abilities. Excellent intuition and research skills. However, tendency toward isolation and depression is heightened. Need balance.",
+      "impact": "Mixed - Strong spiritual gifts but increased isolation"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Extreme Isolation",
+      "description": "Too much spiritual energy leads to severe isolation from the world. Extreme difficulty with relationships and material life. Depression and health issues are common.",
+      "impact": "Very Challenging - Severe isolation, depression, and worldly difficulties"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Complete Detachment",
+      "description": "Almost complete detachment from worldly life. Severe mental health challenges and extreme isolation. May have mystical experiences but struggles with basic life functions.",
+      "impact": "Extremely Challenging - Complete isolation and severe mental health issues"
+    }
+  },
+  "8": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Double Karma",
+      "description": "Facing significant karmic obstacles and lessons. Life is challenging with delays and frustrations. However, potential for great success through persistence is high.",
+      "impact": "Challenging - Significant obstacles but potential for great success"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Extreme Karmic Load",
+      "description": "Very heavy karmic burden with severe obstacles in all areas. Constant delays, health issues, and feelings of being cursed. Requires intensive remedies and spiritual practices.",
+      "impact": "Very Challenging - Severe karmic burden and extreme obstacles"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Maximum Karma",
+      "description": "Extremely difficult life with maximum karmic challenges. Feels like everything is against you. Severe health, relationship, and financial problems. Urgent need for remedies and spiritual guidance.",
+      "impact": "Extremely Challenging - Maximum karmic burden requiring intensive remedies"
+    }
+  },
+  "9": {
+    "2x": {
+      "count": 2,
+      "interpretation": "Strong Warrior",
+      "description": "Strong courage, energy, and compassion. Excellent leadership and ability to inspire others. May need to manage anger and impulsiveness but generally positive.",
+      "impact": "Positive - Strong energy and compassion with some aggression"
+    },
+    "3x": {
+      "count": 3,
+      "interpretation": "Excessive Aggression",
+      "description": "Too much Mars energy leads to excessive aggression and impulsiveness. Anger management issues are severe. Risk of accidents and conflicts. Needs to channel energy positively.",
+      "impact": "Challenging - Excessive aggression and anger issues"
+    },
+    "4x": {
+      "count": 4,
+      "interpretation": "Uncontrolled Aggression",
+      "description": "Extreme aggression and impulsiveness that can become destructive. Very high risk of accidents, violence, and severe conflicts. Urgent need for anger management and positive channeling.",
+      "impact": "Very Challenging - Extreme aggression and high accident risk"
+    }
+  }
+}

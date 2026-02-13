@@ -1,0 +1,101 @@
+{
+  "1": {
+    "number": 1,
+    "title": "The Leader",
+    "summary": "Your name carries the energy of leadership, independence, and innovation.",
+    "personality": "People with name number 1 are natural leaders who command respect and attention. You project confidence and authority, making others naturally follow your lead.",
+    "impact_on_life": "This name attracts leadership opportunities, independence, and pioneering experiences. You're likely to be seen as a strong, confident person.",
+    "career_influence": "Favors entrepreneurship, executive roles, and positions of authority. You attract opportunities to lead and innovate.",
+    "relationship_influence": "You attract people who either respect your leadership or challenge it. May attract dependent partners or equally strong personalities.",
+    "best_combined_with_driver": [1, 3, 5, 9],
+    "challenging_with_driver": [4, 6, 8]
+  },
+  "2": {
+    "number": 2,
+    "title": "The Diplomat",
+    "summary": "Your name carries the energy of cooperation, sensitivity, and intuition.",
+    "personality": "People with name number 2 are seen as diplomatic, sensitive, and cooperative. You project warmth and understanding, making others comfortable.",
+    "impact_on_life": "This name attracts partnerships, emotional connections, and situations requiring diplomacy. You're likely to be seen as caring and intuitive.",
+    "career_influence": "Favors counseling, partnership roles, diplomatic positions, and team-based work. You attract opportunities to mediate and support.",
+    "relationship_influence": "You attract deep emotional connections and partnerships. People come to you for emotional support and understanding.",
+    "best_combined_with_driver": [1, 3, 6, 9],
+    "challenging_with_driver": [4, 7, 8]
+  },
+  "3": {
+    "number": 3,
+    "title": "The Creative",
+    "summary": "Your name carries the energy of creativity, expression, and joy.",
+    "personality": "People with name number 3 are seen as creative, expressive, and optimistic. You project joy and artistic flair, making others smile.",
+    "impact_on_life": "This name attracts creative opportunities, social connections, and joyful experiences. You're likely to be seen as fun and talented.",
+    "career_influence": "Favors arts, entertainment, communication, and creative fields. You attract opportunities to express and create.",
+    "relationship_influence": "You attract fun-loving, social people. Relationships are often joyful but may lack depth if not balanced.",
+    "best_combined_with_driver": [1, 2, 3, 5, 6, 9],
+    "challenging_with_driver": [4, 7, 8]
+  },
+  "4": {
+    "number": 4,
+    "title": "The Builder",
+    "summary": "Your name carries the energy of structure, discipline, and practicality.",
+    "personality": "People with name number 4 are seen as practical, reliable, and disciplined. You project stability and trustworthiness.",
+    "impact_on_life": "This name attracts structured situations, responsibilities, and practical opportunities. You're likely to be seen as dependable and systematic.",
+    "career_influence": "Favors engineering, construction, management, and systematic roles. You attract opportunities requiring organization and reliability.",
+    "relationship_influence": "You attract stable, practical partners or those seeking stability. Relationships are solid but may lack spontaneity.",
+    "best_combined_with_driver": [1, 2, 6, 8],
+    "challenging_with_driver": [3, 5, 9]
+  },
+  "5": {
+    "number": 5,
+    "title": "The Communicator",
+    "summary": "Your name carries the energy of freedom, versatility, and communication.",
+    "personality": "People with name number 5 are seen as versatile, communicative, and dynamic. You project energy and adaptability.",
+    "impact_on_life": "This name attracts variety, travel, communication opportunities, and changes. You're likely to be seen as social and adaptable.",
+    "career_influence": "Favors sales, marketing, travel, media, and dynamic roles. You attract opportunities involving communication and variety.",
+    "relationship_influence": "You attract diverse, interesting people and situations requiring freedom. Relationships are dynamic but may lack stability.",
+    "best_combined_with_driver": [1, 3, 5, 6, 9],
+    "challenging_with_driver": [4, 7, 8]
+  },
+  "6": {
+    "number": 6,
+    "title": "The Nurturer",
+    "summary": "Your name carries the energy of responsibility, love, and harmony.",
+    "personality": "People with name number 6 are seen as responsible, caring, and harmonious. You project warmth and reliability.",
+    "impact_on_life": "This name attracts family responsibilities, caring opportunities, and situations requiring harmony. You're likely to be seen as reliable and loving.",
+    "career_influence": "Favors healthcare, counseling, hospitality, beauty, and service roles. You attract opportunities to care and create harmony.",
+    "relationship_influence": "You attract people needing care or stable partnerships. Relationships are harmonious and long-lasting.",
+    "best_combined_with_driver": [1, 2, 3, 4, 6, 9],
+    "challenging_with_driver": [5, 7, 8]
+  },
+  "7": {
+    "number": 7,
+    "title": "The Seeker",
+    "summary": "Your name carries the energy of spirituality, analysis, and mystery.",
+    "personality": "People with name number 7 are seen as mysterious, analytical, and spiritual. You project depth and wisdom.",
+    "impact_on_life": "This name attracts spiritual experiences, solitary situations, and analytical opportunities. You're likely to be seen as wise and mysterious.",
+    "career_influence": "Favors research, spirituality, analysis, and solitary professions. You attract opportunities requiring depth and investigation.",
+    "relationship_influence": "You attract spiritual or intellectual connections. Relationships may be deep but distant. Difficulty with casual relationships.",
+    "best_combined_with_driver": [1, 2, 4, 7],
+    "challenging_with_driver": [3, 5, 6, 8, 9]
+  },
+  "8": {
+    "number": 8,
+    "title": "The Achiever",
+    "summary": "Your name carries the energy of power, material success, and karma.",
+    "personality": "People with name number 8 are seen as powerful, ambitious, and mature. You project authority and strength.",
+    "impact_on_life": "This name attracts material opportunities, karmic situations, and challenges leading to success. You're likely to be seen as successful and powerful.",
+    "career_influence": "Favors business, real estate, finance, and positions of power. You attract opportunities for material success through challenges.",
+    "relationship_influence": "You attract karmic relationships and people interested in your success. Relationships may face obstacles but can be deeply transformative.",
+    "best_combined_with_driver": [1, 3, 5, 6],
+    "challenging_with_driver": [2, 4, 7, 8, 9]
+  },
+  "9": {
+    "number": 9,
+    "title": "The Humanitarian",
+    "summary": "Your name carries the energy of compassion, service, and universal love.",
+    "personality": "People with name number 9 are seen as compassionate, generous, and inspirational. You project universal love and idealism.",
+    "impact_on_life": "This name attracts service opportunities, causes, and situations requiring compassion. You're likely to be seen as caring about humanity.",
+    "career_influence": "Favors social work, non-profits, healing, teaching, and service professions. You attract opportunities to help humanity.",
+    "relationship_influence": "You attract people needing help or sharing your ideals. Relationships are compassionate but personal needs may be neglected.",
+    "best_combined_with_driver": [1, 2, 3, 5, 6, 9],
+    "challenging_with_driver": [4, 7, 8]
+  }
+}

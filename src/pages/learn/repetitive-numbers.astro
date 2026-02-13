@@ -1,0 +1,150 @@
+---
+import Layout from '../../components/Layout.astro';
+import repetitiveMeanings from '../../data/numbers/repetitive-meanings.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Repetitive Numbers Impact - Numero Girija">
+    <div id="personalSection"></div>
+
+    <div class="card">
+        <h2 class="section-title">Repetitive Numbers Impact</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">
+            When a number appears multiple times in your Lo Shu Grid (2x, 3x, or 4+ times), its energy is amplified. This can bring both enhanced positive traits and intensified challenges.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 12px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">2x</div>
+                <p style="color: #555; font-size: 0.75rem; font-weight: 600;">Balanced</p>
+            </div>
+            <div style="background: linear-gradient(135deg, #fef9e7, #fef3c7); padding: 12px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">3x</div>
+                <p style="color: #555; font-size: 0.75rem; font-weight: 600;">Strong</p>
+            </div>
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 12px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 1.5rem; margin-bottom: 5px;">4x+</div>
+                <p style="color: #555; font-size: 0.75rem; font-weight: 600;">Excessive</p>
+            </div>
+        </div>
+    </div>
+
+    {Object.entries(repetitiveMeanings).map(([num, repetitions]) => (
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <div class="number-badge">{num}</div>
+                <div>
+                    <h3 style="color: #2d1b69; font-size: 1.1rem; font-weight: 700;">Number {num} Repetitions</h3>
+                </div>
+            </div>
+
+            {repetitions['2x'] && (
+                <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 4px solid #3b82f6;">
+                    <h4 style="color: #3b82f6; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">
+                        2x - {repetitions['2x'].interpretation}
+                    </h4>
+                    <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 8px;">
+                        {repetitions['2x'].description}
+                    </p>
+                    <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem;">
+                        <strong style="color: #3b82f6;">Impact:</strong> {repetitions['2x'].impact}
+                    </div>
+                </div>
+            )}
+
+            {repetitions['3x'] && (
+                <div style="background: linear-gradient(135deg, #fef9e7, #fef3c7); padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 4px solid #f59e0b;">
+                    <h4 style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">
+                        3x - {repetitions['3x'].interpretation}
+                    </h4>
+                    <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 8px;">
+                        {repetitions['3x'].description}
+                    </p>
+                    <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem;">
+                        <strong style="color: #f59e0b;">Impact:</strong> {repetitions['3x'].impact}
+                    </div>
+                </div>
+            )}
+
+            {repetitions['4x'] && (
+                <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 4px solid #dc2626;">
+                    <h4 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">
+                        4x+ - {repetitions['4x'].interpretation}
+                    </h4>
+                    <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 8px;">
+                        {repetitions['4x'].description}
+                    </p>
+                    <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem;">
+                        <strong style="color: #dc2626;">Impact:</strong> {repetitions['4x'].impact}
+                    </div>
+                </div>
+            )}
+        </div>
+    ))}
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); text-align: center;">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Want to see which numbers repeat in your chart?</p>
+        <a href={`${base}grid/`} class="btn">View Your Lo Shu Grid</a>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        document.head.appendChild(script);
+    </script>
+    <script is:inline>
+        // Show personal repetitive numbers if DOB exists
+        const dob = sessionStorage.getItem('userDOB');
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const repetitive = [];
+
+            for (let i = 1; i <= 9; i++) {
+                if (data.frequency[i] >= 2) {
+                    repetitive.push({ number: i, count: data.frequency[i] });
+                }
+            }
+
+            if (repetitive.length > 0) {
+                document.getElementById('personalSection').innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #fef9e7, #fef3c7); border-left: 4px solid #f59e0b;">
+                        <h2 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 10px; font-weight: 700;">Your Repetitive Numbers</h2>
+                        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">These numbers appear multiple times in your Lo Shu Grid, amplifying their energies:</p>
+                        <div style="display: grid; gap: 10px;">
+                            ${repetitive.map(({number, count}) => `
+                                <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 12px; border-radius: 10px;">
+                                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700;">
+                                        ${number}
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: 600; color: #333; font-size: 0.9rem;">
+                                            Appears ${count} times
+                                        </div>
+                                        <div style="font-size: 0.75rem; color: #666; margin-top: 2px;">
+                                            ${count === 2 ? 'Balanced energy' : count === 3 ? 'Strong energy' : 'Excessive energy'}
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+    <style>
+        .number-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+    </style>
+</Layout>

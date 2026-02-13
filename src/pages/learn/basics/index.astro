@@ -1,0 +1,119 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Grid Basics - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / Grid Basics
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">📚 Grid Basics</h1>
+        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">
+            Start your numerology journey here. Learn what the Lo Shu Grid is, how it originated, and how to create and interpret your own personal grid.
+        </p>
+
+        <div class="topics-list">
+            <a href={`${base}learn/basics/lo-shu-grid/`} class="topic-card">
+                <div class="topic-icon">📖</div>
+                <div class="topic-content">
+                    <h3>What is Lo Shu Grid?</h3>
+                    <p>Discover the ancient Chinese magic square, its history, and why it's used in numerology</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/basics/making-grid/`} class="topic-card">
+                <div class="topic-icon">🔢</div>
+                <div class="topic-content">
+                    <h3>How to Make Your Grid</h3>
+                    <p>Step-by-step tutorial on creating a Lo Shu Grid from any date of birth</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/basics/understanding-grid/`} class="topic-card">
+                <div class="topic-icon">🧭</div>
+                <div class="topic-content">
+                    <h3>Reading Grid Positions</h3>
+                    <p>Understand what each position means and how to interpret the grid structure</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .topics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .topic-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fafafa;
+            border: 2px solid #e8e8e8;
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateX(4px);
+            border-color: #6b3fa0;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-content h3 {
+            color: #2d1b69;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .topic-content p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #6b3fa0;
+            font-size: 2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</Layout>

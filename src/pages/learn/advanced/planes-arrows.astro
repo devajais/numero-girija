@@ -1,0 +1,161 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Planes & Arrows - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / <a href={`${base}learn/advanced/`}>Advanced</a> / Planes & Arrows
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">⚡ Planes & Arrows in Lo Shu Grid</h1>
+
+        <div class="intro">
+            <p>Beyond individual numbers, the Lo Shu Grid reveals patterns called Planes and Arrows. These show how you think, feel, and act—providing deeper insights into personality and life approach.</p>
+        </div>
+
+        <div class="planes-section">
+            <h2>Three Planes of Existence</h2>
+
+            <div class="plane-card mental">
+                <h3>🧠 Mental Plane (Top Row: 4-9-2)</h3>
+                <p><strong>Represents:</strong> Thinking, logic, spirituality, emotions</p>
+                <p><strong>Strong (2+ numbers):</strong> Intellectual, analytical, good memory, philosophical</p>
+                <p><strong>Weak (0-1 numbers):</strong> Scattered thinking, poor planning, impulsive decisions</p>
+                <p><strong>Remedies:</strong> Reading, puzzles, meditation, education</p>
+            </div>
+
+            <div class="plane-card emotional">
+                <h3>❤️ Emotional Plane (Middle Row: 3-5-7)</h3>
+                <p><strong>Represents:</strong> Feelings, creativity, adaptability, intuition</p>
+                <p><strong>Strong (2+ numbers):</strong> Emotionally balanced, creative, good relationships</p>
+                <p><strong>Weak (0-1 numbers):</strong> Emotional instability, relationship issues, sensitivity</p>
+                <p><strong>Remedies:</strong> Arts, music, counseling, emotional expression</p>
+            </div>
+
+            <div class="plane-card practical">
+                <h3>💪 Practical Plane (Bottom Row: 8-1-6)</h3>
+                <p><strong>Represents:</strong> Action, material world, physical work, execution</p>
+                <p><strong>Strong (2+ numbers):</strong> Hard-working, grounded, achieves goals, practical</p>
+                <p><strong>Weak (0-1 numbers):</strong> Lazy, procrastinates, poor execution, unrealistic</p>
+                <p><strong>Remedies:</strong> Exercise, manual work, goal-setting, discipline</p>
+            </div>
+        </div>
+
+        <div class="arrows-section">
+            <h2>Arrows of Strength</h2>
+
+            <div class="arrow-grid">
+                <div class="arrow-item success">
+                    <h4>🏆 Arrow of Success (4-5-6)</h4>
+                    <p>Left column - Determination, achievement, material success</p>
+                </div>
+                <div class="arrow-item planning">
+                    <h4>📋 Arrow of Planning (2-5-8)</h4>
+                    <p>Right column - Strategic thinking, organization, foresight</p>
+                </div>
+                <div class="arrow-item willpower">
+                    <h4>💎 Arrow of Willpower (1-5-9)</h4>
+                    <p>Horizontal middle - Strong determination, never gives up</p>
+                </div>
+                <div class="arrow-item intellect">
+                    <h4>🎓 Arrow of Intellect (4-9-2)</h4>
+                    <p>Top row - Sharp mind, academic success, wisdom</p>
+                </div>
+                <div class="arrow-item spirituality">
+                    <h4>🕉️ Arrow of Spirituality (3-5-7)</h4>
+                    <p>Middle row - Mystical abilities, healing, intuition</p>
+                </div>
+                <div class="arrow-item activity">
+                    <h4>⚡ Arrow of Activity (8-1-6)</h4>
+                    <p>Bottom row - High energy, practical execution, results</p>
+                </div>
+                <div class="arrow-item compassion">
+                    <h4>💗 Arrow of Compassion (3-6-9)</h4>
+                    <p>Right diagonal - Service, helping others, empathy</p>
+                </div>
+                <div class="arrow-item frustration">
+                    <h4>😤 Arrow of Frustration (4-5-6)</h4>
+                    <p>Left diagonal - Impatience, anger if blocked</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows-weakness">
+            <h2>Arrows of Weakness (Missing Lines)</h2>
+
+            <div class="weakness-grid">
+                <div class="weakness-item">
+                    <h4>Missing 1-4-7 (Left Column)</h4>
+                    <p><strong>Effect:</strong> Lack of determination, gives up easily, poor willpower</p>
+                    <p><strong>Remedy:</strong> Set small goals, build discipline, chant Mars/Ketu mantras</p>
+                </div>
+                <div class="weakness-item">
+                    <h4>Missing 2-5-8 (Right Column)</h4>
+                    <p><strong>Effect:</strong> Poor planning, disorganized, lack of foresight</p>
+                    <p><strong>Remedy:</strong> Use planners, create routines, Moon/Mercury mantras</p>
+                </div>
+                <div class="weakness-item">
+                    <h4>Missing 3-5-7 (Middle Row)</h4>
+                    <p><strong>Effect:</strong> Emotional emptiness, relationship struggles, no creativity</p>
+                    <p><strong>Remedy:</strong> Therapy, arts, Jupiter/Ketu mantras</p>
+                </div>
+                <div class="weakness-item">
+                    <h4>Missing 4-8, 1-6, 3-9, 2-7 (Corners)</h4>
+                    <p><strong>Effect:</strong> Depends on specific corner—analysis/action/spiritual/emotional gaps</p>
+                    <p><strong>Remedy:</strong> Strengthen missing number's planet through gemstones</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="interpretation">
+            <h2>How to Interpret Planes & Arrows</h2>
+            <ol>
+                <li><strong>Count numbers in each plane</strong> - Identify which planes are strong/weak</li>
+                <li><strong>Look for complete lines</strong> - Any row, column, or diagonal with all numbers present is an "arrow"</li>
+                <li><strong>Note missing lines</strong> - Empty lines show areas of challenge</li>
+                <li><strong>Balance is key</strong> - Ideally 2-3 numbers per plane; too many also creates imbalance</li>
+                <li><strong>Apply remedies</strong> - Strengthen weak planes through targeted practices</li>
+            </ol>
+        </div>
+
+        <div class="next-steps">
+            <h3>Continue Learning</h3>
+            <div class="next-links">
+                <a href={`${base}learn/advanced/yearly-cycles/`} class="next-link">
+                    <span>Next: Yearly Cycles →</span>
+                </a>
+                <a href={`${base}analysis/`} class="next-link">
+                    <span>Analyze Your Grid →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 20px; font-weight: 500; }
+        .breadcrumb a { color: #6b3fa0; text-decoration: none; }
+        .intro p { color: #444; font-size: 0.95rem; line-height: 1.8; margin-bottom: 20px; }
+        h2 { color: #2d1b69; font-size: 1.3rem; font-weight: 800; margin: 30px 0 20px; }
+        .plane-card { border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .plane-card.mental { background: linear-gradient(135deg, #e0f2fe, #bae6fd); border: 2px solid #0284c7; }
+        .plane-card.emotional { background: linear-gradient(135deg, #fce7f3, #fbcfe8); border: 2px solid #ec4899; }
+        .plane-card.practical { background: linear-gradient(135deg, #fef9e7, #fef3c7); border: 2px solid #f59e0b; }
+        .plane-card h3 { color: #2d1b69; font-size: 1.1rem; margin-bottom: 12px; font-weight: 800; }
+        .plane-card p { color: #444; font-size: 0.85rem; line-height: 1.6; margin-bottom: 8px; }
+        .arrow-grid, .weakness-grid { display: grid; gap: 16px; margin: 20px 0; }
+        @media (min-width: 768px) { .arrow-grid, .weakness-grid { grid-template-columns: repeat(2, 1fr); } }
+        .arrow-item, .weakness-item { background: white; border: 2px solid #e8e8e8; border-radius: 12px; padding: 20px; }
+        .arrow-item h4, .weakness-item h4 { color: #6b3fa0; font-size: 0.95rem; margin-bottom: 8px; font-weight: 700; }
+        .arrow-item p, .weakness-item p { color: #444; font-size: 0.85rem; line-height: 1.6; }
+        .interpretation ol { color: #444; font-size: 0.9rem; line-height: 1.8; margin-left: 20px; }
+        .interpretation li { margin-bottom: 12px; }
+        .next-steps { background: linear-gradient(135deg, #fff9e5, #ffedd5); border: 2px solid #f59e0b; border-radius: 16px; padding: 24px; margin-top: 40px; }
+        .next-steps h3 { color: #f59e0b; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; }
+        .next-links { display: flex; flex-direction: column; gap: 12px; }
+        .next-link { background: white; border: 2px solid #f59e0b; border-radius: 10px; padding: 14px 18px; text-decoration: none; color: #f59e0b; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; text-align: center; }
+        .next-link:hover { background: #f59e0b; color: white; transform: translateX(4px); }
+        @media (min-width: 768px) { .next-links { flex-direction: row; } }
+    </style>
+</Layout>

@@ -1,0 +1,437 @@
+---
+import Layout from '../../components/Layout.astro';
+import nameMeanings from '../../data/name-numerology/name-number-meanings.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Name Numerology - Numero Girija">
+    <div class="card">
+        <h2 class="section-title">Name Numerology Calculator</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Your name carries a specific vibration that influences your life. Calculate your name number using the ancient Chaldean system to understand how your name affects your personality and destiny.
+        </p>
+
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; color: #2d1b69; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem;">Enter Your Name</label>
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="e.g., GANDHI"
+                style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s;"
+                onfocus="this.style.borderColor='#6b3fa0'"
+                onblur="this.style.borderColor='#e5e7eb'"
+            />
+            <p style="font-size: 0.75rem; color: #666; margin-top: 6px;">Enter full name or any name you want to analyze</p>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button
+                onclick="calculateName('chaldean')"
+                class="btn"
+                id="chaldeanBtn"
+                style="flex: 1; background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);"
+            >
+                Chaldean System
+            </button>
+            <button
+                onclick="calculateName('pythagorean')"
+                class="btn"
+                id="pythagoreanBtn"
+                style="flex: 1; background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);"
+            >
+                Pythagorean
+            </button>
+        </div>
+
+        <div id="result"></div>
+        <div id="compatibility"></div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff);">
+        <h3 style="color: #2d1b69; font-size: 1rem; margin-bottom: 10px; font-weight: 600;">About Name Numerology</h3>
+        <p style="color: #666; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px;">
+            Name numerology assigns numerical values to letters in your name. The sum reveals your name number, which influences how you're perceived and what you attract in life.
+        </p>
+        <div style="background: white; padding: 12px; border-radius: 10px; margin-bottom: 10px;">
+            <h4 style="color: #2d1b69; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">🔮 Chaldean System</h4>
+            <p style="color: #666; font-size: 0.8rem; line-height: 1.5;">
+                Ancient Babylonian system, considered more accurate. Does not use number 9 (reserved for sacred purposes). Based on sound vibrations.
+            </p>
+        </div>
+        <div style="background: white; padding: 12px; border-radius: 10px;">
+            <h4 style="color: #2d1b69; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">📐 Pythagorean System</h4>
+            <p style="color: #666; font-size: 0.8rem; line-height: 1.5;">
+                Western system based on Pythagoras' teachings. Uses all numbers 1-9 sequentially. Based on alphabetical order.
+            </p>
+        </div>
+    </div>
+
+    <script is:inline define:vars={{ base, nameMeanings }}>
+        // Wait for script to load before allowing calculations
+        let scriptsLoaded = false;
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        script.onload = function() {
+            scriptsLoaded = true;
+            console.log('loshu-utils.js loaded successfully');
+            // Auto-calculate if there's already text in the input
+            const existingName = document.getElementById('nameInput').value.trim();
+            if (existingName) {
+                calculateName(currentSystem);
+            }
+        };
+        script.onerror = function() {
+            console.error('Failed to load loshu-utils.js');
+        };
+        document.head.appendChild(script);
+
+        let currentSystem = 'chaldean';
+
+        function updateActiveButton(system) {
+            const chBtn = document.getElementById('chaldeanBtn');
+            const pyBtn = document.getElementById('pythagoreanBtn');
+            if (system === 'chaldean') {
+                chBtn.style.background = 'linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%)';
+                chBtn.style.opacity = '1';
+                pyBtn.style.background = 'linear-gradient(135deg, #9ca3af 0%, #b0b8c4 100%)';
+                pyBtn.style.opacity = '0.7';
+            } else {
+                pyBtn.style.background = 'linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%)';
+                pyBtn.style.opacity = '1';
+                chBtn.style.background = 'linear-gradient(135deg, #9ca3af 0%, #b0b8c4 100%)';
+                chBtn.style.opacity = '0.7';
+            }
+        }
+        updateActiveButton(currentSystem);
+
+        function calculateName(system) {
+            // Check if functions are available
+            if (typeof calculateNameNumber === 'undefined') {
+                return;
+            }
+            currentSystem = system;
+            updateActiveButton(system);
+            const name = document.getElementById('nameInput').value.trim();
+
+            if (!name) {
+                document.getElementById('result').innerHTML = '';
+                document.getElementById('compatibility').innerHTML = '';
+                return;
+            }
+
+            // Only letters matter - skip if no letters entered
+            if (!/[a-zA-Z]/.test(name)) {
+                return;
+            }
+
+            const nameNumber = calculateNameNumber(name, system);
+
+            // Get name number meaning
+            const meanings = nameMeanings;
+            const meaning = meanings[nameNumber];
+
+            document.getElementById('result').innerHTML = `
+                <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 20px; border-radius: 16px; margin-top: 20px; border-left: 4px solid #3b82f6;">
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px; text-transform: uppercase; font-weight: 600;">
+                            ${system.charAt(0).toUpperCase() + system.slice(1)} System
+                        </div>
+                        <div style="display: inline-flex; width: 90px; height: 90px; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border-radius: 18px; align-items: center; justify-content: center; font-size: 3rem; font-weight: 700; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); margin-bottom: 10px;">
+                            ${nameNumber}
+                        </div>
+                        <div style="font-size: 1.1rem; color: #2d1b69; font-weight: 700; margin-bottom: 5px;">
+                            ${meaning.title}
+                        </div>
+                        <div style="font-size: 0.85rem; color: #666;">
+                            Name: <strong>${name.toUpperCase()}</strong>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px;">
+                        <h4 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">📌 Summary</h4>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">${meaning.summary}</p>
+                    </div>
+
+                    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px;">
+                        <h4 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">👤 Personality Impression</h4>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">${meaning.personality}</p>
+                    </div>
+
+                    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px;">
+                        <h4 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">🌟 Life Impact</h4>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">${meaning.impact_on_life}</p>
+                    </div>
+
+                    <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px;">
+                        <h4 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">💼 Career Influence</h4>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">${meaning.career_influence}</p>
+                    </div>
+
+                    <div style="background: white; padding: 15px; border-radius: 12px;">
+                        <h4 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">❤️ Relationship Influence</h4>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">${meaning.relationship_influence}</p>
+                    </div>
+                </div>
+            `;
+
+            // Check compatibility with DOB if exists
+            const dob = sessionStorage.getItem('userDOB');
+            if (dob && typeof calculateLoShuChart !== 'undefined' && typeof getNameCompatibility !== 'undefined') {
+                const data = calculateLoShuChart(dob);
+                const compat = getNameCompatibility(nameNumber, data.driver, data.conductor);
+
+                let compatColor, compatBg;
+                if (compat.status === 'excellent') {
+                    compatColor = '#33cc33';
+                    compatBg = 'linear-gradient(135deg, #f0fdf4, #dcfce7)';
+                } else if (compat.status === 'good') {
+                    compatColor = '#f59e0b';
+                    compatBg = 'linear-gradient(135deg, #fef9e7, #fef3c7)';
+                } else {
+                    compatColor = '#6b3fa0';
+                    compatBg = 'linear-gradient(135deg, #f9f5ff, #f0ebff)';
+                }
+
+                document.getElementById('compatibility').innerHTML = `
+                    <div style="background: ${compatBg}; padding: 20px; border-radius: 16px; margin-top: 20px; border-left: 4px solid ${compatColor};">
+                        <h3 style="color: ${compatColor}; font-size: 1rem; margin-bottom: 12px; font-weight: 700;">
+                            Name & Birth Date Compatibility
+                        </h3>
+                        <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px;">
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center;">
+                                <div>
+                                    <div style="font-size: 0.7rem; color: #666; margin-bottom: 4px; text-transform: uppercase; font-weight: 600;">Name</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: #3b82f6;">${nameNumber}</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.7rem; color: #666; margin-bottom: 4px; text-transform: uppercase; font-weight: 600;">Driver</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">${data.driver}</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.7rem; color: #666; margin-bottom: 4px; text-transform: uppercase; font-weight: 600;">Conductor</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: #6b3fa0;">${data.conductor}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #555; font-size: 0.85rem; line-height: 1.6;">
+                            ${compat.message}
+                        </p>
+                        <div style="margin-top: 12px; padding: 12px; background: white; border-radius: 10px;">
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 6px;">
+                                <strong>Best Name Numbers for Driver ${data.driver}:</strong> ${meaning.best_combined_with_driver.join(', ')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // After compatibility HTML is generated, add suggestions
+                const suggestions = typeof getNameImprovementSuggestions !== 'undefined' ?
+                    getNameImprovementSuggestions(name, system, data.driver) : [];
+
+                if (suggestions.length > 0) {
+                    let suggestionsHtml = `
+                        <div class="suggestions-section">
+                            <h3 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 10px; font-weight: 800;">
+                                ✨ Improve Your Name Numerology
+                            </h3>
+                            <p style="color: #666; font-size: 0.85rem; line-height: 1.6; margin-bottom: 0;">
+                                Adding letters with values <strong>1, 3, or 5</strong> can enhance your name's vibration. Here are specific suggestions for ${name}:
+                            </p>
+
+                            <div class="suggestions-grid">
+                    `;
+
+                    suggestions.forEach(sugg => {
+                        suggestionsHtml += `
+                            <div class="suggestion-card ${sugg.compatible ? 'compatible' : ''}">
+                                <div class="suggestion-header">
+                                    <div class="letter-badge">${sugg.letter}</div>
+                                    <div class="letter-info">
+                                        <div><strong>Letter Value:</strong> ${sugg.letterValue}</div>
+                                        <div><strong>Position:</strong> ${sugg.position === 'prefix' ? 'Add at start' : 'Add at end'}</div>
+                                    </div>
+                                </div>
+
+                                <div class="name-comparison">
+                                    <span class="old-name">${name} (${sugg.oldNumber})</span>
+                                    <span class="arrow">→</span>
+                                    <span class="new-name">${sugg.newName} (${sugg.newNumber})</span>
+                                </div>
+
+                                ${sugg.compatible ? '<div class="compatible-badge">✓ Compatible with Your Driver</div>' : ''}
+                            </div>
+                        `;
+                    });
+
+                    const letterValues = system === 'chaldean' ?
+                        '1 (A, I, J, Q, Y), 3 (C, G, L, S), 5 (E, H, N, X)' :
+                        '1 (A, J, S), 3 (C, L, U), 5 (E, N, W)';
+
+                    suggestionsHtml += `
+                            </div>
+
+                            <div class="info-note">
+                                <strong>Why Letters 1, 3, 5?</strong>
+                                <ul>
+                                    <li><strong>1</strong> - Leadership, independence, new beginnings</li>
+                                    <li><strong>3</strong> - Creativity, communication, growth</li>
+                                    <li><strong>5</strong> - Change, freedom, versatility</li>
+                                </ul>
+                                <p style="margin-top: 12px; font-size: 0.8rem; color: #666;">
+                                    In ${system} system: ${letterValues}
+                                </p>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById('compatibility').innerHTML += suggestionsHtml;
+                }
+            }
+        }
+
+        // Auto-calculate as user types
+        document.getElementById('nameInput').addEventListener('input', function() {
+            calculateName(currentSystem);
+        });
+    </script>
+
+    <style>
+        input:focus {
+            outline: none;
+        }
+
+        .suggestions-section {
+            background: linear-gradient(135deg, #fff9e5, #ffedd5);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+
+        .suggestions-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .suggestion-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+
+        .suggestion-card.compatible {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+        }
+
+        .suggestion-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestion-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .letter-badge {
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
+
+        .letter-info {
+            flex: 1;
+        }
+
+        .letter-info div {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .name-comparison {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .old-name {
+            color: #666;
+            text-decoration: line-through;
+        }
+
+        .new-name {
+            color: #000;
+            font-weight: 700;
+        }
+
+        .arrow {
+            color: #6b3fa0;
+            font-weight: 700;
+        }
+
+        .compatible-badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .info-note {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 16px;
+        }
+
+        .info-note strong {
+            color: #f59e0b;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-note ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-note li {
+            padding: 6px 0;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .info-note li strong {
+            display: inline;
+            color: #2d1b69;
+        }
+
+        @media (min-width: 768px) {
+            .suggestions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</Layout>

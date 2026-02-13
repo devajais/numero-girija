@@ -1,0 +1,154 @@
+---
+import Layout from '../../../components/Layout.astro';
+import missingRemedies from '../../../data/numbers/missing-remedies.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Missing Numbers & Remedies - Numero Girija">
+    <div id="personalSection"></div>
+
+    <div class="card">
+        <h2 class="section-title">Missing Numbers & Remedies</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+            When a number is missing from your Lo Shu Grid, it indicates challenges in areas governed by that number. Here are the problems, remedies, and powerful mantras for each missing number.
+        </p>
+    </div>
+
+    {Object.entries(missingRemedies).map(([num, data]) => (
+        <div class="card" id={`number-${num}`}>
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <div class="number-badge">{num}</div>
+                <div>
+                    <h3 style="color: #2d1b69; font-size: 1.2rem; margin-bottom: 5px;">
+                        {data.planet} - {data.aspect}
+                    </h3>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
+                        {data.colors.map(color => (
+                            <span style={`background: ${color}; color: white; padding: 3px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);`}>
+                                {color}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #dc2626;">
+                <h4 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">⚠️ Problems Caused</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+                    {data.problems.map(problem => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem; line-height: 1.5;">
+                            <span style="position: absolute; left: 0; color: #dc2626; font-weight: bold;">•</span>
+                            {problem}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
+                <h4 style="color: #3b82f6; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">💎 Remedies</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+                    {data.remedies.map(remedy => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem; line-height: 1.5;">
+                            <span style="position: absolute; left: 0; color: #3b82f6; font-weight: bold;">✓</span>
+                            {remedy}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fef9e7, #fef3c7); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #f59e0b;">
+                <h4 style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">🕉️ Powerful Mantras</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+                    {data.mantras.map(mantra => (
+                        <li style="padding: 10px; background: white; border-radius: 8px; color: #555; font-size: 0.85rem; line-height: 1.5; font-family: 'Georgia', serif; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            {mantra}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <div style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); padding: 12px; border-radius: 10px;">
+                    <h4 style="color: #6b3fa0; font-size: 0.8rem; margin-bottom: 6px; font-weight: 600;">💎 Gemstone</h4>
+                    <p style="color: #555; font-size: 0.85rem; font-weight: 600;">{data.gemstone}</p>
+                    {data.alternative_gemstone && (
+                        <p style="color: #666; font-size: 0.75rem; margin-top: 4px;">Alt: {data.alternative_gemstone}</p>
+                    )}
+                </div>
+                <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 12px; border-radius: 10px;">
+                    <h4 style="color: #dc2626; font-size: 0.8rem; margin-bottom: 6px; font-weight: 600;">📅 Best Day</h4>
+                    <p style="color: #555; font-size: 0.85rem; font-weight: 600;">{data.favorable_days.join(', ')}</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 12px; border-radius: 10px;">
+                <h4 style="color: #3b82f6; font-size: 0.8rem; margin-bottom: 6px; font-weight: 600;">🙏 Deity to Worship</h4>
+                <p style="color: #555; font-size: 0.85rem;">{data.deity}</p>
+            </div>
+        </div>
+    ))}
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); text-align: center;">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Want to see which numbers are missing in your chart?</p>
+        <a href={`${base}grid/`} class="btn">View Your Lo Shu Grid</a>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        document.head.appendChild(script);
+    </script>
+    <script is:inline>
+        // Show personal missing numbers if DOB exists
+        const dob = sessionStorage.getItem('userDOB');
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const missing = getMissingNumbers(data.frequency);
+
+            if (missing.length > 0) {
+                document.getElementById('personalSection').innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border-left: 4px solid #dc2626;">
+                        <h2 style="color: #dc2626; font-size: 1.1rem; margin-bottom: 10px; font-weight: 700;">Your Missing Numbers</h2>
+                        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Based on your date of birth, these numbers are missing from your Lo Shu Grid. Scroll down to see remedies for each.</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                            ${missing.map(num => `
+                                <a href="#number-${num}" style="text-decoration: none;">
+                                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #ef4444); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3); cursor: pointer; transition: transform 0.2s;">
+                                        ${num}
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                document.getElementById('personalSection').innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #33cc33;">
+                        <h2 style="color: #33cc33; font-size: 1.1rem; margin-bottom: 10px; font-weight: 700;">✨ Complete Grid!</h2>
+                        <p style="color: #666; font-size: 0.85rem;">Congratulations! You have all numbers 1-9 present in your Lo Shu Grid. This is very rare and indicates a balanced personality.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+    <style>
+        .number-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+
+        a div:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</Layout>

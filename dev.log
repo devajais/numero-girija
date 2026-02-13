@@ -1,0 +1,212 @@
+
+> numero-girija@0.0.1 dev
+> astro dev
+
+10:28:09 [types] Generated 1ms
+10:28:09 [content] Syncing content
+10:28:09 [content] Synced content
+10:28:09 [vite] Re-optimizing dependencies because vite config has changed
+10:28:09 [vite] Port 4321 is in use, trying another one...
+
+ astro  v5.16.8 ready in 84 ms
+
+┃ Local    http://localhost:4322/
+┃ Network  use --host to expose
+
+10:28:09 watching for file changes...
+10:28:09 [ERROR] [vite] Error:   Failed to scan for dependencies from entries:
+  /Users/devashish/Desktop/astro/src/components/Layout.astro
+/Users/devashish/Desktop/astro/src/pages/404.astro
+/Users/devashish/Desktop/astro/src/pages/analysis.astro
+/Users/devashish/Desktop/astro/src/pages/grid.astro
+/Users/devashish/Desktop/astro/src/pages/index.astro
+/Users/devashish/Desktop/astro/src/pages/more.astro
+/Users/devashish/Desktop/astro/src/pages/predictions.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/combinations.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/index.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/lucky-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/guidance/dos-donts.astro
+/Users/devashish/Desktop/astro/src/pages/learn/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/missing-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/number-meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/repetitive-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/name-numerology/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/lo-shu-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/understanding-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/planes-arrows.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/predictions-guide.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/yearly-cycles.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/missing.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/repetitive.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/compatibility.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/name-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/partner-matching.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/gemstones.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/lifestyle.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/mantras.astro
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mExpected ";" but found "$"[0m
+
+    script:/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro?id=0:39:38:
+[37m      39 │ ...                     <a href={`[32m$[37m{base}compatibility/`} class="b...
+         │                                   [32m^[37m
+         ╵                                   [32m;[0m
+
+
+    at failureErrorWithLog (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:935:54)
+    at handleRequest (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:581:7)
+
+ update  ▶ New version of Astro available: 5.17.2
+  Run npx @astrojs/upgrade to update
+
+12:54:41 Configuration file updated. Restarting...
+12:54:41 [vite] Re-optimizing dependencies because vite config has changed
+12:54:41 [content] Syncing content
+12:54:41 [content] Synced content
+12:54:41 [types] Generated 81ms
+12:54:41 [vite] Re-optimizing dependencies because vite config has changed
+12:54:41 [ERROR] [vite] Error:   Failed to scan for dependencies from entries:
+  /Users/devashish/Desktop/astro/src/components/Layout.astro
+/Users/devashish/Desktop/astro/src/pages/404.astro
+/Users/devashish/Desktop/astro/src/pages/analysis.astro
+/Users/devashish/Desktop/astro/src/pages/grid.astro
+/Users/devashish/Desktop/astro/src/pages/index.astro
+/Users/devashish/Desktop/astro/src/pages/more.astro
+/Users/devashish/Desktop/astro/src/pages/predictions.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/combinations.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/index.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/lucky-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/guidance/dos-donts.astro
+/Users/devashish/Desktop/astro/src/pages/name-numerology/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/missing-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/name-numerology.astro
+/Users/devashish/Desktop/astro/src/pages/learn/number-meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/repetitive-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/planes-arrows.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/predictions-guide.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/yearly-cycles.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/lo-shu-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/understanding-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/missing.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/repetitive.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/gemstones.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/lifestyle.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/mantras.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/compatibility.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/name-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/partner-matching.astro
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mExpected ";" but found "$"[0m
+
+    script:/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro?id=0:39:38:
+[37m      39 │ ...                     <a href={`[32m$[37m{base}compatibility/`} class="b...
+         │                                   [32m^[37m
+         ╵                                   [32m;[0m
+
+
+    at failureErrorWithLog (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:935:54)
+    at handleRequest (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:581:7)
+12:54:55 Configuration file updated. Restarting...
+12:54:55 [vite] Re-optimizing dependencies because vite config has changed
+12:54:55 [content] Syncing content
+12:54:55 [content] Synced content
+12:54:55 [types] Generated 68ms
+12:54:55 [vite] Re-optimizing dependencies because vite config has changed
+12:54:55 [vite] Port 4321 is in use, trying another one...
+12:54:55 [ERROR] [vite] Error:   Failed to scan for dependencies from entries:
+  /Users/devashish/Desktop/astro/src/components/Layout.astro
+/Users/devashish/Desktop/astro/src/pages/404.astro
+/Users/devashish/Desktop/astro/src/pages/analysis.astro
+/Users/devashish/Desktop/astro/src/pages/grid.astro
+/Users/devashish/Desktop/astro/src/pages/index.astro
+/Users/devashish/Desktop/astro/src/pages/more.astro
+/Users/devashish/Desktop/astro/src/pages/predictions.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/combinations.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/index.astro
+/Users/devashish/Desktop/astro/src/pages/compatibility/lucky-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/guidance/dos-donts.astro
+/Users/devashish/Desktop/astro/src/pages/learn/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/missing-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/name-numerology.astro
+/Users/devashish/Desktop/astro/src/pages/learn/number-meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/repetitive-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/name-numerology/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/planes-arrows.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/predictions-guide.astro
+/Users/devashish/Desktop/astro/src/pages/learn/advanced/yearly-cycles.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/lo-shu-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/making-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/basics/understanding-grid.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/compatibility.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/name-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/relationships/partner-matching.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/meanings.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/missing.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/personal-numbers.astro
+/Users/devashish/Desktop/astro/src/pages/learn/numbers/repetitive.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/gemstones.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/index.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/lifestyle.astro
+/Users/devashish/Desktop/astro/src/pages/learn/remedies/mantras.astro
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mExpected ";" but found "$"[0m
+
+    script:/Users/devashish/Desktop/astro/src/pages/learn/personal-numbers.astro?id=0:39:38:
+[37m      39 │ ...                     <a href={`[32m$[37m{base}compatibility/`} class="b...
+         │                                   [32m^[37m
+         ╵                                   [32m;[0m
+
+
+    at failureErrorWithLog (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:935:54)
+    at handleRequest (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/Users/devashish/Desktop/astro/node_modules/esbuild/lib/main.js:581:7)

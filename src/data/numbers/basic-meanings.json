@@ -1,0 +1,275 @@
+{
+  "1": {
+    "number": 1,
+    "planet": "Sun",
+    "element": "Fire",
+    "quality": "Leadership",
+    "keywords": ["Leader", "Independent", "Ambitious", "Confident", "Innovative", "Authoritative"],
+    "description": "Number 1 represents the Sun and brings leadership qualities, independence, and ambition. These individuals are natural-born leaders who prefer to take charge and make their own path.",
+    "positive_traits": [
+      "Natural leadership abilities",
+      "Strong willpower and determination",
+      "Independent and self-reliant",
+      "Innovative and pioneering spirit",
+      "Confident and authoritative",
+      "Ambitious and goal-oriented",
+      "Quick decision-making",
+      "Original thinker"
+    ],
+    "negative_traits": [
+      "Can be dominating and bossy",
+      "Stubborn and inflexible",
+      "Egoistic and self-centered",
+      "Impatient with others",
+      "Difficulty accepting help or advice",
+      "May neglect emotions",
+      "Can be aggressive"
+    ],
+    "career_fields": ["Entrepreneurship", "CEO/Executive", "Politics", "Military", "Self-employment", "Leadership roles"],
+    "health_aspects": "Heart, eyes, bones, blood circulation",
+    "life_lesson": "Learning to balance independence with cooperation and ego with humility"
+  },
+  "2": {
+    "number": 2,
+    "planet": "Moon",
+    "element": "Water",
+    "quality": "Emotions",
+    "keywords": ["Emotional", "Intuitive", "Diplomatic", "Sensitive", "Supportive", "Cooperative"],
+    "description": "Number 2 represents the Moon and brings emotional depth, sensitivity, and cooperation. These individuals are natural diplomats who excel in partnerships and relationships.",
+    "positive_traits": [
+      "High emotional intelligence",
+      "Excellent intuition and psychic abilities",
+      "Diplomatic and peace-loving",
+      "Supportive and caring nature",
+      "Good at partnerships and teamwork",
+      "Patient and understanding",
+      "Artistic and creative sensitivity",
+      "Ability to mediate conflicts"
+    ],
+    "negative_traits": [
+      "Over-sensitive and easily hurt",
+      "Mood swings and emotional instability",
+      "Indecisive and confused",
+      "May become dependent on others",
+      "Overthinking and worrying",
+      "Difficulty standing up for self",
+      "Can be manipulative emotionally"
+    ],
+    "career_fields": ["Counseling", "Psychology", "Diplomacy", "HR", "Healing arts", "Customer service", "Nursing"],
+    "health_aspects": "Stomach, chest, mental health, reproductive system",
+    "life_lesson": "Learning emotional balance and independence while maintaining sensitivity"
+  },
+  "3": {
+    "number": 3,
+    "planet": "Jupiter",
+    "element": "Fire",
+    "quality": "Expression",
+    "keywords": ["Creative", "Expressive", "Optimistic", "Social", "Communicative", "Joyful"],
+    "description": "Number 3 represents Jupiter and brings creativity, expression, and optimism. These individuals are natural communicators who spread joy and positivity.",
+    "positive_traits": [
+      "Highly creative and artistic",
+      "Excellent communication skills",
+      "Optimistic and joyful",
+      "Social and charismatic",
+      "Inspirational and motivating",
+      "Multi-talented",
+      "Good sense of humor",
+      "Natural teachers"
+    ],
+    "negative_traits": [
+      "Scattered energy and lack of focus",
+      "Difficulty finishing projects",
+      "Can be superficial",
+      "Tendency to exaggerate",
+      "Financially irresponsible",
+      "May talk too much",
+      "Difficulty with discipline"
+    ],
+    "career_fields": ["Arts", "Entertainment", "Writing", "Teaching", "Marketing", "Public speaking", "Design"],
+    "health_aspects": "Liver, thighs, weight management, nervous system",
+    "life_lesson": "Learning to focus creative energy and develop depth alongside breadth"
+  },
+  "4": {
+    "number": 4,
+    "planet": "Rahu",
+    "element": "Earth",
+    "quality": "Structure",
+    "keywords": ["Practical", "Disciplined", "Systematic", "Cautious", "Confused", "Rebellious"],
+    "description": "Number 4 represents Rahu and brings both practical discipline and confusion. These individuals can be systematic builders but also face mental conflicts and sudden changes.",
+    "positive_traits": [
+      "Practical and grounded",
+      "Disciplined and systematic",
+      "Hard-working and reliable",
+      "Good organizational skills",
+      "Attention to detail",
+      "Can think outside the box",
+      "Ability to handle routine work"
+    ],
+    "negative_traits": [
+      "Mental confusion and anxiety",
+      "Rigid and inflexible thinking",
+      "Trust issues",
+      "Sudden unexpected problems",
+      "Negative thinking patterns",
+      "May attract obstacles",
+      "Difficulty with change",
+      "Can be rebellious or unconventional in negative ways"
+    ],
+    "career_fields": ["Engineering", "Construction", "IT", "Systematic professions", "Research", "Technology"],
+    "health_aspects": "Nerves, skin, mysterious ailments, anxiety disorders",
+    "life_lesson": "Learning to balance practicality with flexibility and overcoming confusion with clarity"
+  },
+  "5": {
+    "number": 5,
+    "planet": "Mercury",
+    "element": "Air",
+    "quality": "Freedom",
+    "keywords": ["Versatile", "Communicative", "Restless", "Curious", "Adaptable", "Social"],
+    "description": "Number 5 represents Mercury and brings versatility, communication, and love for freedom. These individuals are quick-thinking and adaptable but may struggle with restlessness.",
+    "positive_traits": [
+      "Highly versatile and adaptable",
+      "Excellent communication skills",
+      "Quick thinking and intelligent",
+      "Curious and loves learning",
+      "Social and friendly",
+      "Good with numbers and business",
+      "Ability to handle multiple tasks",
+      "Adventurous spirit"
+    ],
+    "negative_traits": [
+      "Restless and lack of commitment",
+      "Scattered energy",
+      "Difficulty with depth and focus",
+      "Impulsive decisions",
+      "May have addictive tendencies",
+      "Inconsistent and unpredictable",
+      "Difficulty with routine"
+    ],
+    "career_fields": ["Sales", "Marketing", "Travel", "Media", "Business", "Public relations", "Consulting"],
+    "health_aspects": "Nervous system, skin, respiratory system, stress-related issues",
+    "life_lesson": "Learning commitment and depth while maintaining versatility and freedom"
+  },
+  "6": {
+    "number": 6,
+    "planet": "Venus",
+    "element": "Earth",
+    "quality": "Harmony",
+    "keywords": ["Responsible", "Caring", "Harmonious", "Aesthetic", "Family-oriented", "Loving"],
+    "description": "Number 6 represents Venus and brings responsibility, love, and harmony. These individuals are natural caregivers who create beauty and balance in their environment.",
+    "positive_traits": [
+      "Highly responsible and reliable",
+      "Caring and nurturing nature",
+      "Family-oriented and loyal",
+      "Excellent aesthetic sense",
+      "Creates harmony and peace",
+      "Healing presence",
+      "Good counselor and advisor",
+      "Attracts prosperity and comforts"
+    ],
+    "negative_traits": [
+      "Takes too much responsibility for others",
+      "Difficulty saying no",
+      "May be overprotective",
+      "Can be stubborn",
+      "May neglect own needs",
+      "Tendency to interfere in others' lives",
+      "Can be materialistic"
+    ],
+    "career_fields": ["Healthcare", "Counseling", "Hospitality", "Beauty industry", "Family services", "Design", "Teaching"],
+    "health_aspects": "Reproductive organs, throat, kidneys, diabetes, weight issues",
+    "life_lesson": "Learning to balance responsibility with self-care and allowing others their own journey"
+  },
+  "7": {
+    "number": 7,
+    "planet": "Ketu",
+    "element": "Water",
+    "quality": "Spirituality",
+    "keywords": ["Spiritual", "Analytical", "Introspective", "Intuitive", "Isolated", "Mysterious"],
+    "description": "Number 7 represents Ketu and brings spiritual seeking, deep thinking, and introspection. These individuals are natural mystics and researchers who seek deeper truths.",
+    "positive_traits": [
+      "Deep spiritual insights",
+      "Excellent analytical abilities",
+      "Strong intuition and psychic abilities",
+      "Original and unique thinking",
+      "Research-oriented mind",
+      "Wise and philosophical",
+      "Independent thinker",
+      "Ability to see beyond surface"
+    ],
+    "negative_traits": [
+      "Tendency toward isolation",
+      "Depression and pessimism",
+      "Difficulty with worldly matters",
+      "Trust issues",
+      "Can be cold and distant",
+      "May struggle with relationships",
+      "Overthinking and analysis paralysis",
+      "Health problems"
+    ],
+    "career_fields": ["Spiritual teaching", "Research", "Analysis", "Mysticism", "Investigation", "Technology", "Solitary professions"],
+    "health_aspects": "Mysterious ailments, mental health, chronic diseases, allergies",
+    "life_lesson": "Learning to balance spiritual seeking with worldly engagement and connecting with others"
+  },
+  "8": {
+    "number": 8,
+    "planet": "Saturn",
+    "element": "Earth",
+    "quality": "Karma",
+    "keywords": ["Disciplined", "Karmic", "Obstacles", "Persistent", "Mature", "Delayed"],
+    "description": "Number 8 represents Saturn and brings discipline, obstacles, and karmic lessons. These individuals face challenges but develop tremendous strength and eventual success through persistence.",
+    "positive_traits": [
+      "Extreme resilience and strength",
+      "Great discipline and patience",
+      "Wisdom from life experiences",
+      "Ability to handle adversity",
+      "Depth of character",
+      "Organized and systematic",
+      "Potential for massive material success",
+      "Mature and responsible"
+    ],
+    "negative_traits": [
+      "Constant delays and obstacles",
+      "Tendency toward depression",
+      "Loneliness and isolation",
+      "Difficulty in relationships",
+      "Health problems",
+      "May become harsh or bitter",
+      "Lack of joy in life",
+      "Feeling burdened"
+    ],
+    "career_fields": ["Roles requiring extreme persistence", "Real estate", "Mining", "Iron/steel industry", "Challenging fields"],
+    "health_aspects": "Bones, joints, teeth, chronic ailments, accidents, depression",
+    "life_lesson": "Learning patience and persistence while maintaining optimism and not becoming bitter"
+  },
+  "9": {
+    "number": 9,
+    "planet": "Mars",
+    "element": "Fire",
+    "quality": "Courage",
+    "keywords": ["Courageous", "Compassionate", "Energetic", "Aggressive", "Humanitarian", "Passionate"],
+    "description": "Number 9 represents Mars and brings courage, energy, and universal compassion. These individuals are warriors with big hearts who fight for causes and help humanity.",
+    "positive_traits": [
+      "Exceptional courage and bravery",
+      "Universal compassion and love",
+      "High energy and vitality",
+      "Natural leaders and warriors",
+      "Inspirational and motivating",
+      "Selfless service orientation",
+      "Passionate and intense",
+      "Public appeal and influence"
+    ],
+    "negative_traits": [
+      "Can be aggressive and impulsive",
+      "Anger management issues",
+      "May be dominating",
+      "Difficulty with details",
+      "May neglect personal life",
+      "Can be self-righteous",
+      "Impatient with others",
+      "Prone to accidents"
+    ],
+    "career_fields": ["Armed forces", "Police", "Politics", "Sports", "Surgery", "Non-profit leadership", "Activism"],
+    "health_aspects": "Blood-related issues, accidents, injuries, blood pressure, inflammation",
+    "life_lesson": "Learning to channel aggression constructively and balance universal love with personal relationships"
+  }
+}

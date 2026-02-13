@@ -1,0 +1,597 @@
+---
+import Layout from '../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Name Numerology - Learn - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / Name Numerology
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">📝 Name Numerology</h1>
+        <p class="intro">
+            Your name is more than just an identifier—it's a vibration that influences how people perceive you and what you attract in life. Learn how to calculate, understand, and optimize your name for success.
+        </p>
+
+        <div class="section">
+            <h2>What is Name Numerology?</h2>
+            <p>
+                Name numerology assigns numerical values to the letters in your name. When you add these values together and reduce them to a single digit (1-9), you get your Name Number. This number reveals the energy and impression your name creates in the world.
+            </p>
+            <div class="info-box">
+                <strong>Key Point:</strong> Your name number affects how others perceive you and what opportunities you attract, while your Driver and Conductor (from DOB) represent who you truly are inside.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The Two Systems</h2>
+
+            <div class="system-card chaldean">
+                <h3>🔮 Chaldean System (Recommended)</h3>
+                <p><strong>Origin:</strong> Ancient Babylon (4000+ years old)</p>
+                <p><strong>Based on:</strong> Sound vibrations and frequencies</p>
+                <p><strong>Special:</strong> Number 9 is sacred and not assigned to letters</p>
+
+                <div class="letter-grid">
+                    <div class="letter-item">
+                        <div class="number">1</div>
+                        <div class="letters">A, I, J, Q, Y</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">2</div>
+                        <div class="letters">B, K, R</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">3</div>
+                        <div class="letters">C, G, L, S</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">4</div>
+                        <div class="letters">D, M, T</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">5</div>
+                        <div class="letters">E, H, N, X</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">6</div>
+                        <div class="letters">U, V, W</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">7</div>
+                        <div class="letters">O, Z</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">8</div>
+                        <div class="letters">F, P</div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <strong>Example: GANDHI</strong><br>
+                    G(3) + A(1) + N(5) + D(4) + H(5) + I(1) = 19<br>
+                    1 + 9 = <strong>10</strong> → 1 + 0 = <strong>1</strong> (The Leader)
+                </div>
+            </div>
+
+            <div class="system-card pythagorean">
+                <h3>📐 Pythagorean System</h3>
+                <p><strong>Origin:</strong> Ancient Greece, from Pythagoras</p>
+                <p><strong>Based on:</strong> Sequential alphabetical order</p>
+                <p><strong>Uses:</strong> All numbers 1-9 in sequence</p>
+
+                <div class="letter-grid">
+                    <div class="letter-item">
+                        <div class="number">1</div>
+                        <div class="letters">A, J, S</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">2</div>
+                        <div class="letters">B, K, T</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">3</div>
+                        <div class="letters">C, L, U</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">4</div>
+                        <div class="letters">D, M, V</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">5</div>
+                        <div class="letters">E, N, W</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">6</div>
+                        <div class="letters">F, O, X</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">7</div>
+                        <div class="letters">G, P, Y</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">8</div>
+                        <div class="letters">H, Q, Z</div>
+                    </div>
+                    <div class="letter-item">
+                        <div class="number">9</div>
+                        <div class="letters">I, R</div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <strong>Example: GANDHI</strong><br>
+                    G(7) + A(1) + N(5) + D(4) + H(8) + I(9) = 34<br>
+                    3 + 4 = <strong>7</strong> (The Seeker)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The 9 Name Numbers</h2>
+
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="num-badge">1</div>
+                    <h4>The Leader</h4>
+                    <p>Leadership, independence, innovation. You attract authority roles and pioneering opportunities.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">2</div>
+                    <h4>The Diplomat</h4>
+                    <p>Cooperation, sensitivity, intuition. You attract partnerships and situations requiring mediation.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">3</div>
+                    <h4>The Creative</h4>
+                    <p>Creativity, expression, joy. You attract artistic opportunities and social connections.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">4</div>
+                    <h4>The Builder</h4>
+                    <p>Structure, discipline, practicality. You attract systematic work and responsibilities.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">5</div>
+                    <h4>The Communicator</h4>
+                    <p>Freedom, versatility, communication. You attract variety, travel, and dynamic roles.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">6</div>
+                    <h4>The Nurturer</h4>
+                    <p>Responsibility, love, harmony. You attract caring roles and family situations.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">7</div>
+                    <h4>The Seeker</h4>
+                    <p>Spirituality, analysis, mystery. You attract spiritual experiences and research opportunities.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">8</div>
+                    <h4>The Achiever</h4>
+                    <p>Power, material success, karma. You attract wealth opportunities through challenges.</p>
+                </div>
+
+                <div class="number-card">
+                    <div class="num-badge">9</div>
+                    <h4>The Humanitarian</h4>
+                    <p>Compassion, service, universal love. You attract opportunities to help humanity.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Name & Birth Date Compatibility</h2>
+            <p>
+                Your name number should harmonize with your Driver and Conductor numbers for best results. When your name is compatible with your birth numbers, you experience:
+            </p>
+            <ul>
+                <li>✅ Easier achievement of goals</li>
+                <li>✅ Better first impressions</li>
+                <li>✅ Increased confidence and self-expression</li>
+                <li>✅ More opportunities aligned with your nature</li>
+            </ul>
+
+            <div class="compatibility-table">
+                <h4>Best Name Numbers by Driver</h4>
+                <table>
+                    <tr>
+                        <th>Your Driver</th>
+                        <th>Best Name Numbers</th>
+                    </tr>
+                    <tr><td>1</td><td>1, 3, 5, 9</td></tr>
+                    <tr><td>2</td><td>1, 3, 6, 9</td></tr>
+                    <tr><td>3</td><td>1, 2, 3, 5, 6, 9</td></tr>
+                    <tr><td>4</td><td>1, 2, 6, 8</td></tr>
+                    <tr><td>5</td><td>1, 3, 5, 6, 9</td></tr>
+                    <tr><td>6</td><td>2, 3, 5, 6, 9</td></tr>
+                    <tr><td>7</td><td>1, 2, 4, 7</td></tr>
+                    <tr><td>8</td><td>1, 3, 5, 6</td></tr>
+                    <tr><td>9</td><td>1, 2, 3, 6, 9</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Name Correction - How to Improve Your Name</h2>
+
+            <div class="correction-methods">
+                <div class="method">
+                    <h4>1. Add a Letter</h4>
+                    <p>Add letters with values 1, 3, or 5 (positive energies) at the beginning or end of your name.</p>
+                    <p class="example-text">Example: JOHN → AJOHN or JOHNA</p>
+                </div>
+
+                <div class="method">
+                    <h4>2. Change Spelling</h4>
+                    <p>Modify spelling while keeping pronunciation: Use Y for I, C for K, add silent letters.</p>
+                    <p class="example-text">Example: KARAN → KARANN, PRIYA → PRIYAA</p>
+                </div>
+
+                <div class="method">
+                    <h4>3. Use Middle Name</h4>
+                    <p>Include or exclude your middle name in signatures and official documents.</p>
+                    <p class="example-text">Example: John Smith → John A Smith</p>
+                </div>
+
+                <div class="method">
+                    <h4>4. Adopt a Nickname</h4>
+                    <p>Use a nickname with a favorable number in daily life and social media.</p>
+                    <p class="example-text">Example: Rajesh → Raj, Elizabeth → Liz</p>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <strong>⚠️ Important:</strong> For name correction to work, you must use the new spelling consistently for at least 40 days in signatures, social media, and introductions. Legal name change is optional but more powerful.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Examples</h2>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🌟 Celebrity Success Stories</h4>
+                    <p><strong>Rajiv Hari Om Bhatia → Akshay Kumar</strong></p>
+                    <p>Changed to a more action-oriented, powerful vibration matching his energetic persona.</p>
+                    <br>
+                    <p><strong>Farhan Abraham → A.R. Rahman</strong></p>
+                    <p>New name has spiritual resonance, perfect for a musical genius who touches souls globally.</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>💼 Business Names</h4>
+                    <p><strong>Apple (1+8+8+3+5 = 25 = 7 Chaldean)</strong></p>
+                    <p>Number 7: Innovation, uniqueness, spiritual/mystical appeal - perfect for tech that "thinks different"</p>
+                    <br>
+                    <p><strong>Google (3+7+7+3+3+5 = 28 = 10 = 1 Chaldean)</strong></p>
+                    <p>Number 1: Leadership, being #1, pioneering - dominant search engine</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Calculate Your Name Number?</h3>
+            <p>Use our calculator to find your name number and get personalized suggestions for improvement.</p>
+            <a href={`${base}name-numerology/`} class="btn-primary">Calculate My Name Number</a>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .intro {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #2d1b69;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            border-bottom: 3px solid #6b3fa0;
+            padding-bottom: 8px;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #3b82f6;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-box.warning {
+            background: linear-gradient(135deg, #fff9e5, #ffedd5);
+            border-left-color: #f59e0b;
+        }
+
+        .system-card {
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .system-card.chaldean {
+            background: linear-gradient(135deg, #f9f5ff, #f0ebff);
+            border: 2px solid #6b3fa0;
+        }
+
+        .system-card.pythagorean {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border: 2px solid #0284c7;
+        }
+
+        .system-card h3 {
+            color: #2d1b69;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .system-card p {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .letter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .letter-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .letter-item .number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #6b3fa0;
+            margin-bottom: 6px;
+        }
+
+        .letter-item .letters {
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .example {
+            background: white;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .number-card {
+            background: white;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+
+        .number-card:hover {
+            border-color: #6b3fa0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .num-badge {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .number-card h4 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .number-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .compatibility-table {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .compatibility-table h4 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e8e8e8;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: #f9fafb;
+            color: #2d1b69;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .correction-methods {
+            display: grid;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .method {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .method h4 {
+            color: #d97706;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .method p {
+            margin-bottom: 8px;
+        }
+
+        .example-text {
+            font-style: italic;
+            color: #6b3fa0;
+            font-weight: 600;
+        }
+
+        .examples-grid {
+            display: grid;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        @media (min-width: 768px) {
+            .examples-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .example-card {
+            background: white;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .example-card h4 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .example-card p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 24px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: white;
+            color: #2d1b69;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</Layout>

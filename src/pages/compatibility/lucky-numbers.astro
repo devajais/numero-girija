@@ -1,0 +1,183 @@
+---
+import Layout from '../../components/Layout.astro';
+import luckyNumbersData from '../../data/driver-conductor/lucky-numbers.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Lucky Numbers Guide - Numero Girija">
+    <div id="personalSection"></div>
+
+    <div class="card">
+        <h2 class="section-title">Lucky Numbers Guide</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+            Your Driver number determines which numbers are lucky, neutral, or unlucky for you. Use this guide to choose favorable numbers for vehicle plates, phone numbers, house numbers, and important dates.
+        </p>
+    </div>
+
+    {Object.entries(luckyNumbersData).map(([num, data]) => (
+        <div class="card" id={`driver-${num}`}>
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <div class="number-badge">{num}</div>
+                <div>
+                    <h3 style="color: #2d1b69; font-size: 1.2rem; margin-bottom: 5px;">Driver {num} - {data.planet}</h3>
+                    <p style="color: #666; font-size: 0.8rem;">{data.description}</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 4px solid #33cc33;">
+                <h4 style="color: #33cc33; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">🍀 Lucky Numbers</h4>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                    {data.lucky.map(n => (
+                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #33cc33, #22bb33); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; box-shadow: 0 2px 8px rgba(51, 204, 51, 0.3);">
+                            {n}
+                        </div>
+                    ))}
+                </div>
+                <div style="font-size: 0.8rem; color: #555; line-height: 1.5;">
+                    <strong>Best Dates:</strong> {data.lucky_dates.join(', ')}
+                </div>
+            </div>
+
+            {data.neutral && data.neutral.length > 0 && (
+                <div style="background: linear-gradient(135deg, #fef9e7, #fef3c7); padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 4px solid #f59e0b;">
+                    <h4 style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">~ Neutral Numbers</h4>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        {data.neutral.map(n => (
+                            <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);">
+                                {n}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #dc2626;">
+                <h4 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">⚠️ Unlucky Numbers</h4>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    {data.bad.map(n => (
+                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #dc2626, #ef4444); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);">
+                            {n}
+                        </div>
+                    ))}
+                </div>
+                <p style="font-size: 0.8rem; color: #555; margin-top: 10px; line-height: 1.5;">
+                    Avoid these numbers in important aspects of life. They create obstacles and challenges.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #6b3fa0; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;">💡 Practical Applications</h4>
+                <div style="display: grid; gap: 8px; font-size: 0.85rem; color: #555;">
+                    <div style="padding: 8px; background: white; border-radius: 6px;">
+                        <strong>Vehicle Numbers:</strong> {data.car_numbers}
+                    </div>
+                    <div style="padding: 8px; background: white; border-radius: 6px;">
+                        <strong>House Numbers:</strong> {data.house_numbers}
+                    </div>
+                    <div style="padding: 8px; background: white; border-radius: 6px;">
+                        <strong>Phone Numbers:</strong> {data.phone_numbers}
+                    </div>
+                    <div style="padding: 8px; background: white; border-radius: 6px;">
+                        <strong>Best Partnerships:</strong> Driver numbers {data.best_partners.join(', ')}
+                    </div>
+                    <div style="padding: 8px; background: white; border-radius: 6px;">
+                        <strong>Avoid Partnerships:</strong> Driver numbers {data.avoid_partners.join(', ')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    ))}
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); text-align: center;">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Don't know your Driver number?</p>
+        <a href={`${base}grid/`} class="btn">Calculate Your Lo Shu Grid</a>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        document.head.appendChild(script);
+    </script>
+    <script is:inline>
+        const dob = sessionStorage.getItem('userDOB');
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+            const lucky = getLuckyNumbers(data.driver);
+            const neutral = getNeutralNumbers(data.driver);
+            const bad = getBadNumbers(data.driver);
+
+            document.getElementById('personalSection').innerHTML = `
+                <div class="card" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #33cc33;">
+                    <h2 style="color: #33cc33; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">
+                        Your Lucky Numbers
+                    </h2>
+
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">Your Driver Number</div>
+                        <div style="display: inline-flex; width: 80px; height: 80px; background: linear-gradient(135deg, #2d1b69, #6b3fa0); color: white; border-radius: 16px; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(107, 63, 160, 0.4);">
+                            ${data.driver}
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <h3 style="color: #33cc33; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">🍀 Your Lucky Numbers</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                            ${lucky.map(n => `
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #33cc33, #22bb33); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 10px rgba(51, 204, 51, 0.3);">
+                                    ${n}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    ${neutral.length > 0 ? `
+                        <div style="margin-bottom: 15px;">
+                            <h3 style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">~ Your Neutral Numbers</h3>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                                ${neutral.map(n => `
+                                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);">
+                                        ${n}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div>
+                        <h3 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">⚠️ Your Unlucky Numbers</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                            ${bad.map(n => `
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #dc2626, #ef4444); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);">
+                                    ${n}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align: center;">
+                            Avoid these numbers in vehicle plates, phone numbers, and house numbers
+                        </p>
+                    </div>
+
+                    <a href="#driver-${data.driver}" class="btn" style="margin-top: 15px;">
+                        See Detailed Guide for Driver ${data.driver}
+                    </a>
+                </div>
+            `;
+        }
+    </script>
+
+    <style>
+        .number-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+    </style>
+</Layout>

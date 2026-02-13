@@ -1,0 +1,229 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Reading Grid Positions - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / <a href={`${base}learn/basics/`}>Grid Basics</a> / Reading Grid Positions
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">🧭 Reading Grid Positions</h1>
+
+        <div class="content-section">
+            <h2>Understanding the 3×3 Grid Structure</h2>
+            <p>
+                Each position in the Lo Shu Grid has specific meanings and influences. Learning to read these positions helps you understand how different numbers in your birth date create unique personality patterns and life experiences.
+            </p>
+        </div>
+
+        <div class="grid-layout">
+            <div class="grid-position top-left">
+                <h3>Position 4</h3>
+                <p><strong>Mind & Logic</strong></p>
+                <p>Intellectual abilities, analytical thinking, problem-solving, and mental organization</p>
+            </div>
+            <div class="grid-position top-center">
+                <h3>Position 9</h3>
+                <p><strong>Spirituality & Ideals</strong></p>
+                <p>Higher consciousness, spiritual growth, humanitarian values, and universal love</p>
+            </div>
+            <div class="grid-position top-right">
+                <h3>Position 2</h3>
+                <p><strong>Emotions & Sensitivity</strong></p>
+                <p>Emotional intelligence, intuition, relationships, and caring nature</p>
+            </div>
+            <div class="grid-position middle-left">
+                <h3>Position 3</h3>
+                <p><strong>Creativity & Expression</strong></p>
+                <p>Creative talents, self-expression, communication, and artistic abilities</p>
+            </div>
+            <div class="grid-position middle-center">
+                <h3>Position 5</h3>
+                <p><strong>Balance & Center</strong></p>
+                <p>Core stability, adaptability, change management, and finding equilibrium</p>
+            </div>
+            <div class="grid-position middle-right">
+                <h3>Position 7</h3>
+                <p><strong>Intuition & Analysis</strong></p>
+                <p>Inner wisdom, research abilities, philosophical thinking, and self-reflection</p>
+            </div>
+            <div class="grid-position bottom-left">
+                <h3>Position 8</h3>
+                <p><strong>Action & Willpower</strong></p>
+                <p>Physical energy, determination, practical execution, and achievement drive</p>
+            </div>
+            <div class="grid-position bottom-center">
+                <h3>Position 1</h3>
+                <p><strong>Communication & Leadership</strong></p>
+                <p>Speaking abilities, leadership qualities, self-confidence, and social interaction</p>
+            </div>
+            <div class="grid-position bottom-right">
+                <h3>Position 6</h3>
+                <p><strong>Material & Domestic</strong></p>
+                <p>Material comfort, family life, responsibility, and practical matters</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>How to Interpret Your Grid</h2>
+            <p>
+                When you plot your birth date numbers onto the grid:
+            </p>
+            <ul>
+                <li><strong>Filled Positions:</strong> Areas where you have natural strength and ability</li>
+                <li><strong>Empty Positions:</strong> Missing numbers indicating growth opportunities</li>
+                <li><strong>Multiple Numbers:</strong> Amplified energy in that life area (can be strength or excess)</li>
+            </ul>
+        </div>
+
+        <div class="next-steps">
+            <h3>Continue Learning</h3>
+            <div class="next-links">
+                <a href={`${base}learn/basics/making-grid/`} class="next-link">
+                    <span>How to Make Your Grid →</span>
+                </a>
+                <a href={`${base}learn/numbers/meanings/`} class="next-link">
+                    <span>Number Meanings →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            color: #2d1b69;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+
+        .content-section p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .content-section ul {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .grid-position {
+            background: linear-gradient(135deg, #f9f5ff, #f0ebff);
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .grid-position h3 {
+            color: #6b3fa0;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .grid-position p {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .grid-position p strong {
+            color: #2d1b69;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #fff9e5, #ffedd5);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        .next-steps h3 {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .next-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .next-link {
+            background: white;
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 14px 18px;
+            text-decoration: none;
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .next-link:hover {
+            background: #f59e0b;
+            color: white;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 767px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .next-links {
+                flex-direction: row;
+            }
+        }
+    </style>
+</Layout>

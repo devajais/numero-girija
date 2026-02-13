@@ -1,0 +1,812 @@
+{
+  "1-1": {
+    "type": "friendly",
+    "title": "Double Leadership",
+    "description": "Highly independent and ambitious personalities with strong leadership qualities. Both driver and conductor reinforce your natural tendency to lead and take charge.",
+    "strengths": ["Natural leadership", "Strong decision-making", "Independence", "Ambition", "Confidence"],
+    "challenges": ["Ego clashes", "Stubbornness", "Impatience", "Difficulty accepting help", "Overconfidence"],
+    "career": "Entrepreneurship, CEO roles, independent business, political leadership, pioneering ventures",
+    "relationship": "Needs partner who respects independence and doesn't try to dominate. Best with supportive numbers like 2, 3, or 9.",
+    "compatibility_score": 8
+  },
+  "1-2": {
+    "type": "friendly",
+    "title": "Leader with Diplomat",
+    "description": "Perfect balance of leadership (1) and emotional intelligence (2). You can lead with empathy and build strong relationships while maintaining authority.",
+    "strengths": ["Balanced leadership", "Diplomatic skills", "Emotional intelligence", "Team building", "Intuitive decision-making"],
+    "challenges": ["Internal conflict between independence and partnership needs", "Mood swings", "Overthinking"],
+    "career": "Team leadership, HR management, counseling with authority, diplomatic roles, collaborative ventures",
+    "relationship": "Excellent balance - can lead while nurturing. Great compatibility with most numbers.",
+    "compatibility_score": 9
+  },
+  "1-3": {
+    "type": "friendly",
+    "title": "Creative Leader",
+    "description": "Dynamic combination of leadership and creativity. You can lead innovative projects and inspire others with your vision and creative expression.",
+    "strengths": ["Creative leadership", "Innovative thinking", "Inspirational", "Communication skills", "Optimism"],
+    "challenges": ["Scattered energy", "Too many projects at once", "Impatience with details"],
+    "career": "Creative director, entrepreneur in creative fields, marketing leadership, entertainment industry",
+    "relationship": "Charismatic and fun partner, but may need freedom. Best with understanding partners (2, 6, 9).",
+    "compatibility_score": 9
+  },
+  "1-4": {
+    "type": "opposite",
+    "title": "Visionary Meets Pragmatist",
+    "description": "Challenging combination where leadership ambition (1) conflicts with practical caution (4). Internal struggle between taking risks and playing it safe.",
+    "strengths": ["Practical leadership", "Grounded ambition", "Systematic approach", "Reliability"],
+    "challenges": ["Internal conflict", "Indecisiveness", "Frustration", "Feeling held back", "Health issues due to stress"],
+    "career": "Structured leadership roles, management in established organizations, project management",
+    "relationship": "Conflicted nature may cause relationship challenges. Needs very patient partner.",
+    "compatibility_score": 4
+  },
+  "1-5": {
+    "type": "neutral",
+    "title": "Leader with Versatility",
+    "description": "Interesting mix of focused leadership and scattered versatility. You can lead diverse projects but may struggle with consistency.",
+    "strengths": ["Adaptable leadership", "Quick thinking", "Versatility", "Communication", "Risk-taking ability"],
+    "challenges": ["Lack of focus", "Restlessness", "Impulsive decisions", "Difficulty with routine"],
+    "career": "Sales leadership, business development, consulting, travel industry, media",
+    "relationship": "Needs freedom and variety. Best with adventurous partners who understand your need for space.",
+    "compatibility_score": 6
+  },
+  "1-6": {
+    "type": "friendly",
+    "title": "Responsible Leader",
+    "description": "Beautiful combination of leadership and responsibility. You lead with care for others' wellbeing and take your duties seriously.",
+    "strengths": ["Responsible leadership", "Caring nature", "Family-oriented", "Aesthetic sense", "Balance of power and love"],
+    "challenges": ["Taking too much responsibility", "Difficulty delegating", "Work-life balance issues"],
+    "career": "Healthcare leadership, hospitality management, family business, luxury brand management",
+    "relationship": "Excellent family person and partner. Very loyal and caring. Great compatibility with 2, 3, 6, 9.",
+    "compatibility_score": 8
+  },
+  "1-7": {
+    "type": "opposite",
+    "title": "Action Meets Contemplation",
+    "description": "Difficult combination where action-oriented leadership (1) conflicts with introspective, spiritual nature (7). Internal confusion about worldly vs spiritual goals.",
+    "strengths": ["Unique insights", "Spiritual leadership", "Analytical thinking", "Independence"],
+    "challenges": ["Internal confusion", "Isolation", "Indecisiveness", "Pessimism", "Health issues", "Difficulty trusting others"],
+    "career": "Research leadership, spiritual teaching, analytical roles, solitary professions",
+    "relationship": "Difficulty opening up emotionally. Needs very understanding partner. Often prefers solitude.",
+    "compatibility_score": 3
+  },
+  "1-8": {
+    "type": "opposite",
+    "title": "Leadership Under Pressure",
+    "description": "Very challenging combination where leadership desires (1) are constantly tested by obstacles and delays (8). Life of struggle but potential for great success through persistence.",
+    "strengths": ["Resilience", "Determination", "Strength under pressure", "Material success potential"],
+    "challenges": ["Constant obstacles", "Delays", "Frustration", "Health issues", "Relationship problems", "Father issues"],
+    "career": "Roles requiring extreme persistence, turnaround management, challenging industries",
+    "relationship": "Difficult to maintain relationships due to stress and challenges. Needs very supportive partner.",
+    "compatibility_score": 3
+  },
+  "1-9": {
+    "type": "friendly",
+    "title": "Humanitarian Leader",
+    "description": "Powerful combination of leadership and universal compassion. You lead with a vision to help humanity and can inspire masses.",
+    "strengths": ["Visionary leadership", "Compassion", "Public appeal", "Courage", "Idealism", "Ability to inspire"],
+    "challenges": ["Can be aggressive", "Impulsive", "Difficulty with details", "May neglect personal life"],
+    "career": "Political leadership, non-profit leadership, social activism, public service, armed forces leadership",
+    "relationship": "Passionate but may prioritize mission over personal relationships. Best with 2, 3, 6.",
+    "compatibility_score": 8
+  },
+  "2-1": {
+    "type": "friendly",
+    "title": "Diplomat Turned Leader",
+    "description": "You're naturally diplomatic and emotional (2) but destiny pushes you toward leadership (1). Learning to lead while maintaining sensitivity.",
+    "strengths": ["Empathetic leadership", "Relationship building", "Intuitive", "Balanced approach", "Team orientation"],
+    "challenges": ["Self-doubt", "Difficulty being assertive", "Over-sensitivity", "Torn between helping and leading"],
+    "career": "Team management, counseling with authority, diplomatic roles, HR leadership",
+    "relationship": "Caring and supportive partner. Excellent compatibility with most numbers.",
+    "compatibility_score": 9
+  },
+  "2-2": {
+    "type": "friendly",
+    "title": "Double Sensitivity",
+    "description": "Highly sensitive, emotional, and intuitive. Excellent at understanding others' feelings but may struggle with your own emotional intensity.",
+    "strengths": ["Deep empathy", "Intuition", "Emotional intelligence", "Artistic sensitivity", "Supportive nature"],
+    "challenges": ["Over-sensitivity", "Mood swings", "Difficulty making decisions", "Easily hurt", "May become dependent"],
+    "career": "Counseling, psychology, healing arts, music, poetry, caring professions",
+    "relationship": "Deeply caring but needs emotional security. Best with strong, supportive partners (1, 6, 9).",
+    "compatibility_score": 7
+  },
+  "2-3": {
+    "type": "friendly",
+    "title": "Emotional Creative",
+    "description": "Beautiful blend of emotional depth (2) and creative expression (3). You can channel feelings into creative works and communication.",
+    "strengths": ["Artistic talent", "Emotional expression", "Communication", "Social skills", "Optimism"],
+    "challenges": ["Emotional instability", "Scattered creativity", "Difficulty with focus", "May talk too much"],
+    "career": "Creative arts, writing, entertainment, teaching, social media, emotional healing through creativity",
+    "relationship": "Warm, expressive, and fun partner. Great compatibility with 1, 3, 6, 9.",
+    "compatibility_score": 9
+  },
+  "2-4": {
+    "type": "neutral",
+    "title": "Sensitive Pragmatist",
+    "description": "Mix of emotional sensitivity (2) and practical discipline (4). You feel deeply but try to be practical, creating internal tension.",
+    "strengths": ["Practical empathy", "Systematic care", "Reliable", "Detail-oriented with emotional intelligence"],
+    "challenges": ["Internal conflict between emotions and logic", "Anxiety", "Rigid thinking", "Trust issues"],
+    "career": "Healthcare administration, structured counseling, organized caregiving roles",
+    "relationship": "Caring but may have difficulty expressing emotions freely. Needs patient partner.",
+    "compatibility_score": 6
+  },
+  "2-5": {
+    "type": "neutral",
+    "title": "Emotional Wanderer",
+    "description": "Sensitive emotions (2) combined with restless energy (5). You feel deeply but also crave freedom and variety, creating instability.",
+    "strengths": ["Adaptability", "Social skills", "Versatility", "Ability to connect with diverse people"],
+    "challenges": ["Emotional instability", "Restlessness", "Commitment issues", "Mood swings", "Scattered energy"],
+    "career": "Travel counseling, sales with emotional intelligence, social work with variety",
+    "relationship": "Needs emotional security but also freedom. Difficult to balance. Best with understanding partners.",
+    "compatibility_score": 5
+  },
+  "2-6": {
+    "type": "friendly",
+    "title": "Nurturer Supreme",
+    "description": "Excellent combination of emotional care (2) and responsibility (6). You're born to nurture, care for others, and create harmony.",
+    "strengths": ["Exceptional caring nature", "Family-oriented", "Responsible", "Harmonious", "Aesthetic sense", "Healing ability"],
+    "challenges": ["Taking too much responsibility for others", "Difficulty saying no", "May neglect self"],
+    "career": "Healthcare, counseling, family services, hospitality, beauty and wellness, teaching",
+    "relationship": "Perfect family person and partner. Extremely loyal and caring. Great compatibility with all numbers.",
+    "compatibility_score": 10
+  },
+  "2-7": {
+    "type": "neutral",
+    "title": "Mystical Emotions",
+    "description": "Emotional sensitivity (2) meets spiritual seeking (7). You're deeply intuitive and may have psychic abilities but struggle with worldly life.",
+    "strengths": ["Deep intuition", "Spiritual insights", "Psychic abilities", "Analytical emotional intelligence"],
+    "challenges": ["Social isolation", "Depression tendency", "Difficulty with practical life", "Trust issues", "Pessimism"],
+    "career": "Spiritual counseling, mysticism, research in psychology, healing arts, solitary creative work",
+    "relationship": "Difficulty opening up. Needs very understanding and patient partner. Often prefers solitude.",
+    "compatibility_score": 5
+  },
+  "2-8": {
+    "type": "opposite",
+    "title": "Sensitive Under Pressure",
+    "description": "Very difficult combination where emotional sensitivity (2) faces constant obstacles and delays (8). Emotional suffering but potential for spiritual growth.",
+    "strengths": ["Emotional resilience developed through challenges", "Depth of character", "Spiritual potential"],
+    "challenges": ["Emotional pain", "Delays in relationships", "Health issues", "Feeling of abandonment", "Trust issues"],
+    "career": "Healing professions after overcoming personal suffering, therapy, counseling from life experience",
+    "relationship": "Difficult relationships due to past hurts. Needs extremely patient and loyal partner.",
+    "compatibility_score": 3
+  },
+  "2-9": {
+    "type": "friendly",
+    "title": "Compassionate Helper",
+    "description": "Beautiful combination of emotional sensitivity (2) and universal compassion (9). You're here to help humanity through emotional support and care.",
+    "strengths": ["Universal compassion", "Emotional generosity", "Public appeal", "Healing presence", "Selfless service"],
+    "challenges": ["May neglect personal needs", "Emotional exhaustion", "Difficulty with boundaries"],
+    "career": "Non-profit work, social services, mass healing, counseling for marginalized communities, charity work",
+    "relationship": "Deeply caring but may prioritize service over personal relationships. Best with understanding partners.",
+    "compatibility_score": 8
+  },
+  "3-1": {
+    "type": "friendly",
+    "title": "Creative Pioneer",
+    "description": "Natural creativity (3) channeled into leadership (1). You pioneer creative ventures and lead with innovative vision.",
+    "strengths": ["Creative innovation", "Inspirational leadership", "Communication", "Optimism", "Pioneering spirit"],
+    "challenges": ["Scattered focus", "Impatience", "Starting many things without finishing", "Ego in creative expression"],
+    "career": "Creative entrepreneurship, marketing, entertainment industry leadership, innovative ventures",
+    "relationship": "Charismatic and fun but needs freedom. Best with supportive partners (2, 6, 9).",
+    "compatibility_score": 9
+  },
+  "3-2": {
+    "type": "friendly",
+    "title": "Expressive Empath",
+    "description": "Creative expression (3) with emotional sensitivity (2). You express emotions beautifully through creative mediums.",
+    "strengths": ["Artistic expression", "Emotional communication", "Social charm", "Empathy with joy", "Teaching ability"],
+    "challenges": ["Emotional instability affecting creativity", "Mood-dependent productivity", "Scattered energy"],
+    "career": "Arts, writing, teaching, entertainment, emotional healing through creative expression",
+    "relationship": "Warm, expressive, and caring. Excellent compatibility with 1, 3, 6, 9.",
+    "compatibility_score": 9
+  },
+  "3-3": {
+    "type": "friendly",
+    "title": "Triple Expression",
+    "description": "Highly creative and expressive personality. Excellent communication and artistic abilities but may lack focus and discipline.",
+    "strengths": ["Exceptional creativity", "Communication skills", "Social charm", "Optimism", "Joy spreader", "Multi-talented"],
+    "challenges": ["Extreme scattered energy", "Difficulty finishing projects", "May be superficial", "Financial instability"],
+    "career": "Arts, entertainment, writing, speaking, social media, creative consulting",
+    "relationship": "Fun, joyful partner but may lack depth and commitment. Needs grounding partner.",
+    "compatibility_score": 7
+  },
+  "3-4": {
+    "type": "neutral",
+    "title": "Creative Builder",
+    "description": "Creativity (3) meets practical structure (4). You can build creative projects systematically but may feel restricted.",
+    "strengths": ["Practical creativity", "Systematic approach to art", "Discipline in creative work", "Reliability"],
+    "challenges": ["Feeling creatively restricted", "Internal tension", "Difficulty with spontaneity"],
+    "career": "Design with structure, creative project management, architecture, planned creative work",
+    "relationship": "Balanced between fun and responsibility. Compatible with grounded numbers.",
+    "compatibility_score": 7
+  },
+  "3-5": {
+    "type": "friendly",
+    "title": "Social Butterfly",
+    "description": "Highly social, communicative, and versatile. You thrive on variety and social connections but may lack depth and focus.",
+    "strengths": ["Exceptional social skills", "Versatility", "Communication", "Adaptability", "Quick wit", "Networking ability"],
+    "challenges": ["Extreme restlessness", "Lack of focus", "Superficiality", "Commitment issues", "Financial instability"],
+    "career": "Sales, marketing, media, public relations, travel industry, entertainment, social media",
+    "relationship": "Very social and fun but may struggle with commitment. Needs freedom in relationships.",
+    "compatibility_score": 6
+  },
+  "3-6": {
+    "type": "friendly",
+    "title": "Creative Nurturer",
+    "description": "Excellent combination of creativity (3) and responsibility (6). You create with purpose and care for others through your creative expression.",
+    "strengths": ["Creative with purpose", "Family-oriented creativity", "Aesthetic excellence", "Balanced life", "Teaching ability"],
+    "challenges": ["May take too much responsibility", "Difficulty balancing creative freedom with duties"],
+    "career": "Creative teaching, family business in creative fields, design, beauty industry, hospitality",
+    "relationship": "Excellent partner - fun yet responsible. Great compatibility with most numbers.",
+    "compatibility_score": 9
+  },
+  "3-7": {
+    "type": "neutral",
+    "title": "Mystical Creative",
+    "description": "Creative expression (3) meets spiritual seeking (7). You create from deep spiritual insights but may struggle with worldly success.",
+    "strengths": ["Unique creative vision", "Spiritual creativity", "Analytical thinking", "Originality"],
+    "challenges": ["Internal conflict between expression and solitude", "Difficulty with commercial success", "Isolation"],
+    "career": "Spiritual creative work, mystical arts, research-based creativity, solitary creative professions",
+    "relationship": "Complex personality - outgoing yet withdrawn. Needs very understanding partner.",
+    "compatibility_score": 6
+  },
+  "3-8": {
+    "type": "opposite",
+    "title": "Creative Under Pressure",
+    "description": "Challenging combination where creative expression (3) faces constant obstacles (8). Creative struggles but potential for profound work through suffering.",
+    "strengths": ["Depth in creative work", "Resilience", "Unique perspective from challenges"],
+    "challenges": ["Creative blocks", "Delays in success", "Financial struggles", "Health issues", "Frustration"],
+    "career": "Creative work that eventually succeeds through persistence, art from suffering",
+    "relationship": "Creative nature may be dampened by life challenges. Needs very supportive partner.",
+    "compatibility_score": 4
+  },
+  "3-9": {
+    "type": "friendly",
+    "title": "Creative Humanitarian",
+    "description": "Powerful combination of creativity (3) and universal love (9). You create to inspire and uplift humanity.",
+    "strengths": ["Inspirational creativity", "Public appeal", "Compassionate expression", "Teaching masses", "Idealism"],
+    "challenges": ["May neglect personal needs", "Scattered energy in helping everyone", "Financial instability"],
+    "career": "Entertainment with social message, teaching, motivational speaking, creative social work",
+    "relationship": "Warm and generous but may prioritize creative mission. Best with understanding partners.",
+    "compatibility_score": 8
+  },
+  "4-1": {
+    "type": "opposite",
+    "title": "Practical Leader Struggling",
+    "description": "Difficult combination where practical caution (4) conflicts with leadership ambition (1). Internal battle between risk-taking and playing safe.",
+    "strengths": ["Systematic leadership", "Grounded decisions", "Reliability", "Practical vision"],
+    "challenges": ["Internal conflict", "Frustration", "Indecisiveness", "Feeling held back", "Health issues due to stress"],
+    "career": "Management in established organizations, systematic leadership, project management",
+    "relationship": "Internal conflicts may affect relationships. Needs very patient and understanding partner.",
+    "compatibility_score": 4
+  },
+  "4-2": {
+    "type": "neutral",
+    "title": "Practical Caregiver",
+    "description": "Practical discipline (4) with emotional sensitivity (2). You care for others in practical, systematic ways.",
+    "strengths": ["Practical empathy", "Organized care", "Reliability", "Systematic support", "Trustworthy"],
+    "challenges": ["Rigid in emotional expression", "Difficulty with spontaneity", "Anxiety", "Trust issues"],
+    "career": "Healthcare administration, structured counseling, organized caregiving, practical helping professions",
+    "relationship": "Caring in practical ways but may lack emotional spontaneity. Needs patient partner.",
+    "compatibility_score": 6
+  },
+  "4-3": {
+    "type": "neutral",
+    "title": "Structured Creative",
+    "description": "Practical structure (4) with creative impulses (3). You bring discipline to creative work but may feel internally restricted.",
+    "strengths": ["Disciplined creativity", "Systematic approach to projects", "Reliable creative output", "Practical artistry"],
+    "challenges": ["Creative frustration", "Feeling restricted", "Internal tension between freedom and discipline"],
+    "career": "Architecture, structured design, creative project management, technical creative work",
+    "relationship": "Balanced between responsibility and fun. Good compatibility with grounded numbers.",
+    "compatibility_score": 7
+  },
+  "4-4": {
+    "type": "friendly",
+    "title": "Ultimate Builder",
+    "description": "Double practical energy. Excellent at building stable structures but may be too rigid, cautious, and struggle with change.",
+    "strengths": ["Extreme discipline", "Building solid foundations", "Reliability", "Systematic approach", "Hard work"],
+    "challenges": ["Extreme rigidity", "Resistance to change", "Anxiety", "Health issues", "Trust issues", "Slow progress"],
+    "career": "Construction, engineering, systematic professions, established organizations, structured environments",
+    "relationship": "Very reliable but may be too rigid and cautious. Difficult with change. Needs flexible partner.",
+    "compatibility_score": 6
+  },
+  "4-5": {
+    "type": "opposite",
+    "title": "Structure vs Freedom",
+    "description": "Extremely challenging combination where discipline (4) conflicts with freedom-seeking (5). Constant internal battle between stability and adventure.",
+    "strengths": ["Can balance structure with adaptability when evolved", "Versatility with foundation"],
+    "challenges": ["Severe internal conflict", "Restlessness vs rigidity", "Confusion", "Instability", "Health issues"],
+    "career": "Difficult to find satisfaction. May frequently change careers seeking balance.",
+    "relationship": "Conflicted nature creates relationship challenges. Needs very understanding partner.",
+    "compatibility_score": 2
+  },
+  "4-6": {
+    "type": "friendly",
+    "title": "Responsible Builder",
+    "description": "Good combination of practical discipline (4) and responsibility (6). You build stable structures for family and community.",
+    "strengths": ["Strong sense of duty", "Building family security", "Reliable", "Responsible", "Practical care"],
+    "challenges": ["Taking too much responsibility", "Difficulty relaxing", "May be too serious", "Rigid thinking"],
+    "career": "Family business, real estate, construction, practical caregiving, structured family services",
+    "relationship": "Very responsible and reliable partner. Excellent for family life. Good compatibility with 2, 6, 8.",
+    "compatibility_score": 8
+  },
+  "4-7": {
+    "type": "opposite",
+    "title": "Material vs Spiritual",
+    "description": "Challenging combination where practical worldly focus (4) conflicts with spiritual seeking (7). Confusion between material and spiritual goals.",
+    "strengths": ["Analytical thinking", "Research abilities", "Attention to detail"],
+    "challenges": ["Internal conflict", "Confusion about life purpose", "Isolation", "Trust issues", "Pessimism"],
+    "career": "Research in practical fields, technical analysis, solitary systematic work",
+    "relationship": "Difficulty opening up. Trust issues. Needs extremely patient partner.",
+    "compatibility_score": 3
+  },
+  "4-8": {
+    "type": "opposite",
+    "title": "Double Obstacles",
+    "description": "Very difficult combination where both numbers bring obstacles and delays. Life of extreme challenges but potential for massive success through persistence.",
+    "strengths": ["Extreme resilience", "Ability to handle pressure", "Depth of character", "Material success potential"],
+    "challenges": ["Constant obstacles", "Extreme delays", "Health issues", "Relationship problems", "Loneliness", "Frustration"],
+    "career": "Roles requiring extreme persistence, dealing with extreme challenges, turnaround situations",
+    "relationship": "Very difficult to maintain relationships. Needs extraordinarily patient and loyal partner.",
+    "compatibility_score": 2
+  },
+  "4-9": {
+    "type": "neutral",
+    "title": "Practical Humanitarian",
+    "description": "Practical discipline (4) with universal compassion (9). You serve humanity in practical, organized ways.",
+    "strengths": ["Systematic service", "Practical compassion", "Organized helping", "Reliable support for causes"],
+    "challenges": ["May be too rigid in helping", "Difficulty with spontaneous generosity", "Internal tension"],
+    "career": "Non-profit administration, organized charity work, systematic social service, practical helping professions",
+    "relationship": "Caring in practical ways. Good compatibility with service-oriented partners.",
+    "compatibility_score": 7
+  },
+  "5-1": {
+    "type": "neutral",
+    "title": "Adventurous Leader",
+    "description": "Freedom-loving (5) with leadership drive (1). You lead diverse, dynamic ventures but may lack consistency.",
+    "strengths": ["Dynamic leadership", "Adaptability", "Quick decisions", "Versatility", "Risk-taking"],
+    "challenges": ["Lack of focus", "Impulsiveness", "Starting things without finishing", "Restlessness"],
+    "career": "Dynamic business ventures, sales leadership, consulting, travel industry, media",
+    "relationship": "Needs freedom and variety. Best with independent partners who understand need for space.",
+    "compatibility_score": 6
+  },
+  "5-2": {
+    "type": "neutral",
+    "title": "Restless Emotions",
+    "description": "Freedom-seeking (5) with emotional sensitivity (2). Restless heart that craves both connection and freedom.",
+    "strengths": ["Social adaptability", "Emotional versatility", "Ability to connect with diverse people"],
+    "challenges": ["Emotional instability", "Commitment issues", "Restlessness", "Mood swings", "Unpredictability"],
+    "career": "Counseling with variety, social work in diverse settings, travel-related emotional work",
+    "relationship": "Needs both emotional security and freedom - difficult to balance. Needs very understanding partner.",
+    "compatibility_score": 5
+  },
+  "5-3": {
+    "type": "friendly",
+    "title": "Dynamic Communicator",
+    "description": "Excellent for social connections and communication. Highly versatile and expressive but may lack depth and stability.",
+    "strengths": ["Exceptional communication", "Social magnetism", "Versatility", "Quick wit", "Networking", "Adaptability"],
+    "challenges": ["Severe lack of focus", "Superficiality", "Commitment issues", "Financial instability", "Scattered energy"],
+    "career": "Sales, marketing, media, public relations, entertainment, social media, travel industry",
+    "relationship": "Very social and fun but struggles with deep commitment. Needs freedom and variety.",
+    "compatibility_score": 6
+  },
+  "5-4": {
+    "type": "opposite",
+    "title": "Freedom vs Discipline",
+    "description": "Extremely challenging where freedom (5) and discipline (4) are in constant battle. Severe internal conflict and instability.",
+    "strengths": ["Potential for balanced approach when evolved", "Can adapt while maintaining some structure"],
+    "challenges": ["Severe internal conflict", "Instability", "Confusion", "Restlessness with guilt", "Health issues"],
+    "career": "Difficulty finding career satisfaction. May change careers frequently.",
+    "relationship": "Internal conflicts create relationship challenges. Needs extraordinarily understanding partner.",
+    "compatibility_score": 2
+  },
+  "5-5": {
+    "type": "friendly",
+    "title": "Ultimate Freedom Seeker",
+    "description": "Extreme love of freedom, variety, and change. Excellent adaptability but severe difficulty with commitment and stability.",
+    "strengths": ["Maximum adaptability", "Versatility", "Quick thinking", "Social skills", "Risk-taking", "Experiencing life fully"],
+    "challenges": ["Extreme restlessness", "Cannot commit", "Financial instability", "Scattered energy", "Superficiality", "Addictive tendencies"],
+    "career": "Travel industry, sales, frequent job changes, freelancing, any work with maximum variety and freedom",
+    "relationship": "Extreme difficulty with commitment. Needs partner who gives complete freedom.",
+    "compatibility_score": 4
+  },
+  "5-6": {
+    "type": "neutral",
+    "title": "Free Spirit with Duty",
+    "description": "Internal tension between freedom (5) and family responsibility (6). You want both adventure and stable family life.",
+    "strengths": ["Balanced social life", "Can bring variety to family", "Responsible yet fun"],
+    "challenges": ["Internal conflict between freedom and duty", "Restlessness in family life", "Commitment issues"],
+    "career": "Family business with variety, hospitality, travel with family involvement",
+    "relationship": "Wants family but also freedom. Needs understanding partner who allows space.",
+    "compatibility_score": 6
+  },
+  "5-7": {
+    "type": "neutral",
+    "title": "Seeking Wanderer",
+    "description": "External wandering (5) with internal spiritual seeking (7). You search for meaning through experiences but may feel lost.",
+    "strengths": ["Unique perspectives", "Learning through diverse experiences", "Philosophical thinking"],
+    "challenges": ["Feeling lost", "Lack of direction", "Isolation despite social nature", "Confusion", "Addictive tendencies"],
+    "career": "Spiritual travel, teaching through experiences, freelance research, unconventional professions",
+    "relationship": "Difficulty with commitment and opening up. Needs very understanding partner.",
+    "compatibility_score": 4
+  },
+  "5-8": {
+    "type": "opposite",
+    "title": "Freedom Under Pressure",
+    "description": "Challenging combination where freedom-loving nature (5) faces constant obstacles (8). Feeling trapped despite craving freedom.",
+    "strengths": ["Resilience developed through challenges", "Unique life experiences"],
+    "challenges": ["Feeling trapped", "Frustration", "Delays in desired freedom", "Health issues", "Relationship problems"],
+    "career": "Struggling to find satisfaction. May face obstacles in achieving desired lifestyle.",
+    "relationship": "Difficult relationships due to feeling trapped. Needs patient partner who provides freedom.",
+    "compatibility_score": 3
+  },
+  "5-9": {
+    "type": "friendly",
+    "title": "Global Humanitarian",
+    "description": "Freedom-loving (5) with universal compassion (9). You serve humanity through diverse, dynamic means and global connections.",
+    "strengths": ["Global perspective", "Diverse helping", "Adaptable service", "Connecting people across cultures"],
+    "challenges": ["Lack of focus in service", "Scattered energy", "Commitment issues even to causes"],
+    "career": "International NGO work, global travel for service, diverse social work, multicultural projects",
+    "relationship": "Generous but needs freedom. Best with independent partners who share humanitarian values.",
+    "compatibility_score": 7
+  },
+  "6-1": {
+    "type": "friendly",
+    "title": "Leader with Heart",
+    "description": "Responsible, caring nature (6) with leadership destiny (1). You lead with love and take care of your team/family.",
+    "strengths": ["Responsible leadership", "Caring for team", "Family-oriented", "Balanced power and love", "Loyalty"],
+    "challenges": ["Taking too much responsibility", "Difficulty delegating", "Work-life balance"],
+    "career": "Leadership in caring professions, family business leadership, hospitality management",
+    "relationship": "Excellent partner - responsible, caring, loyal. Great compatibility with most numbers.",
+    "compatibility_score": 9
+  },
+  "6-2": {
+    "type": "friendly",
+    "title": "Ultimate Nurturer",
+    "description": "Perfect caring combination. Extremely nurturing, emotional, and responsible. Born to take care of others.",
+    "strengths": ["Maximum caring ability", "Emotional intelligence", "Family devotion", "Healing presence", "Harmony creator"],
+    "challenges": ["Taking too much responsibility", "Difficulty saying no", "May neglect self completely", "Over-attachment"],
+    "career": "Healthcare, counseling, family services, teaching, hospitality, beauty and wellness",
+    "relationship": "Perfect family person. Extremely loyal and caring. Excellent compatibility with all numbers.",
+    "compatibility_score": 10
+  },
+  "6-3": {
+    "type": "friendly",
+    "title": "Joyful Caregiver",
+    "description": "Excellent combination of responsibility (6) and creativity (3). You care for others with joy and creative expression.",
+    "strengths": ["Creative care", "Joyful responsibility", "Aesthetic sense", "Teaching ability", "Balanced life"],
+    "challenges": ["May spread yourself too thin", "Difficulty balancing fun and duty"],
+    "career": "Creative teaching, hospitality, beauty industry, family business in creative fields, event planning",
+    "relationship": "Excellent partner - responsible yet fun. Great compatibility with most numbers.",
+    "compatibility_score": 9
+  },
+  "6-4": {
+    "type": "friendly",
+    "title": "Stable Provider",
+    "description": "Good combination of family responsibility (6) and practical discipline (4). You build stable foundations for family.",
+    "strengths": ["Excellent provider", "Family security", "Practical care", "Reliability", "Building stable home"],
+    "challenges": ["May be too serious", "Difficulty relaxing", "Taking too much responsibility", "Rigid thinking"],
+    "career": "Family business, real estate, construction, practical family services, stable providing professions",
+    "relationship": "Very reliable provider and family person. Good compatibility with 2, 4, 6, 8.",
+    "compatibility_score": 8
+  },
+  "6-5": {
+    "type": "neutral",
+    "title": "Responsible Yet Restless",
+    "description": "Internal tension between family responsibility (6) and freedom (5). Wants both stable family and variety.",
+    "strengths": ["Bringing variety to family", "Social family life", "Balanced when evolved"],
+    "challenges": ["Internal conflict", "Restlessness in family life", "May feel trapped by responsibility"],
+    "career": "Family business with variety, hospitality with travel, social family services",
+    "relationship": "Caring but may feel restless. Needs partner who provides both security and freedom.",
+    "compatibility_score": 6
+  },
+  "6-6": {
+    "type": "friendly",
+    "title": "Super Responsible",
+    "description": "Double responsibility and family orientation. Extremely caring and loyal but may take too much on shoulders.",
+    "strengths": ["Maximum responsibility", "Family devotion", "Loyalty", "Aesthetic sense", "Harmony", "Healing ability"],
+    "challenges": ["Taking too much responsibility", "Difficulty saying no", "May neglect self", "Interfering in others' lives"],
+    "career": "Healthcare, family services, hospitality, beauty and wellness, teaching, family business",
+    "relationship": "Perfect family person but may be overprotective. Excellent compatibility with caring numbers.",
+    "compatibility_score": 9
+  },
+  "6-7": {
+    "type": "neutral",
+    "title": "Caring Seeker",
+    "description": "Family responsibility (6) with spiritual seeking (7). Internal conflict between family duties and spiritual solitude.",
+    "strengths": ["Spiritual care", "Deep healing ability", "Intuitive understanding of family"],
+    "challenges": ["Internal conflict between family and solitude", "May feel burdened by responsibilities", "Trust issues"],
+    "career": "Spiritual healing, counseling with depth, family therapy, holistic health",
+    "relationship": "Caring but may withdraw emotionally. Needs understanding partner who respects need for alone time.",
+    "compatibility_score": 6
+  },
+  "6-8": {
+    "type": "opposite",
+    "title": "Responsibility Under Pressure",
+    "description": "Challenging combination where family responsibilities (6) face constant obstacles (8). Family struggles but strong loyalty.",
+    "strengths": ["Extreme loyalty", "Resilience in family matters", "Depth of caring through struggles"],
+    "challenges": ["Family problems", "Health issues in family", "Delays in family happiness", "Feeling burdened"],
+    "career": "Helping professions dealing with difficult situations, family services in challenging areas",
+    "relationship": "Very loyal but relationships may face many challenges. Needs extremely patient partner.",
+    "compatibility_score": 4
+  },
+  "6-9": {
+    "type": "friendly",
+    "title": "Universal Caregiver",
+    "description": "Beautiful combination of family love (6) and universal love (9). You care for humanity like family.",
+    "strengths": ["Universal caring", "Compassionate", "Public service", "Healing presence", "Selfless nature"],
+    "challenges": ["May neglect own family while helping others", "Taking too much responsibility", "Emotional exhaustion"],
+    "career": "Healthcare for masses, social services, charity work, teaching, hospitality for service",
+    "relationship": "Caring and compassionate but may prioritize service. Needs understanding partner.",
+    "compatibility_score": 9
+  },
+  "7-1": {
+    "type": "opposite",
+    "title": "Spiritual Warrior",
+    "description": "Difficult combination where spiritual seeking (7) conflicts with worldly leadership (1). Internal confusion about purpose.",
+    "strengths": ["Unique insights", "Spiritual leadership potential", "Analytical thinking", "Independence"],
+    "challenges": ["Internal conflict", "Confusion about path", "Isolation", "Difficulty trusting", "Pessimism"],
+    "career": "Spiritual teaching, research leadership, analytical leadership, solitary professions",
+    "relationship": "Difficulty opening up. Conflicted between independence and spiritual connection. Needs very understanding partner.",
+    "compatibility_score": 3
+  },
+  "7-2": {
+    "type": "neutral",
+    "title": "Intuitive Mystic",
+    "description": "Spiritual seeking (7) with emotional sensitivity (2). Deep intuition and psychic abilities but struggle with worldly life.",
+    "strengths": ["Exceptional intuition", "Psychic abilities", "Spiritual empathy", "Healing potential"],
+    "challenges": ["Extreme sensitivity", "Social isolation", "Depression tendency", "Difficulty with practical life"],
+    "career": "Spiritual counseling, psychic work, deep healing, mysticism, solitary creative work",
+    "relationship": "Difficulty opening up and trusting. Needs extremely patient and spiritual partner.",
+    "compatibility_score": 5
+  },
+  "7-3": {
+    "type": "neutral",
+    "title": "Spiritual Creative",
+    "description": "Spiritual seeking (7) with creative expression (3). You create from spiritual insights but may struggle between solitude and expression.",
+    "strengths": ["Spiritual creativity", "Unique artistic vision", "Philosophical thinking", "Originality"],
+    "challenges": ["Internal conflict between expression and solitude", "Difficulty with commercial success", "Isolation"],
+    "career": "Spiritual arts, mystical writing, philosophical creativity, research-based creative work",
+    "relationship": "Complex - needs both connection and solitude. Needs very understanding partner.",
+    "compatibility_score": 6
+  },
+  "7-4": {
+    "type": "opposite",
+    "title": "Spiritual vs Material",
+    "description": "Challenging combination where spiritual seeking (7) conflicts with practical focus (4). Confusion between spiritual and material goals.",
+    "strengths": ["Analytical depth", "Research abilities", "Systematic spiritual practice"],
+    "challenges": ["Internal conflict", "Confusion", "Isolation", "Trust issues", "Rigid spiritual beliefs", "Pessimism"],
+    "career": "Spiritual research, technical analysis in spiritual fields, solitary systematic work",
+    "relationship": "Extreme difficulty opening up. Trust issues. Needs extraordinarily patient partner.",
+    "compatibility_score": 3
+  },
+  "7-5": {
+    "type": "neutral",
+    "title": "Wandering Seeker",
+    "description": "Spiritual seeking (7) with restless energy (5). External wandering and internal seeking - searching for meaning everywhere.",
+    "strengths": ["Philosophical thinking", "Learning from diverse experiences", "Unique perspectives"],
+    "challenges": ["Feeling lost", "Lack of direction", "Isolation despite social exploration", "Addictive tendencies"],
+    "career": "Spiritual travel, teaching through experiences, philosophical freelancing, unconventional spiritual paths",
+    "relationship": "Difficulty with commitment and deep connection. Needs understanding partner who gives freedom.",
+    "compatibility_score": 4
+  },
+  "7-6": {
+    "type": "neutral",
+    "title": "Spiritual Caregiver",
+    "description": "Spiritual seeking (7) with family responsibility (6). Internal conflict between spiritual solitude and family duties.",
+    "strengths": ["Spiritual healing", "Deep caring", "Intuitive understanding", "Holistic health approach"],
+    "challenges": ["Internal conflict", "Feeling burdened by family while seeking solitude", "Trust issues in family"],
+    "career": "Spiritual healing, deep counseling, family therapy, holistic health, mystical caregiving",
+    "relationship": "Caring but needs alone time. May withdraw emotionally. Needs understanding partner.",
+    "compatibility_score": 6
+  },
+  "7-7": {
+    "type": "friendly",
+    "title": "Ultimate Seeker",
+    "description": "Double spiritual energy. Deeply spiritual and introspective but extreme isolation and difficulty with worldly life.",
+    "strengths": ["Deep spiritual insights", "Mystical abilities", "Analytical depth", "Research excellence", "Wisdom"],
+    "challenges": ["Extreme isolation", "Depression", "Difficulty with worldly life", "Trust issues", "Pessimism", "Health issues"],
+    "career": "Spiritual teaching, research, mysticism, solitary professions, deep analytical work",
+    "relationship": "Extreme difficulty with relationships. Prefers solitude. Needs spiritual partner who understands need for space.",
+    "compatibility_score": 5
+  },
+  "7-8": {
+    "type": "opposite",
+    "title": "Spiritual Suffering",
+    "description": "Very difficult combination where spiritual seeking (7) faces constant obstacles (8). Deep suffering but potential for profound spiritual growth.",
+    "strengths": ["Spiritual depth through suffering", "Wisdom from challenges", "Potential for enlightenment"],
+    "challenges": ["Extreme difficulties", "Isolation", "Depression", "Health issues", "Feeling abandoned", "Trust issues"],
+    "career": "Spiritual teaching after overcoming suffering, deep healing from personal experience, mystical paths",
+    "relationship": "Extreme difficulty with relationships. Needs extraordinarily patient and spiritual partner.",
+    "compatibility_score": 2
+  },
+  "7-9": {
+    "type": "neutral",
+    "title": "Spiritual Humanitarian",
+    "description": "Spiritual seeking (7) with universal compassion (9). You seek to help humanity spiritually but may struggle with isolation vs service.",
+    "strengths": ["Spiritual wisdom", "Compassionate teaching", "Mystical healing", "Universal love"],
+    "challenges": ["Internal conflict between solitude and service", "Difficulty with practical service", "Isolation"],
+    "career": "Spiritual teaching, mystical healing, philosophical service, meditation teaching, spiritual counseling",
+    "relationship": "Compassionate but needs solitude. Needs spiritual partner who understands both service and space needs.",
+    "compatibility_score": 7
+  },
+  "8-1": {
+    "type": "opposite",
+    "title": "Leader Under Extreme Pressure",
+    "description": "Very challenging where leadership ambitions (1) face constant obstacles (8). Life of extreme struggle but potential for great success through persistence.",
+    "strengths": ["Extreme resilience", "Strength under pressure", "Determination", "Material success potential"],
+    "challenges": ["Constant obstacles", "Delays", "Frustration", "Health issues", "Father issues", "Relationship problems"],
+    "career": "Roles requiring extreme persistence, turnaround leadership, dealing with extreme challenges",
+    "relationship": "Very difficult due to stress and obstacles. Needs extraordinarily supportive and patient partner.",
+    "compatibility_score": 3
+  },
+  "8-2": {
+    "type": "opposite",
+    "title": "Emotional Suffering",
+    "description": "Very difficult where emotional sensitivity (2) faces constant obstacles (8). Deep emotional pain but potential for healing others through your experience.",
+    "strengths": ["Emotional depth from suffering", "Healing others from personal experience", "Spiritual potential"],
+    "challenges": ["Emotional pain", "Relationship delays", "Health issues", "Feeling abandoned", "Depression", "Trust issues"],
+    "career": "Healing professions after personal healing, counseling from life experience, deep therapy work",
+    "relationship": "Very difficult relationships due to past hurts. Needs extremely patient and loyal partner.",
+    "compatibility_score": 3
+  },
+  "8-3": {
+    "type": "opposite",
+    "title": "Creative Struggles",
+    "description": "Challenging where creative expression (3) faces obstacles (8). Creative blocks and delays but potential for profound work through persistence.",
+    "strengths": ["Depth in creative work from struggles", "Unique perspective", "Resilience"],
+    "challenges": ["Creative blocks", "Delays in recognition", "Financial struggles", "Health issues", "Frustration"],
+    "career": "Creative work that succeeds through persistence, art from suffering, eventual creative success",
+    "relationship": "Creative joy dampened by challenges. Needs very supportive and patient partner.",
+    "compatibility_score": 4
+  },
+  "8-4": {
+    "type": "opposite",
+    "title": "Double Obstacles",
+    "description": "Extremely difficult where both numbers bring obstacles. Life of extreme challenges but potential for massive material success through extraordinary persistence.",
+    "strengths": ["Extreme resilience", "Ability to handle maximum pressure", "Depth of character", "Material success potential"],
+    "challenges": ["Constant severe obstacles", "Extreme delays", "Health issues", "Relationship problems", "Loneliness", "Frustration"],
+    "career": "Roles requiring extreme persistence, dealing with maximum challenges, turnaround situations",
+    "relationship": "Extremely difficult to maintain relationships. Needs partner with extraordinary patience and loyalty.",
+    "compatibility_score": 2
+  },
+  "8-5": {
+    "type": "opposite",
+    "title": "Freedom Trapped",
+    "description": "Challenging where freedom-loving (5) faces constant obstacles (8). Feeling trapped despite craving freedom.",
+    "strengths": ["Resilience", "Unique experiences from struggles", "Depth of character"],
+    "challenges": ["Feeling trapped", "Frustration", "Delays in desired freedom", "Health issues", "Relationship problems"],
+    "career": "Struggling to find career satisfaction, obstacles in achieving desired lifestyle",
+    "relationship": "Difficult relationships due to feeling trapped. Needs patient partner who provides freedom.",
+    "compatibility_score": 3
+  },
+  "8-6": {
+    "type": "opposite",
+    "title": "Family Under Pressure",
+    "description": "Challenging where family responsibilities (6) face constant obstacles (8). Family struggles but extremely loyal nature.",
+    "strengths": ["Extreme loyalty", "Resilience in family matters", "Deep caring through struggles"],
+    "challenges": ["Family problems", "Health issues in family", "Delays in family happiness", "Feeling heavily burdened"],
+    "career": "Helping professions in difficult situations, family services in challenging circumstances",
+    "relationship": "Extremely loyal but relationships face many challenges. Needs partner with extraordinary patience.",
+    "compatibility_score": 4
+  },
+  "8-7": {
+    "type": "opposite",
+    "title": "Spiritual Trials",
+    "description": "Very difficult where spiritual seeking (7) faces extreme obstacles (8). Deep suffering but highest potential for spiritual enlightenment.",
+    "strengths": ["Profound spiritual depth", "Wisdom from suffering", "Potential for enlightenment", "Mystical abilities"],
+    "challenges": ["Extreme suffering", "Isolation", "Depression", "Health issues", "Feeling abandoned by everything", "Trust issues"],
+    "career": "Spiritual teaching after overcoming extreme suffering, mystical healing, profound spiritual work",
+    "relationship": "Extreme difficulty with relationships. Needs extraordinarily spiritual and patient partner.",
+    "compatibility_score": 2
+  },
+  "8-8": {
+    "type": "opposite",
+    "title": "Maximum Karma",
+    "description": "Extremely challenging where both driver and conductor bring obstacles. Life of maximum challenges but potential for extraordinary material and spiritual success.",
+    "strengths": ["Extreme resilience", "Handling maximum adversity", "Potential for massive success", "Depth of character"],
+    "challenges": ["Maximum obstacles in all areas", "Delays", "Health issues", "Relationship problems", "Loneliness", "Extreme frustration"],
+    "career": "Eventual success in extremely challenging fields, massive turnarounds, roles requiring superhuman persistence",
+    "relationship": "Extremely difficult relationships. Needs partner with superhuman patience, loyalty, and understanding.",
+    "compatibility_score": 1
+  },
+  "8-9": {
+    "type": "neutral",
+    "title": "Challenged Humanitarian",
+    "description": "Universal compassion (9) facing obstacles (8). You want to help humanity but face many challenges in doing so.",
+    "strengths": ["Compassion through suffering", "Helping others from personal experience", "Resilience in service"],
+    "challenges": ["Obstacles in service", "Delays in achieving mission", "Health issues", "Frustration"],
+    "career": "Service work with challenges, helping marginalized communities, social work in difficult areas",
+    "relationship": "Compassionate but life challenges may affect relationships. Needs very supportive partner.",
+    "compatibility_score": 5
+  },
+  "9-1": {
+    "type": "friendly",
+    "title": "Warrior Leader",
+    "description": "Powerful combination of universal compassion (9) and leadership (1). You lead with courage to help humanity.",
+    "strengths": ["Visionary leadership", "Courage", "Compassion", "Public appeal", "Inspirational", "Idealism"],
+    "challenges": ["Can be aggressive", "Impulsive", "May neglect personal life for mission", "Difficulty with details"],
+    "career": "Political leadership, armed forces, non-profit leadership, social activism, public service",
+    "relationship": "Passionate and caring but may prioritize mission. Best with understanding partners.",
+    "compatibility_score": 8
+  },
+  "9-2": {
+    "type": "friendly",
+    "title": "Gentle Helper",
+    "description": "Beautiful combination of universal compassion (9) and emotional sensitivity (2). You help humanity with deep emotional care.",
+    "strengths": ["Maximum compassion", "Emotional generosity", "Healing presence", "Universal empathy", "Selfless service"],
+    "challenges": ["May neglect personal needs completely", "Emotional exhaustion", "Difficulty with boundaries"],
+    "career": "Counseling for masses, social services, healing work, charity, emotional support for communities",
+    "relationship": "Deeply caring but may prioritize service over personal relationships. Needs understanding partner.",
+    "compatibility_score": 8
+  },
+  "9-3": {
+    "type": "friendly",
+    "title": "Joyful Humanitarian",
+    "description": "Excellent combination of universal love (9) and creative expression (3). You inspire and uplift humanity through creative means.",
+    "strengths": ["Inspirational creativity", "Public appeal", "Joyful service", "Teaching masses", "Optimism", "Communication"],
+    "challenges": ["Scattered energy", "May neglect personal needs", "Financial instability", "Difficulty with focus"],
+    "career": "Entertainment with social message, inspirational teaching, motivational speaking, creative social work",
+    "relationship": "Warm and generous but may prioritize mission. Best with understanding and supportive partners.",
+    "compatibility_score": 8
+  },
+  "9-4": {
+    "type": "neutral",
+    "title": "Organized Helper",
+    "description": "Universal compassion (9) with practical discipline (4). You serve humanity in systematic, organized ways.",
+    "strengths": ["Systematic service", "Organized compassion", "Practical helping", "Reliable support for causes"],
+    "challenges": ["May be rigid in helping", "Internal tension", "Difficulty with spontaneous generosity"],
+    "career": "Non-profit administration, organized charity, systematic social service, practical helping professions",
+    "relationship": "Caring in practical ways. Good compatibility with service-oriented and grounded partners.",
+    "compatibility_score": 7
+  },
+  "9-5": {
+    "type": "friendly",
+    "title": "Global Servant",
+    "description": "Universal love (9) with freedom and versatility (5). You serve humanity globally through diverse, dynamic means.",
+    "strengths": ["Global perspective", "Diverse helping", "Adaptable service", "Connecting cultures", "Universal appeal"],
+    "challenges": ["Lack of focus in service", "Scattered energy", "Commitment issues", "Financial instability"],
+    "career": "International NGO work, global service travel, diverse social work, multicultural humanitarian projects",
+    "relationship": "Generous but needs freedom. Best with independent partners who share humanitarian values.",
+    "compatibility_score": 7
+  },
+  "9-6": {
+    "type": "friendly",
+    "title": "Family of Humanity",
+    "description": "Beautiful combination where you treat humanity (9) like family (6). Maximum caring and nurturing energy for all.",
+    "strengths": ["Universal caring", "Maximum compassion", "Healing presence", "Selfless service", "Love for all"],
+    "challenges": ["May neglect own family while helping world", "Taking too much responsibility", "Emotional exhaustion"],
+    "career": "Healthcare for masses, large-scale social services, charity leadership, teaching for service",
+    "relationship": "Extremely caring but may prioritize service. Needs very understanding partner who shares values.",
+    "compatibility_score": 9
+  },
+  "9-7": {
+    "type": "neutral",
+    "title": "Spiritual Teacher",
+    "description": "Universal compassion (9) with spiritual wisdom (7). You teach spiritual truths to humanity but may struggle with isolation vs service.",
+    "strengths": ["Spiritual wisdom", "Compassionate teaching", "Mystical healing", "Deep insights", "Universal love"],
+    "challenges": ["Internal conflict between solitude and service", "Difficulty with worldly service", "Isolation"],
+    "career": "Spiritual teaching, mystical healing, philosophical service, meditation teaching, wisdom sharing",
+    "relationship": "Compassionate but needs solitude. Needs spiritual partner who understands service and space needs.",
+    "compatibility_score": 7
+  },
+  "9-8": {
+    "type": "neutral",
+    "title": "Suffering Servant",
+    "description": "Universal compassion (9) facing obstacles (8). You want to help humanity but face many challenges in your service.",
+    "strengths": ["Compassion through personal suffering", "Helping others from experience", "Resilience in service"],
+    "challenges": ["Obstacles in service", "Delays in mission", "Health issues", "Frustration", "Emotional pain"],
+    "career": "Service in challenging circumstances, helping marginalized communities, social work in difficult areas",
+    "relationship": "Compassionate but challenges may affect relationships. Needs extraordinarily supportive partner.",
+    "compatibility_score": 5
+  },
+  "9-9": {
+    "type": "friendly",
+    "title": "Universal Warrior",
+    "description": "Double universal energy. Maximum compassion, courage, and desire to serve humanity. Can inspire masses but may neglect personal life.",
+    "strengths": ["Maximum compassion", "Exceptional courage", "Public appeal", "Inspirational", "Selfless service", "Visionary"],
+    "challenges": ["Can be aggressive in service", "Impulsive", "May completely neglect personal needs", "Anger issues"],
+    "career": "Large-scale social leadership, armed forces, political activism, revolutionary work, mass movements",
+    "relationship": "Passionate about causes which may overshadow personal relationships. Needs very understanding partner.",
+    "compatibility_score": 7
+  }
+}

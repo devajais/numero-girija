@@ -1,0 +1,156 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Making Lo Shu Grid - Numero Girija">
+    <div class="card">
+        <h2 class="section-title">How to Make a Lo Shu Grid</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Learn the step-by-step process of creating a Lo Shu Grid from any date of birth. This ancient 3x3 grid reveals personality patterns and life path information.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3 style="color: #2d1b69; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">📋 The Lo Shu Grid Structure</h3>
+        <div style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 250px; margin: 0 auto;">
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">4</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">9</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">2</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">3</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">5</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">7</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">8</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">1</div>
+                </div>
+                <div style="background: white; padding: 15px; text-align: center; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #2d1b69;">6</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: #666; font-size: 0.8rem; margin-top: 12px;">
+                This is the fixed structure - numbers 1-9 always go in these positions
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 style="color: #2d1b69; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">📝 Step-by-Step Process</h3>
+
+        <div style="margin-bottom: 15px;">
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 15px; border-radius: 12px; border-left: 4px solid #3b82f6; margin-bottom: 12px;">
+                <h4 style="color: #3b82f6; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">Step 1: Extract Digits from Date of Birth</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px;">
+                    Example DOB: <strong>15-08-1947</strong>
+                </p>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 6px;">
+                    <li style="color: #555; font-size: 0.85rem; padding-left: 20px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #3b82f6;">•</span>
+                        Day: 15 → <strong>1, 5</strong>
+                    </li>
+                    <li style="color: #555; font-size: 0.85rem; padding-left: 20px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #3b82f6;">•</span>
+                        Month: 08 → <strong>8</strong> (ignore zeros)
+                    </li>
+                    <li style="color: #555; font-size: 0.85rem; padding-left: 20px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #3b82f6;">•</span>
+                        Year: 1947 → <strong>1, 9, 4, 7</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fef9e7, #fef3c7); padding: 15px; border-radius: 12px; border-left: 4px solid #f59e0b; margin-bottom: 12px;">
+                <h4 style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">Step 2: Calculate Driver Number</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px;">
+                    Add digits of day until single digit:
+                </p>
+                <p style="color: #555; font-size: 0.85rem; padding: 10px; background: white; border-radius: 8px; text-align: center; font-family: monospace;">
+                    15 → 1 + 5 = <strong style="color: #f59e0b; font-size: 1.2rem;">6</strong>
+                </p>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">
+                    Driver Number = <strong style="color: #f59e0b;">6</strong> (represents your personality)
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 15px; border-radius: 12px; border-left: 4px solid #33cc33; margin-bottom: 12px;">
+                <h4 style="color: #33cc33; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">Step 3: Calculate Conductor Number</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px;">
+                    Add ALL digits (day + month + year) until single digit:
+                </p>
+                <p style="color: #555; font-size: 0.85rem; padding: 10px; background: white; border-radius: 8px; text-align: center; font-family: monospace;">
+                    1 + 5 + 8 + 1 + 9 + 4 + 7 = 35<br>
+                    3 + 5 = <strong style="color: #33cc33; font-size: 1.2rem;">8</strong>
+                </p>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">
+                    Conductor Number = <strong style="color: #33cc33;">8</strong> (represents your destiny)
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 15px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                <h4 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;">Step 4: Fill the Grid</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px;">
+                    Count frequency of each number 1-9:
+                </p>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 6px;">
+                    <li style="color: #555; font-size: 0.85rem; padding-left: 20px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #dc2626;">•</span>
+                        Numbers present: <strong>1 (×2), 4, 5, 6, 7, 8, 9</strong>
+                    </li>
+                    <li style="color: #555; font-size: 0.85rem; padding-left: 20px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #dc2626;">•</span>
+                        Numbers missing: <strong>2, 3</strong>
+                    </li>
+                </ul>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">
+                    Mark present numbers in their grid positions and note missing numbers
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff);">
+        <h3 style="color: #6b3fa0; font-size: 1rem; margin-bottom: 12px; font-weight: 600;">🔍 What to Analyze</h3>
+        <div style="display: grid; gap: 10px;">
+            <div style="background: white; padding: 12px; border-radius: 10px;">
+                <strong style="color: #2d1b69; font-size: 0.85rem;">1. Driver & Conductor:</strong>
+                <span style="color: #666; font-size: 0.85rem;"> Your core personality and destiny numbers</span>
+            </div>
+            <div style="background: white; padding: 12px; border-radius: 10px;">
+                <strong style="color: #2d1b69; font-size: 0.85rem;">2. Present Numbers:</strong>
+                <span style="color: #666; font-size: 0.85rem;"> Strengths and available energies</span>
+            </div>
+            <div style="background: white; padding: 12px; border-radius: 10px;">
+                <strong style="color: #2d1b69; font-size: 0.85rem;">3. Missing Numbers:</strong>
+                <span style="color: #666; font-size: 0.85rem;"> Challenges and areas needing remedies</span>
+            </div>
+            <div style="background: white; padding: 12px; border-radius: 10px;">
+                <strong style="color: #2d1b69; font-size: 0.85rem;">4. Repetitive Numbers:</strong>
+                <span style="color: #666; font-size: 0.85rem;"> Amplified energies (2x, 3x, 4x+)</span>
+            </div>
+            <div style="background: white; padding: 12px; border-radius: 10px;">
+                <strong style="color: #2d1b69; font-size: 0.85rem;">5. Planes & Arrows:</strong>
+                <span style="color: #666; font-size: 0.85rem;"> Mental, emotional, practical patterns</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="text-align: center; background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Ready to create your own Lo Shu Grid?</p>
+        <a href={`${base}grid/`} class="btn">Calculate My Grid Now</a>
+    </div>
+</Layout>

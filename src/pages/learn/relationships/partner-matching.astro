@@ -1,0 +1,152 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Partner Matching Guide - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / <a href={`${base}learn/relationships/`}>Relationships</a> / Partner Matching
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">💕 Partner Matching Guide</h1>
+
+        <div class="intro">
+            <p>Finding the right partner involves checking numerical compatibility at multiple levels. This guide will help you systematically evaluate potential partners using numerology.</p>
+        </div>
+
+        <div class="steps-section">
+            <h2>Step-by-Step Matching Process</h2>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Calculate Both Drivers</h3>
+                    <p>Reduce birth date to single digit (e.g., 18th = 1+8 = 9)</p>
+                    <p><strong>Score:</strong> Friends = 30 points, Neutral = 15, Enemies = 0</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Calculate Both Conductors</h3>
+                    <p>Add full DOB and reduce (e.g., 18-05-1990 = 1+8+0+5+1+9+9+0 = 33 = 6)</p>
+                    <p><strong>Score:</strong> Friends = 25 points, Neutral = 12, Enemies = 0</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Check Name Numbers</h3>
+                    <p>Calculate Chaldean name numbers for both</p>
+                    <p><strong>Score:</strong> Compatible = 20 points, Neutral = 10, Incompatible = 0</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Analyze Grid Complementarity</h3>
+                    <p>Check if missing numbers in one are present in other</p>
+                    <p><strong>Score:</strong> High complement = 15 points, Some = 7, None = 0</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Current Personal Years</h3>
+                    <p>Check if both are in favorable cycles for relationship</p>
+                    <p><strong>Score:</strong> Both favorable = 10 points, One = 5, Neither = 0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scoring">
+            <h2>Compatibility Scoring</h2>
+            <div class="score-card excellent">
+                <h3>90-100 Points: Excellent Match</h3>
+                <p>Natural harmony, long-term potential, minimal effort needed</p>
+            </div>
+            <div class="score-card good">
+                <h3>70-89 Points: Good Match</h3>
+                <p>Workable with understanding, complementary strengths</p>
+            </div>
+            <div class="score-card fair">
+                <h3>50-69 Points: Fair Match</h3>
+                <p>Requires effort, use remedies for balance</p>
+            </div>
+            <div class="score-card challenging">
+                <h3>Below 50: Challenging</h3>
+                <p>Significant work needed, consider if ready for this journey</p>
+            </div>
+        </div>
+
+        <div class="quick-reference">
+            <h2>Quick Compatibility Reference</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Your Driver</th>
+                        <th>Best Matches</th>
+                        <th>Good Matches</th>
+                        <th>Avoid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>1, 3, 9</td><td>2, 5, 7</td><td>8</td></tr>
+                    <tr><td>2</td><td>1, 7, 9</td><td>3, 5, 6</td><td>4, 8</td></tr>
+                    <tr><td>3</td><td>1, 3, 6, 9</td><td>2, 5</td><td>4, 8</td></tr>
+                    <tr><td>4</td><td>5, 6, 8</td><td>1, 7</td><td>3, 9</td></tr>
+                    <tr><td>5</td><td>1, 3, 5, 6</td><td>2, 4</td><td>8, 9</td></tr>
+                    <tr><td>6</td><td>3, 6, 8, 9</td><td>4, 5</td><td>1</td></tr>
+                    <tr><td>7</td><td>2, 7, 9</td><td>1, 4, 5</td><td>-</td></tr>
+                    <tr><td>8</td><td>4, 5, 6, 8</td><td>2, 7</td><td>1, 3, 9</td></tr>
+                    <tr><td>9</td><td>1, 2, 3, 9</td><td>6, 7</td><td>4, 8</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="next-steps">
+            <h3>Continue Learning</h3>
+            <div class="next-links">
+                <a href={`${base}learn/relationships/name-numbers/`} class="next-link">
+                    <span>Next: Name Numbers →</span>
+                </a>
+                <a href={`${base}compatibility/`} class="next-link">
+                    <span>Use Compatibility Tool →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 20px; font-weight: 500; }
+        .breadcrumb a { color: #6b3fa0; text-decoration: none; }
+        .intro p { color: #444; font-size: 0.95rem; line-height: 1.8; margin-bottom: 20px; }
+        .steps-section h2, .scoring h2, .quick-reference h2 { color: #2d1b69; font-size: 1.3rem; font-weight: 800; margin: 30px 0 20px; }
+        .step { display: flex; gap: 20px; background: white; border: 2px solid #e8e8e8; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .step-number { background: linear-gradient(135deg, #2d1b69, #6b3fa0); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; flex-shrink: 0; }
+        .step-content h3 { color: #2d1b69; font-size: 1rem; margin-bottom: 8px; font-weight: 700; }
+        .step-content p { color: #444; font-size: 0.85rem; line-height: 1.6; margin-bottom: 6px; }
+        .score-card { border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .score-card.excellent { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #10b981; }
+        .score-card.good { background: linear-gradient(135deg, #fef9e7, #fef3c7); border: 2px solid #f59e0b; }
+        .score-card.fair { background: linear-gradient(135deg, #e0f2fe, #bae6fd); border: 2px solid #0284c7; }
+        .score-card.challenging { background: linear-gradient(135deg, #fff5f5, #ffe5e5); border: 2px solid #ef4444; }
+        .score-card h3 { color: #2d1b69; font-size: 1rem; margin-bottom: 8px; font-weight: 800; }
+        .score-card p { color: #444; font-size: 0.85rem; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 12px; overflow: hidden; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e8e8e8; }
+        th { background: #6b3fa0; color: white; font-weight: 700; font-size: 0.85rem; }
+        td { font-size: 0.85rem; color: #444; }
+        .next-steps { background: linear-gradient(135deg, #fff9e5, #ffedd5); border: 2px solid #f59e0b; border-radius: 16px; padding: 24px; margin-top: 40px; }
+        .next-steps h3 { color: #f59e0b; font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; }
+        .next-links { display: flex; flex-direction: column; gap: 12px; }
+        .next-link { background: white; border: 2px solid #f59e0b; border-radius: 10px; padding: 14px 18px; text-decoration: none; color: #f59e0b; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; text-align: center; }
+        .next-link:hover { background: #f59e0b; color: white; transform: translateX(4px); }
+        @media (min-width: 768px) { .next-links { flex-direction: row; } }
+    </style>
+</Layout>

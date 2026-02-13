@@ -1,0 +1,128 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Numbers 1-9 - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / Numbers 1-9
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">🔢 Numbers 1-9</h1>
+        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">
+            Each number from 1 to 9 carries unique vibrations and meanings. Explore their characteristics, planetary associations, and how they influence personality and life patterns.
+        </p>
+
+        <div class="topics-list">
+            <a href={`${base}learn/numbers/meanings/`} class="topic-card">
+                <div class="topic-icon">✨</div>
+                <div class="topic-content">
+                    <h3>Number Meanings (1-9)</h3>
+                    <p>Complete reference guide: planets, traits, careers, and characteristics of each number</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/numbers/personal-numbers/`} class="topic-card">
+                <div class="topic-icon">👤</div>
+                <div class="topic-content">
+                    <h3>Personal Numbers Explained</h3>
+                    <p>Understanding Driver, Conductor, and Personal Year numbers in depth</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/numbers/missing/`} class="topic-card">
+                <div class="topic-icon">🔴</div>
+                <div class="topic-content">
+                    <h3>Missing Numbers & Remedies</h3>
+                    <p>Challenges from missing numbers and powerful solutions to strengthen them</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/numbers/repetitive/`} class="topic-card">
+                <div class="topic-icon">🔁</div>
+                <div class="topic-content">
+                    <h3>Repetitive Numbers Impact</h3>
+                    <p>Effects of having numbers appear 2x, 3x, or 4x+ times in your grid</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .topics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .topic-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fafafa;
+            border: 2px solid #e8e8e8;
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateX(4px);
+            border-color: #6b3fa0;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-content h3 {
+            color: #2d1b69;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .topic-content p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #6b3fa0;
+            font-size: 2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</Layout>

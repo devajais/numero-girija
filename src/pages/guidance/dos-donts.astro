@@ -1,0 +1,107 @@
+---
+import Layout from '../../components/Layout.astro';
+import dosdontsData from '../../data/guidance/dos-donts.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Do's & Don'ts by Number - Numero Girija">
+    <div id="personalSection"></div>
+
+    <div class="card">
+        <h2 class="section-title">Do's & Don'ts by Driver Number</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+            Each Driver number has specific do's and don'ts to maximize positive energy and minimize challenges. Follow these guidelines based on your Driver number for a more harmonious life.
+        </p>
+    </div>
+
+    {Object.entries(dosdontsData).map(([num, data]) => (
+        <div class="card" id={`driver-${num}`}>
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <div class="number-badge">{num}</div>
+                <div>
+                    <h3 style="color: #2d1b69; font-size: 1.2rem;">Driver Number {num}</h3>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #33cc33;">
+                <h4 style="color: #33cc33; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">✅ Do's</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+                    {data.dos.map(item => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem; line-height: 1.5;">
+                            <span style="position: absolute; left: 0; color: #33cc33; font-weight: bold;">✓</span>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 15px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                <h4 style="color: #dc2626; font-size: 0.95rem; margin-bottom: 10px; font-weight: 600;">❌ Don'ts</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+                    {data.donts.map(item => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem; line-height: 1.5;">
+                            <span style="position: absolute; left: 0; color: #dc2626; font-weight: bold;">✗</span>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    ))}
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); text-align: center;">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Want to know your Driver number?</p>
+        <a href={`${base}grid/`} class="btn">Calculate Your Lo Shu Grid</a>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        document.head.appendChild(script);
+    </script>
+    <script is:inline>
+        const dob = sessionStorage.getItem('userDOB');
+        if (dob) {
+            const data = calculateLoShuChart(dob);
+
+            document.getElementById('personalSection').innerHTML = `
+                <div class="card" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-left: 4px solid #3b82f6;">
+                    <h2 style="color: #3b82f6; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700;">
+                        Your Personalized Guidance
+                    </h2>
+
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">Your Driver Number</div>
+                        <div style="display: inline-flex; width: 80px; height: 80px; background: linear-gradient(135deg, #2d1b69, #6b3fa0); color: white; border-radius: 16px; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; box-shadow: 0 4px 15px rgba(107, 63, 160, 0.4);">
+                            ${data.driver}
+                        </div>
+                    </div>
+
+                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; text-align: center; margin-bottom: 15px;">
+                        Scroll down to see personalized do's and don'ts for your Driver number ${data.driver}, or jump directly:
+                    </p>
+
+                    <a href="#driver-${data.driver}" class="btn">
+                        View Guidelines for Driver ${data.driver}
+                    </a>
+                </div>
+            `;
+        }
+    </script>
+
+    <style>
+        .number-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+    </style>
+</Layout>

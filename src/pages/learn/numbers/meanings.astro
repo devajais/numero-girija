@@ -1,0 +1,96 @@
+---
+import Layout from '../../../components/Layout.astro';
+import basicMeanings from '../../../data/numbers/basic-meanings.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Number Meanings 1-9 - Numero Girija">
+    <div class="card">
+        <h2 class="section-title">Number Meanings (1-9)</h2>
+        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+            Each number from 1 to 9 carries unique energies governed by specific planets. Understanding these meanings helps you interpret your Lo Shu Grid chart.
+        </p>
+    </div>
+
+    {Object.entries(basicMeanings).map(([num, data]) => (
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <div class="number-badge">{num}</div>
+                <div>
+                    <h3 style="color: #2d1b69; font-size: 1.2rem; margin-bottom: 5px;">{data.planet}</h3>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <span style="background: linear-gradient(135deg, #f0ebff, #e8dff5); color: #6b3fa0; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">
+                            {data.element}
+                        </span>
+                        <span style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); color: #dc2626; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">
+                            {data.quality}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">{data.description}</p>
+
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2d1b69; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">✅ Positive Traits</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 6px;">
+                    {data.positive_traits.map(trait => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem;">
+                            <span style="position: absolute; left: 0; color: #33cc33;">•</span>
+                            {trait}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2d1b69; font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">⚠️ Challenges</h4>
+                <ul style="list-style: none; padding: 0; display: grid; gap: 6px;">
+                    {data.negative_traits.map(trait => (
+                        <li style="padding-left: 20px; position: relative; color: #555; font-size: 0.85rem;">
+                            <span style="position: absolute; left: 0; color: #dc2626;">•</span>
+                            {trait}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); padding: 12px; border-radius: 10px; margin-bottom: 10px;">
+                <h4 style="color: #2d1b69; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">💼 Career Fields</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.5;">{data.career_fields.join(', ')}</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); padding: 12px; border-radius: 10px;">
+                <h4 style="color: #dc2626; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">🏥 Health Aspects</h4>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.5;">{data.health_aspects}</p>
+            </div>
+
+            <div style="margin-top: 12px; padding: 12px; background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-radius: 10px; border-left: 4px solid #3b82f6;">
+                <p style="color: #555; font-size: 0.85rem; font-style: italic; line-height: 1.5;">
+                    <strong style="color: #3b82f6;">Life Lesson:</strong> {data.life_lesson}
+                </p>
+            </div>
+        </div>
+    ))}
+
+    <div class="card" style="background: linear-gradient(135deg, #f9f5ff, #f0ebff); text-align: center;">
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Want to see which numbers are present or missing in your chart?</p>
+        <a href={`${base}grid/`} class="btn">View Your Lo Shu Grid</a>
+    </div>
+
+    <style>
+        .number-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2d1b69 0%, #6b3fa0 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+        }
+    </style>
+</Layout>

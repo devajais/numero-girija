@@ -1,0 +1,704 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+
+const lifestyleGuide = {
+    1: {
+        favorable: {
+            colors: ["Red", "Orange", "Golden", "Yellow"],
+            days: ["Sunday"],
+            directions: "East, North-East",
+            foods: "Wheat, jaggery, saffron, almonds, warm spices",
+            activities: "Leadership roles, government work, gold dealings, medicine",
+            numbers: [1, 2, 3, 9]
+        },
+        avoid: {
+            colors: ["Black", "Dark Blue", "Dark Grey"],
+            days: ["Saturday"],
+            conflicts: "Avoid partnerships with number 8",
+            negativity: "Pride, ego, dominating behavior, overspending"
+        },
+        donations: "Wheat, jaggery, copper, ruby, red clothes on Sundays",
+        fasting: "Fast on Sundays, eat after sunset",
+        habits: ["Wake up early to see sunrise", "Practice Surya Namaskar", "Spend time in sunlight", "Meditate facing east"]
+    },
+    2: {
+        favorable: {
+            colors: ["White", "Cream", "Light Green", "Silver"],
+            days: ["Monday"],
+            directions: "North-West",
+            foods: "Rice, milk, curd, white foods, coconut, cucumber",
+            activities: "Nursing, teaching, hospitality, water-related business, dairy",
+            numbers: [1, 2, 7, 9]
+        },
+        avoid: {
+            colors: ["Red", "Dark colors"],
+            days: ["Tuesday"],
+            conflicts: "Avoid direct conflict with number 9",
+            negativity: "Over-emotional reactions, mood swings, dependency"
+        },
+        donations: "White rice, milk, pearl, white clothes on Mondays",
+        fasting: "Fast on Mondays, break with fruits and milk",
+        habits: ["Spend time near water", "Practice moon meditation", "Keep plants at home", "Maintain emotional diary"]
+    },
+    3: {
+        favorable: {
+            colors: ["Yellow", "Golden", "Purple", "Light Brown"],
+            days: ["Thursday"],
+            directions: "North-East",
+            foods: "Bananas, yellow lentils, turmeric, saffron, ghee, sweets",
+            activities: "Teaching, writing, counseling, banking, law, spirituality",
+            numbers: [1, 2, 3, 6, 9]
+        },
+        avoid: {
+            colors: ["Black", "Dark Blue"],
+            days: ["Saturday"],
+            conflicts: "Be careful with number 5 partnerships",
+            negativity: "Over-optimism, over-spending, scattered energy"
+        },
+        donations: "Yellow clothes, books, turmeric, gold on Thursdays",
+        fasting: "Fast on Thursdays, offer bananas and sweets to deity",
+        habits: ["Read spiritual texts", "Practice gratitude", "Teach or share knowledge", "Maintain discipline"]
+    },
+    4: {
+        favorable: {
+            colors: ["Grey", "Blue", "Electric Blue", "Black"],
+            days: ["Saturday", "Sunday"],
+            directions: "South-West",
+            foods: "Boiled vegetables, grains, sesame, black lentils",
+            activities: "Technology, research, unconventional fields, import-export",
+            numbers: [1, 4, 5, 6]
+        },
+        avoid: {
+            colors: ["Red", "Pink"],
+            days: ["Tuesday"],
+            conflicts: "Difficult with numbers 8 and 9",
+            negativity: "Stubbornness, rebellion, isolation, negative thinking"
+        },
+        donations: "Blue clothes, mustard oil, iron items on Saturdays",
+        fasting: "Fast on Saturdays, eat simple food",
+        habits: ["Practice meditation", "Maintain routine", "Engage in physical work", "Stay grounded"]
+    },
+    5: {
+        favorable: {
+            colors: ["Green", "Light Green", "Parrot Green", "Turquoise"],
+            days: ["Wednesday"],
+            directions: "North",
+            foods: "Green vegetables, leafy greens, moong dal, mint, coriander",
+            activities: "Business, communication, media, accounting, trade, education",
+            numbers: [1, 3, 5, 6]
+        },
+        avoid: {
+            colors: ["Red", "Dark colors"],
+            days: ["Tuesday", "Sunday"],
+            conflicts: "Be cautious with number 9",
+            negativity: "Restlessness, gambling, speculation, nervous tension"
+        },
+        donations: "Green clothes, books, pens, food grains on Wednesdays",
+        fasting: "Fast on Wednesdays, worship Lord Ganesha",
+        habits: ["Practice breathing exercises", "Read daily", "Maintain accounts", "Travel mindfully"]
+    },
+    6: {
+        favorable: {
+            colors: ["White", "Pink", "Light Blue", "Cream"],
+            days: ["Friday"],
+            directions: "South-East",
+            foods: "Rice, white foods, sweets, dairy products, fruits",
+            activities: "Arts, fashion, luxury goods, hospitality, beauty, entertainment",
+            numbers: [4, 5, 6, 8]
+        },
+        avoid: {
+            colors: ["Black", "Dark Brown"],
+            days: ["Saturday"],
+            conflicts: "Challenging with number 1",
+            negativity: "Materialism, laziness, indulgence, vanity"
+        },
+        donations: "White clothes, rice, sugar, perfumes on Fridays",
+        fasting: "Fast on Fridays, offer white flowers",
+        habits: ["Appreciate beauty", "Practice arts", "Maintain harmony at home", "Express love"]
+    },
+    7: {
+        favorable: {
+            colors: ["Purple", "Violet", "Light Green", "White"],
+            days: ["Monday", "Sunday"],
+            directions: "South-West",
+            foods: "Simple vegetarian food, fruits, herbs, medicinal plants",
+            activities: "Research, spirituality, healing, occult, writing, philosophy",
+            numbers: [1, 2, 4, 7]
+        },
+        avoid: {
+            colors: ["Bright Red", "Black"],
+            days: ["Tuesday"],
+            conflicts: "Misunderstandings with number 8",
+            negativity: "Isolation, depression, escapism, substance abuse"
+        },
+        donations: "Books, medicines, spiritual items on Sundays or Mondays",
+        fasting: "Fast on Mondays, practice silent meditation",
+        habits: ["Spend time in nature", "Practice yoga", "Study spiritual texts", "Maintain solitude"]
+    },
+    8: {
+        favorable: {
+            colors: ["Dark Blue", "Black", "Purple", "Dark Grey"],
+            days: ["Saturday"],
+            directions: "West",
+            foods: "Sesame, black lentils, whole grains, simple food",
+            activities: "Real estate, mining, labor, iron/steel, oil, agriculture",
+            numbers: [4, 5, 6, 8]
+        },
+        avoid: {
+            colors: ["Bright colors", "Red", "Yellow"],
+            days: ["Sunday"],
+            conflicts: "Very difficult with numbers 1 and 9",
+            negativity: "Depression, delays, harshness, manipulation"
+        },
+        donations: "Black clothes, iron, mustard oil, shoes to needy on Saturdays",
+        fasting: "Fast on Saturdays, visit Shani temple",
+        habits: ["Practice patience", "Serve the elderly", "Do charity", "Accept delays gracefully"]
+    },
+    9: {
+        favorable: {
+            colors: ["Red", "Maroon", "Pink", "Coral"],
+            days: ["Tuesday"],
+            directions: "South",
+            foods: "Red lentils, spicy food, garlic, ginger, warm foods",
+            activities: "Military, sports, surgery, engineering, police, real estate",
+            numbers: [1, 2, 3, 6, 9]
+        },
+        avoid: {
+            colors: ["Black", "Dark Blue"],
+            days: ["Saturday"],
+            conflicts: "Avoid close partnerships with 8",
+            negativity: "Anger, aggression, impulsiveness, accidents"
+        },
+        donations: "Red clothes, red lentils, copper on Tuesdays",
+        fasting: "Fast on Tuesdays, worship Hanuman or Mars deity",
+        habits: ["Channel energy through sports", "Practice anger management", "Help siblings", "Do physical work"]
+    }
+};
+---
+
+<Layout title="Lifestyle Guidance - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / <a href={`${base}learn/remedies/`}>Remedies</a> / Lifestyle
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">🌟 Lifestyle Guidance by Number</h1>
+
+        <div class="intro-section">
+            <p>
+                Living in harmony with your number's energy can bring success and happiness. Each number has favorable colors, days, directions, foods, and activities that enhance its positive vibrations. Follow these guidelines based on your Driver number (birth date) for best results.
+            </p>
+
+            <div class="tip-box">
+                <h4>💡 How to Use This Guide</h4>
+                <ul>
+                    <li>Focus on your <strong>Driver number</strong> (day of birth reduced to single digit)</li>
+                    <li>Also check your <strong>missing numbers</strong> for remedial practices</li>
+                    <li>Combine multiple remedies for stronger effects</li>
+                    <li>Be consistent - changes take 40-90 days to manifest</li>
+                    <li>Trust your intuition - if something doesn't feel right, modify it</li>
+                </ul>
+            </div>
+        </div>
+
+        {Object.entries(lifestyleGuide).map(([num, guide]) => (
+            <div class="lifestyle-card">
+                <div class="lifestyle-header">
+                    <div class="lifestyle-number">{num}</div>
+                    <h3>Number {num} Lifestyle Guide</h3>
+                </div>
+
+                <div class="lifestyle-content">
+                    <div class="favorable-section">
+                        <h4 class="favorable-title">✅ Favorable & Beneficial</h4>
+
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <div class="detail-label">🎨 Colors</div>
+                                <div class="colors-list">
+                                    {guide.favorable.colors.map(color => (
+                                        <span class="color-badge">{color}</span>
+                                    ))}
+                                </div>
+                                <p class="detail-note">Wear these colors, use in home decor, choose vehicles in these shades</p>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">📅 Lucky Days</div>
+                                <div class="days-list">
+                                    {guide.favorable.days.map(day => (
+                                        <span class="day-badge">{day}</span>
+                                    ))}
+                                </div>
+                                <p class="detail-note">Start new ventures, sign contracts, make important decisions on these days</p>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">🧭 Directions</div>
+                                <p class="detail-text">{guide.favorable.directions}</p>
+                                <p class="detail-note">Face this direction while working, meditating, or sleeping (head towards)</p>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">🍽️ Foods</div>
+                                <p class="detail-text">{guide.favorable.foods}</p>
+                                <p class="detail-note">Include these in your regular diet for health and prosperity</p>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">💼 Career Fields</div>
+                                <p class="detail-text">{guide.favorable.activities}</p>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">🔢 Compatible Numbers</div>
+                                <div class="numbers-list">
+                                    {guide.favorable.numbers.map(n => (
+                                        <span class="number-badge">{n}</span>
+                                    ))}
+                                </div>
+                                <p class="detail-note">Best for partnerships, relationships, collaborations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="avoid-section">
+                        <h4 class="avoid-title">⚠️ Things to Avoid</h4>
+
+                        <div class="avoid-grid">
+                            <div class="avoid-item">
+                                <strong>Colors to Avoid:</strong> {guide.avoid.colors.join(", ")}
+                            </div>
+                            <div class="avoid-item">
+                                <strong>Unfavorable Days:</strong> {guide.avoid.days.join(", ")}
+                            </div>
+                            <div class="avoid-item">
+                                <strong>Conflicts:</strong> {guide.avoid.conflicts}
+                            </div>
+                            <div class="avoid-item">
+                                <strong>Negative Traits to Control:</strong> {guide.avoid.negativity}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practices-section">
+                        <h4 class="practices-title">🙏 Daily Practices</h4>
+
+                        <div class="practice-box donation-box">
+                            <strong>💝 Donations & Charity:</strong>
+                            <p>{guide.donations}</p>
+                        </div>
+
+                        <div class="practice-box fasting-box">
+                            <strong>🌙 Fasting:</strong>
+                            <p>{guide.fasting}</p>
+                        </div>
+
+                        <div class="practice-box habits-box">
+                            <strong>🌱 Recommended Habits:</strong>
+                            <ul>
+                                {guide.habits.map(habit => (
+                                    <li>{habit}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+
+        <div class="universal-tips">
+            <h2>🌍 Universal Lifestyle Tips for All Numbers</h2>
+
+            <div class="universal-card">
+                <h4>Morning Routine</h4>
+                <ul>
+                    <li>Wake up during Brahma Muhurta (1.5 hours before sunrise) if possible</li>
+                    <li>Drink warm water, practice oil pulling</li>
+                    <li>Meditate or chant mantras for 10-15 minutes</li>
+                    <li>Practice gratitude, set intentions for the day</li>
+                    <li>Do light exercise or yoga</li>
+                </ul>
+            </div>
+
+            <div class="universal-card">
+                <h4>Home & Environment</h4>
+                <ul>
+                    <li>Keep your space clean, clutter-free, and well-ventilated</li>
+                    <li>Place plants in your favorable direction</li>
+                    <li>Use favorable colors for main rooms</li>
+                    <li>Play soft music or mantras in the morning</li>
+                    <li>Light a lamp (diya) in the evening</li>
+                </ul>
+            </div>
+
+            <div class="universal-card">
+                <h4>Work & Business</h4>
+                <ul>
+                    <li>Start important work during your favorable time</li>
+                    <li>Sign documents with your lucky pen color</li>
+                    <li>Sit facing your favorable direction</li>
+                    <li>Keep your desk organized and energized</li>
+                    <li>Take breaks every 90 minutes to recharge</li>
+                </ul>
+            </div>
+
+            <div class="universal-card">
+                <h4>Relationships</h4>
+                <ul>
+                    <li>Partner with compatible numbers for business</li>
+                    <li>Check compatibility before marriage or major partnerships</li>
+                    <li>Respect all numbers - each has unique gifts</li>
+                    <li>Practice patience with conflicting numbers</li>
+                    <li>Celebrate differences, find common ground</li>
+                </ul>
+            </div>
+
+            <div class="universal-card">
+                <h4>Health & Wellness</h4>
+                <ul>
+                    <li>Eat according to your number's favorable foods</li>
+                    <li>Practice fasting on your number's day</li>
+                    <li>Exercise regularly - physical activity balances all numbers</li>
+                    <li>Get sunlight exposure daily</li>
+                    <li>Sleep 7-8 hours, maintain consistent schedule</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Continue Learning</h3>
+            <div class="next-links">
+                <a href={`${base}learn/remedies/gemstones/`} class="next-link">
+                    <span>Gemstones Guide →</span>
+                </a>
+                <a href={`${base}learn/remedies/mantras/`} class="next-link">
+                    <span>Mantras & Chants →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .intro-section {
+            margin-bottom: 30px;
+        }
+
+        .intro-section p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border: 2px solid #0284c7;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tip-box h4 {
+            color: #0369a1;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .tip-box ul {
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-left: 20px;
+        }
+
+        .tip-box li {
+            margin-bottom: 8px;
+        }
+
+        .lifestyle-card {
+            background: #ffffff;
+            border: 2px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .lifestyle-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        .lifestyle-number {
+            background: linear-gradient(135deg, #2d1b69, #6b3fa0);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .lifestyle-header h3 {
+            color: #2d1b69;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .lifestyle-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .favorable-section {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .favorable-title {
+            color: #059669;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .detail-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .detail-item {
+            background: white;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #059669;
+            margin-bottom: 8px;
+        }
+
+        .colors-list, .days-list, .numbers-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .color-badge, .day-badge, .number-badge {
+            background: #059669;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .detail-text {
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .detail-note {
+            color: #666;
+            font-size: 0.75rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .avoid-section {
+            background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .avoid-title {
+            color: #dc2626;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .avoid-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .avoid-item {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .avoid-item strong {
+            color: #dc2626;
+        }
+
+        .practices-section {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .practices-title {
+            color: #d97706;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .practice-box {
+            background: white;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .practice-box strong {
+            color: #d97706;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .practice-box p {
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .practice-box ul {
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-left: 20px;
+        }
+
+        .practice-box li {
+            margin-bottom: 6px;
+        }
+
+        .universal-tips {
+            margin-top: 40px;
+        }
+
+        .universal-tips h2 {
+            color: #2d1b69;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .universal-card {
+            background: linear-gradient(135deg, #f9f5ff, #f0ebff);
+            border: 2px solid #6b3fa0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .universal-card h4 {
+            color: #2d1b69;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .universal-card ul {
+            color: #444;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-left: 20px;
+        }
+
+        .universal-card li {
+            margin-bottom: 6px;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #fff9e5, #ffedd5);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        .next-steps h3 {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .next-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .next-link {
+            background: white;
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 14px 18px;
+            text-decoration: none;
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .next-link:hover {
+            background: #f59e0b;
+            color: white;
+            transform: translateX(4px);
+        }
+
+        @media (min-width: 768px) {
+            .next-links {
+                flex-direction: row;
+            }
+        }
+    </style>
+</Layout>

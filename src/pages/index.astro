@@ -1,0 +1,497 @@
+---
+import Layout from '../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Astro Girija - Lo Shu Grid Numerology">
+    <style>
+        /* Premium Paid App Aesthetic */
+        .hero {
+            text-align: center;
+            padding: 60px 24px;
+            margin-bottom: 48px;
+            background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+            border-radius: 0;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: #666666;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: #666666;
+            line-height: 1.8;
+            max-width: 520px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .dob-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 36px 28px;
+            margin-bottom: 48px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .dob-label {
+            display: block;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            letter-spacing: -0.2px;
+        }
+
+        .dob-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 400;
+            color: #1a1a1a;
+            background: #fafafa;
+            transition: all 0.2s;
+        }
+
+        .dob-input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 14px;
+            background: #1a1a1a;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-calculate:hover {
+            background: #000000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-clear {
+            background: #f5f5f5;
+            color: #1a1a1a;
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-clear:hover {
+            background: #ebebeb;
+            border-color: #1a1a1a;
+        }
+
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .feature-card:hover {
+            border-color: #b0b0b0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-title {
+            font-weight: 500;
+            color: #1a1a1a;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666666;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: #1a1a1a;
+            transition: all 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .language-toggle:hover {
+            background: #fafafa;
+            border-color: #1a1a1a;
+        }
+
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 640px) {
+            .quick-access-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .quick-access-card {
+            background: #f8f8f8;
+            color: #1a1a1a;
+            padding: 20px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            border: 1px solid #e5e5e5;
+        }
+
+        .quick-access-card:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-color: #d0d0d0;
+        }
+
+        .quick-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+        }
+
+        .quick-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: -0.1px;
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .language-toggle {
+                top: 16px;
+                right: 16px;
+                padding: 7px 14px;
+                font-size: 0.8rem;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .quick-title {
+                font-size: 0.8rem;
+            }
+
+            .quick-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .quick-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+
+    <button class="language-toggle" onclick="toggleLanguage()">
+        <span id="langText">EN | हिंदी</span>
+    </button>
+
+    <div class="hero">
+        <h1 class="hero-title" id="siteTitle">Astro Girija</h1>
+        <p class="hero-subtitle" id="siteUrl">astrogirija.in</p>
+        <p class="hero-description" id="siteTagline">
+            Discover your life path through Lo Shu Grid Numerology. Ancient wisdom for modern living.
+        </p>
+    </div>
+
+    <!-- Quick Access Section -->
+    <div id="quickAccessSection" style="display: none;" class="quick-access-grid">
+        <a href={`${base}grid/`} class="quick-access-card">
+            <div class="quick-icon">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M3 3h5v5H3V3zm0 7h5v5H3v-5zm7-7h5v5h-5V3zm0 7h5v5h-5v-5z"/>
+                </svg>
+            </div>
+            <div class="quick-title" data-translate="quick.grid">My Grid</div>
+        </a>
+
+        <a href={`${base}predictions/`} class="quick-access-card">
+            <div class="quick-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+            </div>
+            <div class="quick-title" data-translate="quick.predictions">Predictions</div>
+        </a>
+
+        <a href={`${base}compatibility/`} class="quick-access-card">
+            <div class="quick-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </div>
+            <div class="quick-title" data-translate="quick.compatibility">Compatibility</div>
+        </a>
+
+        <a href={`${base}learn/`} class="quick-access-card">
+            <div class="quick-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+            </div>
+            <div class="quick-title" data-translate="quick.learn">Learn More</div>
+        </a>
+    </div>
+
+    <div class="dob-card">
+        <label class="dob-label">Enter Your Date of Birth</label>
+        <input type="date" id="dobInput" class="dob-input" />
+        <div style="display: flex; gap: 12px;">
+            <button class="btn-calculate" onclick="handleDOBSubmit()" style="flex: 1;">
+                Calculate My Grid
+            </button>
+            <button
+                id="clearDobBtn"
+                class="btn-calculate btn-clear"
+                onclick="clearDOB()"
+                style="display: none; flex: 0.5; padding: 14px; border-radius: 8px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;"
+            >
+                Clear
+            </button>
+        </div>
+        <p id="dobHelpText" style="font-size: 0.85rem; color: #999; margin-top: 14px; text-align: center; font-weight: 400;">
+            For learning: Try different dates to see various numerology patterns
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header" data-translate="section.study">Study Material</h2>
+        <div class="feature-grid">
+            <a href={`${base}grid/`} class="feature-card">
+                <div class="feature-title" data-translate="study.grid">Lo Shu Grid</div>
+                <div class="feature-desc" data-translate="study.grid.desc">View your complete 3×3 grid with all numbers</div>
+            </a>
+
+            <a href={`${base}learn/number-meanings/`} class="feature-card">
+                <div class="feature-title" data-translate="study.numbers">Present & Missing Numbers</div>
+                <div class="feature-desc" data-translate="study.numbers.desc">Understand numbers 1-9 and what's missing in your chart</div>
+            </a>
+
+            <a href={`${base}learn/repetitive-numbers/`} class="feature-card">
+                <div class="feature-title" data-translate="study.repetitions">Repetitions</div>
+                <div class="feature-desc" data-translate="study.repetitions.desc">Impact of numbers appearing 2x, 3x, or 4x+ times</div>
+            </a>
+
+            <a href={`${base}learn/missing-numbers/`} class="feature-card">
+                <div class="feature-title" data-translate="study.remedies">Remedies & Mantras</div>
+                <div class="feature-desc" data-translate="study.remedies.desc">Solutions, gemstones, and powerful mantras</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header" data-translate="section.compatibility">Compatibility</h2>
+        <div class="feature-grid">
+            <a href={`${base}compatibility/`} class="feature-card">
+                <div class="feature-title" data-translate="compat.combinations">Driver-Conductor Combinations</div>
+                <div class="feature-desc" data-translate="compat.combinations.desc">Your personality and destiny compatibility</div>
+            </a>
+
+            <a href={`${base}compatibility/combinations/`} class="feature-card">
+                <div class="feature-title" data-translate="compat.all">All 81 Combinations</div>
+                <div class="feature-desc" data-translate="compat.all.desc">Relationship & professional compatibility analysis</div>
+            </a>
+
+            <a href={`${base}compatibility/lucky-numbers/`} class="feature-card">
+                <div class="feature-title" data-translate="compat.lucky">Lucky / Bad / Neutral Numbers</div>
+                <div class="feature-desc" data-translate="compat.lucky.desc">Find your favorable and unfavorable numbers</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header" data-translate="section.predictions">Predictions</h2>
+        <div class="feature-grid">
+            <a href={`${base}predictions/`} class="feature-card">
+                <div class="feature-title" data-translate="pred.monthly">Monthly & Yearly Forecast</div>
+                <div class="feature-desc" data-translate="pred.monthly.desc">Your personal predictions for 2026</div>
+            </a>
+
+            <a href={`${base}analysis/`} class="feature-card">
+                <div class="feature-title" data-translate="pred.lifearea">Life-Area Predictions</div>
+                <div class="feature-desc" data-translate="pred.lifearea.desc">Planes, arrows, and pattern analysis</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-header" data-translate="section.guidance">Guidance</h2>
+        <div class="feature-grid">
+            <a href={`${base}learn/`} class="feature-card">
+                <div class="feature-title" data-translate="guide.learning">Complete Learning Hub</div>
+                <div class="feature-desc" data-translate="guide.learning.desc">Tutorials, meanings, and comprehensive guides</div>
+            </a>
+
+            <a href={`${base}guidance/dos-donts/`} class="feature-card">
+                <div class="feature-title" data-translate="guide.guidelines">Life Guidelines</div>
+                <div class="feature-desc" data-translate="guide.guidelines.desc">Do's and don'ts based on your numbers</div>
+            </a>
+
+            <a href={`${base}name-numerology/`} class="feature-card">
+                <div class="feature-title" data-translate="guide.name">Name Numerology</div>
+                <div class="feature-desc" data-translate="guide.name.desc">Calculate and analyze your name number</div>
+            </a>
+
+            <a href={`${base}learn/making-grid/`} class="feature-card">
+                <div class="feature-title" data-translate="guide.discovery">Self-Discovery</div>
+                <div class="feature-desc" data-translate="guide.discovery.desc">Learn how to make and read Lo Shu Grids</div>
+            </a>
+        </div>
+    </div>
+
+    <script is:inline define:vars={{ base }}>
+        // Load translations
+        const script = document.createElement('script');
+        script.src = base + 'translations.js';
+        document.head.appendChild(script);
+
+        // Make functions global so onclick handlers can access them
+        window.handleDOBSubmit = function() {
+            const dobInput = document.getElementById('dobInput');
+            const dob = dobInput.value;
+
+            if (!dob) {
+                alert(typeof t === 'function' ? t('pred.no.dob') : 'Please enter your date of birth');
+                return;
+            }
+
+            sessionStorage.setItem('userDOB', dob);
+            updateDOBUI();
+            window.location.href = base + 'grid/';
+        }
+
+        window.clearDOB = function() {
+            sessionStorage.removeItem('userDOB');
+            document.getElementById('dobInput').value = '';
+            updateDOBUI();
+
+            const helpText = document.getElementById('dobHelpText');
+            helpText.textContent = 'DOB cleared! Enter a new date to try different patterns.';
+            helpText.style.color = '#4a4a4a';
+
+            setTimeout(() => {
+                helpText.textContent = 'For learning: Try different dates to see various numerology patterns';
+                helpText.style.color = '#999';
+            }, 3000);
+        }
+
+        function updateDOBUI() {
+            const savedDOB = sessionStorage.getItem('userDOB');
+            const clearBtn = document.getElementById('clearDobBtn');
+            const quickAccess = document.getElementById('quickAccessSection');
+
+            if (savedDOB) {
+                clearBtn.style.display = 'block';
+                quickAccess.style.display = 'grid';
+                document.getElementById('dobInput').value = savedDOB;
+            } else {
+                clearBtn.style.display = 'none';
+                quickAccess.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Apply translations
+            document.getElementById('siteTitle').textContent = t('site.title');
+            document.getElementById('siteUrl').textContent = t('site.url');
+            document.getElementById('siteTagline').textContent = t('site.tagline') + ' ' + t('site.description');
+            document.querySelector('.dob-label').textContent = t('dob.label');
+            document.querySelector('.btn-calculate').textContent = t('dob.button');
+
+            // Translate sections
+            const sections = document.querySelectorAll('[data-translate]');
+            sections.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                el.textContent = t(key);
+            });
+
+            // Update UI based on DOB
+            updateDOBUI();
+        });
+    </script>
+</Layout>

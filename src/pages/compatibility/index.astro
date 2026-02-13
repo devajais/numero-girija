@@ -1,0 +1,145 @@
+---
+import Layout from '../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Compatibility Analysis - Numero Girija">
+    <div id="personalCompatibility"></div>
+
+    <div class="card">
+        <h2 class="section-title">Driver-Conductor Compatibility</h2>
+        <p style="color: #333; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; font-weight: 500;">
+            Your Driver and Conductor numbers reveal how your personality (Driver) works with your destiny (Conductor). Understanding this compatibility helps you leverage strengths and work on challenges.
+        </p>
+
+        <div style="background: #fafafa; border: 1px solid #e8e8e8; padding: 20px; border-radius: 14px; margin-bottom: 20px;">
+            <h3 style="color: #000000; font-size: 1.05rem; margin-bottom: 14px; font-weight: 800;">Three Types of Combinations</h3>
+            <div style="display: grid; gap: 14px;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 44px; height: 44px; background: #33cc33; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white;">F</div>
+                    <div>
+                        <div style="font-weight: 700; color: #000000; font-size: 0.95rem;">Friendly</div>
+                        <div style="font-size: 0.85rem; color: #333; font-weight: 500;">Harmonious energies that support each other</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 44px; height: 44px; background: #f59e0b; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white;">N</div>
+                    <div>
+                        <div style="font-weight: 700; color: #000000; font-size: 0.95rem;">Neutral</div>
+                        <div style="font-size: 0.85rem; color: #333; font-weight: 500;">Mixed energies requiring balance</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 44px; height: 44px; background: #dc2626; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white;">O</div>
+                    <div>
+                        <div style="font-weight: 700; color: #000000; font-size: 0.95rem;">Opposite</div>
+                        <div style="font-size: 0.85rem; color: #333; font-weight: 500;">Conflicting energies creating challenges</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href={`${base}compatibility/combinations/`} class="card" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; background: #000000; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; font-weight: 800;">81</div>
+            <div style="flex: 1;">
+                <h3 style="color: #000000; font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">All 81 Combinations</h3>
+                <p style="color: #333; font-size: 0.9rem; font-weight: 500;">Explore detailed analysis of all Driver-Conductor combinations from 1-1 to 9-9</p>
+            </div>
+            <div style="color: #000000; font-size: 1.4rem; font-weight: 700;">›</div>
+        </div>
+    </a>
+
+    <a href={`${base}compatibility/lucky-numbers/`} class="card" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; background: #000000; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; font-weight: 800;">1-9</div>
+            <div style="flex: 1;">
+                <h3 style="color: #000000; font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">Lucky Numbers Guide</h3>
+                <p style="color: #333; font-size: 0.9rem; font-weight: 500;">Discover your lucky, neutral, and unlucky numbers for dates, vehicles, and more</p>
+            </div>
+            <div style="color: #000000; font-size: 1.4rem; font-weight: 700;">›</div>
+        </div>
+    </a>
+
+    <script is:inline define:vars={{ base }}>
+        const script = document.createElement('script');
+        script.src = base + 'loshu-utils.js';
+        document.head.appendChild(script);
+    </script>
+    <script is:inline define:vars={{ base }}>
+        const dob = sessionStorage.getItem('userDOB');
+        if (!dob) {
+            document.getElementById('personalCompatibility').innerHTML = `
+                <div class="card" style="background: #ffffff; border: 2px solid #000000; border-radius: 14px;">
+                    <h2 style="color: #000000; font-size: 1.2rem; margin-bottom: 12px; font-weight: 800;">Enter Your Date of Birth</h2>
+                    <p style="color: #333; font-size: 0.95rem; margin-bottom: 18px; font-weight: 500; line-height: 1.6;">To see your personalized compatibility analysis, please enter your date of birth on the home page first.</p>
+                    <a href="/" class="btn">Go to Home</a>
+                </div>
+            `;
+        } else {
+            const data = calculateLoShuChart(dob);
+            const type = getCompatibilityType(data.driver, data.conductor);
+            const score = getCompatibilityScore(data.driver, data.conductor);
+
+            let typeColor, typeDesc;
+            if (type === 'friendly') {
+                typeColor = '#33cc33';
+                typeDesc = 'Your Driver and Conductor numbers are harmonious! This friendly combination means your personality and destiny support each other naturally.';
+            } else if (type === 'opposite') {
+                typeColor = '#dc2626';
+                typeDesc = 'Your Driver and Conductor numbers are in opposition. This creates internal conflicts but also potential for great growth through challenges.';
+            } else {
+                typeColor = '#f59e0b';
+                typeDesc = 'Your Driver and Conductor numbers are neutral. You need to consciously balance these energies for best results.';
+            }
+
+            document.getElementById('personalCompatibility').innerHTML = `
+                <div class="card" style="background: #ffffff; border-left: 4px solid ${typeColor}; border: 1px solid #e8e8e8;">
+                    <h2 style="color: #000000; font-size: 1.3rem; margin-bottom: 18px; font-weight: 800;">
+                        Your Compatibility: ${type.toUpperCase()}
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+                        <div style="background: #fafafa; border: 1px solid #e8e8e8; padding: 18px; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 0.8rem; text-transform: uppercase; color: #333; margin-bottom: 10px; font-weight: 700; letter-spacing: 0.5px;">Driver Number</div>
+                            <div style="font-size: 2.8rem; font-weight: 800; color: #000000;">${data.driver}</div>
+                            <div style="font-size: 0.85rem; color: #333; margin-top: 8px; font-weight: 600;">${getPlanetName(data.driver)}</div>
+                        </div>
+                        <div style="background: #fafafa; border: 1px solid #e8e8e8; padding: 18px; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 0.8rem; text-transform: uppercase; color: #333; margin-bottom: 10px; font-weight: 700; letter-spacing: 0.5px;">Conductor Number</div>
+                            <div style="font-size: 2.8rem; font-weight: 800; color: #000000;">${data.conductor}</div>
+                            <div style="font-size: 0.85rem; color: #333; margin-top: 8px; font-weight: 600;">${getPlanetName(data.conductor)}</div>
+                        </div>
+                    </div>
+
+                    <p style="color: #333; font-size: 0.95rem; line-height: 1.7; margin-bottom: 18px; font-weight: 500;">
+                        ${typeDesc}
+                    </p>
+
+                    <div style="background: #fafafa; border: 1px solid #e8e8e8; padding: 18px; border-radius: 12px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-size: 0.95rem; font-weight: 700; color: #000000;">Compatibility Score</span>
+                            <span style="font-size: 1.4rem; font-weight: 800; color: ${typeColor};">${score}/10</span>
+                        </div>
+                        <div style="width: 100%; height: 10px; background: #e8e8e8; border-radius: 6px; overflow: hidden;">
+                            <div style="width: ${score * 10}%; height: 100%; background: ${typeColor}; border-radius: 6px; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>
+
+                    <a href="${base}compatibility/combinations/" class="btn" style="margin-top: 18px;">
+                        View Detailed Analysis
+                    </a>
+                </div>
+            `;
+        }
+    </script>
+
+    <style>
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        }
+    </style>
+</Layout>

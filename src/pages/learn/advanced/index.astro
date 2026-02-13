@@ -1,0 +1,119 @@
+---
+import Layout from '../../../components/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Advanced Concepts - Numero Girija">
+    <div class="breadcrumb">
+        <a href={`${base}learn/`}>Learning Portal</a> / Advanced Concepts
+    </div>
+
+    <div class="card">
+        <h1 class="section-title">🎓 Advanced Concepts</h1>
+        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">
+            Take your numerology knowledge to the next level. Explore advanced topics like planes, arrows, yearly cycles, and the art of making accurate predictions.
+        </p>
+
+        <div class="topics-list">
+            <a href={`${base}learn/advanced/planes-arrows/`} class="topic-card">
+                <div class="topic-icon">⚡</div>
+                <div class="topic-content">
+                    <h3>Planes & Arrows</h3>
+                    <p>Understanding Mental, Emotional, and Practical planes and their arrows</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/advanced/yearly-cycles/`} class="topic-card">
+                <div class="topic-icon">🔄</div>
+                <div class="topic-content">
+                    <h3>Yearly Cycles</h3>
+                    <p>The 9-year numerological cycle and how Personal Years shape your life</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+
+            <a href={`${base}learn/advanced/predictions-guide/`} class="topic-card">
+                <div class="topic-icon">🔮</div>
+                <div class="topic-content">
+                    <h3>Making Predictions</h3>
+                    <p>How to use numerology for accurate forecasts and life guidance</p>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .breadcrumb {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #6b3fa0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .topics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .topic-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fafafa;
+            border: 2px solid #e8e8e8;
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateX(4px);
+            border-color: #6b3fa0;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-content h3 {
+            color: #2d1b69;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .topic-content p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #6b3fa0;
+            font-size: 2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</Layout>
